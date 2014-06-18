@@ -36,6 +36,14 @@ group :test do
   gem 'shoulda-matchers'
   gem 'factory_girl'
 end
+
+group :development do
+  gem 'capistrano-ext'
+  gem 'capistrano', '> 3.0'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
