@@ -1,18 +1,9 @@
-%h1 Listing articles
-%table
-  %thead
-    %tr
-      %th Title
-      %th Content
-      %th Short content
-      %th{:colspan => "3"}
-  %tbody
-    - @articles.each do |article|
-      %tr
-        %td= article.title
-        %td= article.content
-        %td= article.short_content
-        %td= link_to 'Show', article
-        %td= link_to 'Edit', edit_article_path(article)
-        %td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
+.body.main-content
+  .love
+
+    ╭╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮
+    ┃┃╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱┃┃
+    ┃┃╱╱╭━━┳╮╭┳━━╮╭╮╱╭┳━━┳╮╭╮╭━━┳━━╮╭╮╭┳╮╭┳━━┫╰━╮
+    ┃┃╱╭┫╭╮┃╰╯┃┃━┫┃┃╱┃┃╭╮┃┃┃┃┃━━┫╭╮┃┃╰╯┃┃┃┃╭━┫╭╮┃
+    ┃╰━╯┃╰╯┣╮╭┫┃━┫┃╰━╯┃╰╯┃╰╯┃┣━━┃╰╯┃┃┃┃┃╰╯┃╰━┫┃┃┃
+    ╰━━━┻━━╯╰╯╰━━╯╰━╮╭┻━━┻━━╯╰━━┻━━╯╰┻┻┻━━┻━━┻╯╰╯
