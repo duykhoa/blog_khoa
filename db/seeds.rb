@@ -12,3 +12,8 @@
     content: Faker::Lorem.paragraph(4)
   )
 end
+
+User.create(
+  email: 'admin@phuongbui.me',
+  password: 'phuongbui.me'
+)

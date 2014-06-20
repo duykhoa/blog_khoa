@@ -27,6 +27,8 @@ gem 'spring',        group: :development
 gem 'pg'
 gem 'haml'
 gem "paperclip", "~> 4.1"
+gem 'devise'
+gem 'rails_admin'
 
 group :test, :development do
   gem 'faker'
