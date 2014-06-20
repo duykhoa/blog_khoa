@@ -62,14 +62,21 @@ namespace :deploy do
     end
   end
 
+  task :seed_data do
+    on roles(:all) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'db:seed'
+        end
+      end
+    end
+  end
+
   after :publishing, :migrate_db, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-       within release_path do
-         execute :rake, 'cache:clear'
-       end
     end
   end
 end

@@ -5,12 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-10.times do |i|
-  Article.create(
-    title: Faker::Lorem.sentence,
-    short_content: Faker::Lorem.paragraph(4),
-    content: Faker::Lorem.paragraph(4)
-  )
+if Rails.env.development?
+  10.times do |i|
+    Article.create(
+      title: Faker::Lorem.sentence,
+      short_content: Faker::Lorem.paragraph(4),
+      content: Faker::Lorem.paragraph(4)
+    )
+  end
 end
 
 User.create(
