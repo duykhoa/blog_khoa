@@ -8,4 +8,8 @@ class Article < ActiveRecord::Base
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
 
   default_scope lambda { order(created_at: :desc) }
+
+  def related_articles(number = 3)
+    self.class.where.not(id: id).limit(number)
+  end
 end
