@@ -26,12 +26,16 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'pg'
 gem 'haml'
+gem "paperclip", "~> 4.1"
+
+group :test, :development do
+  gem 'faker'
+end
 
 group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'rspec-instafail'
-  gem 'faker'
   gem 'shoulda'
   gem 'shoulda-matchers'
   gem 'factory_girl'
@@ -43,6 +47,7 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

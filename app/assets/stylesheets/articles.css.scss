@@ -1,3 +1,148 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variable';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+* {
+  font-family:'Open Sans', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1vmax;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  width: $content-width;
+  margin: 0 auto;
+  color: $text-color-gray;
+}
+
+.clear {
+  clear: both;
+}
+
+.header {
+  position: relative;
+  &:before, &:after {
+    content: '';
+    display: inline-block;
+    background-color: #EEE;
+    height: 40px;
+    position: absolute;
+    top: 0;
+  }
+
+  &:before {
+    padding-left: 500%;
+    margin-left: -500%;
+  }
+
+  &:after {
+    padding-right: 500%;
+    margin-right: -500%;
+    right: 0;
+  }
+
+  height: 40px;
+  background-color: #EEE;
+  .navbar-content {
+    width: 100%;
+    display: inline-block;
+
+    .list-items {
+      display: table;
+      width: 100%;
+      height: 40px;
+
+      ul {
+        display: table-row;
+        list-style: none;
+        font-size: 1.2vmax;
+      }
+
+      .logo, .search-box {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .search-box {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.navigation-menu {
+  ul {
+    text-align: center;
+    list-style: none;
+    width: 100%;
+
+    li {
+      display: inline-block;
+      padding: 10px 0;
+      width: 20%;
+      text-align: center;
+      position: relative;
+      border-left: 1px solid #EEE;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      overflow: hidden;
+      white-space: nowrap;
+
+      &:last-child {
+        border-right: 1px solid #EEE;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $green-navbar;
+      }
+    }
+  }
+}
+.body.main-content {
+  margin-top: 20px;
+
+  &:after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+
+  .love {
+    width: $content-width;
+    margin: 0 auto;
+  }
+
+  .article-container {
+    width: 50%;
+    float: left;
+    margin-bottom: 4vh;
+
+    .post-time {
+      font-size: 0.92vmax;
+      color: $date;
+    }
+
+    .title {
+      color: $title;
+      font-weight: bold;
+      font-size: 1.3vmax;
+    }
+
+    .short-content {
+      margin-top: 3vh;
+    }
+  }
+}
