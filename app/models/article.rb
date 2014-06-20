@@ -12,4 +12,12 @@ class Article < ActiveRecord::Base
   def related_articles(number = 3)
     self.class.where.not(id: id).limit(number)
   end
+
+  rails_admin do
+    edit do
+      field :title
+      field :short_content
+      field :content, :ck_editor
+    end
+  end
 end
