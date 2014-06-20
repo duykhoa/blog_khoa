@@ -3,7 +3,7 @@ class Article < ActiveRecord::Base
     :feature_image,
     styles:
       { :medium => "450x450>", :thumb => "100x100>" },
-    default_url: "/images/:style/missing.png")
+    default_url: "/images/missing.png")
 
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
 

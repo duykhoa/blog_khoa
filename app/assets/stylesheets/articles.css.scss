@@ -141,13 +141,16 @@ body {
     }
 
     .feature-image {
-      max-height: 45vh;
+      height: 45vh;
       overflow: hidden;
       width: 100%;
+      border: 1px solid $gray;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
 
       img {
         width: 100%;
-        margin: 0.8vh 0;
         display: block;
       }
     }
@@ -159,9 +162,16 @@ body {
     }
 
     .title {
-      color: $title;
-      font-weight: bold;
-      font-size: 1.3vmax;
+      a, a:hover, a:visited {
+        text-decoration: none;
+        color: $title;
+        font-weight: bold;
+        font-size: 1.3vmax;
+      }
+
+      a:hover {
+        color: $title-hover;
+      }
     }
 
     .short-content {
