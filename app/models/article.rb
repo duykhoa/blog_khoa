@@ -58,6 +58,7 @@ class Article < ActiveRecord::Base
     edit do
       field :title
       field :short_content
+      field :feature_image
       field :content, :ck_editor
     end
   end

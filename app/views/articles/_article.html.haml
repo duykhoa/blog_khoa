@@ -4,7 +4,7 @@
   .post-time
     = format_date(article.created_at)
   .title
-    = link_to article.title, article.slug
+    = link_to article.title, article_path(article.slug)
   .short-content
     = article.short_content
 - if article_counter % 2 != 0

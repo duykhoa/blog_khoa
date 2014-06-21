@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :articles, only: [:index, :show, :search]
+  devise_for :users
 
   namespace :admin do
     resources :articles
