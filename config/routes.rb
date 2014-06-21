@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show, :search]
 
   namespace :admin do
     resources :articles
   end
+
+  get 'search' => 'articles#search'
+  get 'search/:query' => 'articles#search_seo_friendly', as: :search_seo_friendly
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

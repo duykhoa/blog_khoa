@@ -1,11 +1,11 @@
 %ul
+  %li{class: "#{'active' if action_name.eql?('index')}"}>
+    = link_to 'Home', root_path
   %li>
-    Home
+    = link_to 'Marketing at Work', root_path
   %li>
-    Marketing at Work
+    = link_to 'Marketing Stories', root_path
   %li>
-    Marketing Stories
+    = link_to 'Random Stuff', root_path
   %li>
-    Random Stuff
-  %li>
-    About me
+    = link_to 'About me', root_path
