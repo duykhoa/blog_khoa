@@ -30,6 +30,7 @@ gem "paperclip", "~> 4.1"
 gem 'devise'
 gem 'rails_admin'
 gem 'ckeditor'
+gem 'friendly_id', '~> 5.0.0'
 
 group :test, :development do
   gem 'faker'

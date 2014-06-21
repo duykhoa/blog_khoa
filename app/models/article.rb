@@ -7,6 +7,13 @@ class Article < ActiveRecord::Base
 
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
 
+  extend FriendlyId
+  friendly_id :article_url, use: [:slugged, :finders]
+
+  def article_url
+    [:title]
+  end
+
   default_scope lambda { order(created_at: :desc) }
 
   def related_articles(number = 3)
