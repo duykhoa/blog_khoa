@@ -33,10 +33,10 @@ gem 'ckeditor'
 
 group :test, :development do
   gem 'faker'
+  gem 'rspec-rails', '~> 3.0.0'
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'rspec-instafail'
   gem 'shoulda'
