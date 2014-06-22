@@ -1,5 +1,5 @@
 class AboutMesController < ApplicationController
   def index
-    @about_mes = AboutMe.first
+    @about_me = AboutMe.first
   end
 end
