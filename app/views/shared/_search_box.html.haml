@@ -1,2 +1,2 @@
-= form_tag search_path, method: :get, id: 'search_form' do
+= form_tag form_search_path(params), method: :get, id: 'search_form' do
   = text_field_tag :query, params[:query]

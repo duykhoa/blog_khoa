@@ -43,14 +43,14 @@ class Article < ActiveRecord::Base
     def search(search_params = {}, page_params = 1)
       tire.search do
         query do
-          if search_params.has_key?(:query) && search_params[:query] != '-'
+          if search_params[:query].present? && search_params[:query] != '-'
             string search_params[:query], fields: %W(title short_content content)
           else
             all
           end
         end
 
-        if search_params.has_key?(:category_name) && search_params[:category_name] != ''
+        if search_params[:category_name].present? && search_params[:category_name] != ''
           filter :term, category_name: Article.decode(search_params[:category_name])
         end
 
