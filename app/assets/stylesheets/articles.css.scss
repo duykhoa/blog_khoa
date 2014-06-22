@@ -69,6 +69,11 @@ body {
         }
       }
 
+      .logo {
+        a {
+          font-size: 1.2vmax;
+        }
+      }
       .logo, .search-box {
         display: table-cell;
         vertical-align: middle;
