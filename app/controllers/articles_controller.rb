@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
     end
 
     def sanitize_search_params
-      params[:query] ? params[:query] : '-'
+      params[:query] ? params[:query].gsub(/\W/, '-') : '-'
     end
 
     def search_params
