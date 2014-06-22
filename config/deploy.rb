@@ -72,7 +72,17 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :migrate_db, :restart
+  task :elasticsearch_index do
+    on roles(:all) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'environment tire:import CLASS=Article FORCE=true'
+        end
+      end
+    end
+  end
+
+  after :publishing, :migrate_db, :elasticsearch_index, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
