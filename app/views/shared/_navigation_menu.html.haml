@@ -1,11 +1,11 @@
 %ul
-  %li{class: "#{'active' if action_name.eql?('index')}"}>
-    = link_to 'Home', root_path
-  %li>
-    = link_to 'Marketing at Work', root_path
-  %li>
-    = link_to 'Marketing Stories', root_path
-  %li>
-    = link_to 'Random Stuff', root_path
-  %li>
-    = link_to 'About me', root_path
+  = link_to root_path do
+    %li{class: "#{'active' if action_name.eql?('index')}"}>
+      Home
+  - @categories.each do |category|
+    = link_to category_index_path(encode_url(category)) do
+      %li>
+        = category
+  = link_to root_path do
+    %li>
+      About me

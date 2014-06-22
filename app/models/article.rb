@@ -6,6 +6,7 @@ class Article < ActiveRecord::Base
     default_url: "/images/missing.png")
 
   PER_PAGE = 8
+  belongs_to :category
 
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
   validates :title, presence: true
@@ -33,19 +34,24 @@ class Article < ActiveRecord::Base
     indexes :content, type: 'string', analyzer: 'snowball'
     indexes :short_content, type: 'string', analyzer: 'snowball'
     indexes :feature_image, as: 'feature_image.url(:medium)', type: 'string'
+    indexes :category_name, as: 'category.name', type: 'string', index: :not_analyzed
     indexes :created_at, type: 'date'
     indexes :slug, index: :not_analyzed
   end
 
   class << self
-    def search(params)
-      tire.search(page: params[:page], per_page: PER_PAGE) do
+    def search(search_params = {}, page_params = 1)
+      tire.search do
         query do
-          if params[:query].present? && params[:query] != '-'
-            string params[:query], fields: %W(title short_content content)
+          if search_params.has_key?(:query) && search_params[:query] != '-'
+            string search_params[:query], fields: %W(title short_content content)
           else
             all
           end
+        end
+
+        if search_params.has_key?(:category_name) && search_params[:category_name] != ''
+          filter :term, category_name: Article.decode(search_params[:category_name])
         end
 
         sort do
@@ -53,12 +59,17 @@ class Article < ActiveRecord::Base
         end
       end
     end
+
+    def decode(params)
+      params.gsub('-', ' ')
+    end
   end
 
   rails_admin do
     edit do
       field :title
       field :short_content
+      field :category
       field :feature_image
       field :content, :ck_editor
     end

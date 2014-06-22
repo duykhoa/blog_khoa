@@ -5,12 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Category.delete_all
+
+CATEGORY = ['Marketing at Work', 'Marketing Stories', 'Random Stuff']
+CATEGORY.each { |category| Category.create!(name: category) }
+
 if Rails.env.development?
+  Article.delete_all
+
   10.times do |i|
     Article.create(
       title: Faker::Lorem.sentence,
       short_content: Faker::Lorem.paragraph(4),
-      content: Faker::Lorem.paragraph(4)
+      content: Faker::Lorem.paragraph(4),
+      category_id:
+        Category
+        .offset(rand(Category.count))
+        .first
+        .id
     )
   end
 end

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :articles
   end
 
+  get 'search/category/:category_name(/:query)' => 'articles#category_index', as: :category_index
   get 'search' => 'articles#search'
   get 'search/:query' => 'articles#search_seo_friendly', as: :search_seo_friendly
 
