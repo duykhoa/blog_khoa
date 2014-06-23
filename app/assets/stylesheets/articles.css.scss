@@ -86,7 +86,9 @@ body {
         form {
           input#query {
             border: none;
-            padding: 1vh 0;
+            padding: 0.5vh 1vw;
+            font-size: 0.8vmax;
+            color: $text-color-gray;
           }
         }
       }
