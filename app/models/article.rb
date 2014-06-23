@@ -41,7 +41,8 @@ class Article < ActiveRecord::Base
 
   class << self
     def search(search_params = {}, page_params = 1)
-      tire.search do
+      page = search_params.fetch(:page) || 1
+      tire.search(page: page, per_page: PER_PAGE) do
         query do
           if search_params[:query].present? && search_params[:query] != '-'
             string search_params[:query], fields: %W(title short_content content)

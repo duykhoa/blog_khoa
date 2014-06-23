@@ -10,6 +10,12 @@ $(document).ready ->
       facebook: {
         app_id: '1505889032957471'
       },
+      twitter: {
+        enable: true
+      }
+      google_plus: {
+        enable: true
+      }
       pinterest: {
         enabled: false
       },

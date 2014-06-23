@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :destroy]
 
   def index
-    @articles = Article.search()
+    @articles = Article.search(index_params)
   end
 
   def category_index
@@ -32,9 +32,16 @@ class ArticlesController < ApplicationController
       arg ? arg.gsub(/\W/, '-') : '-'
     end
 
+    def index_params
+      params.permit(:page).tap do |args|
+        args[:page] = args[:page].to_i > 0 ? args[:page].to_i : 1
+      end
+    end
+
     def search_params
       params.permit(:query, :page).tap do |args|
-        args[:query] = sanitize_params args[:query]
+        args[:query] = args[:query].present? ? sanitize_params(args[:query]) : '-'
+        args[:page] = args[:page].to_i > 0 ? args[:page].to_i : 1
       end
     end
 
@@ -42,6 +49,7 @@ class ArticlesController < ApplicationController
       params.permit(:category_name, :page, :query).tap do |args|
         args[:category_name] = sanitize_params args[:category_name]
         args[:query] = sanitize_params args[:query]
+        args[:page] = args[:page].to_i > 0 ? args[:page].to_i : 1
       end
     end
 end

@@ -8,10 +8,11 @@ Rails.application.routes.draw do
     resources :articles
   end
 
-  get 'aboutme' => 'about_mes#index'
-  get 'search/category/:category_name(/:query)' => 'articles#category_index', as: :category_index
+  get '/(page/:page)' => 'articles#index', as: :index_seo
+  get 'search/category/:category_name(/:query)(page/:page)' => 'articles#category_index', as: :category_index
   get 'search' => 'articles#search'
-  get 'search/:query' => 'articles#search_seo_friendly', as: :search_seo_friendly
+  get 'search/:query(/page/:page)' => 'articles#search_seo_friendly', as: :search_seo_friendly
+  get 'aboutme' => 'about_mes#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
