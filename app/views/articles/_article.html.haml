@@ -3,7 +3,7 @@
     = image_tag article.feature_image
   .post-time
     = format_date(article.created_at)
-  .title
+  .title{'data-no-turbolink' => ''}
     = link_to article.title, article_path(article.slug)
   .short-content
     = article.short_content

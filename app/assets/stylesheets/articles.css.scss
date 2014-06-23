@@ -231,12 +231,32 @@ body {
       ul {
         list-style: none;
         li {
+          padding-left: 5px;
           a {
             text-decoration: none;
             color: $green-navbar;
+            font-size: 0.95vmax;
           }
         }
       }
+    }
+  }
+}
+
+.share-social {
+  margin-top: 2vh;
+  .share-button.sharer-0 {
+    height: auto;
+
+    label.entypo-export {
+      display: none;
+    }
+
+    .social.middle.right.networks-3.active {
+      margin: 0;
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none;
     }
   }
 }
