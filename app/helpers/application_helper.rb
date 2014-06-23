@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def pagination_next(articles, page)
-    if !page || page.to_i < total_page(articles.total_count)
+    if !page || 0 < page.to_i < total_page(articles.total_count)
       content_tag :div, class: 'next' do
         link_to 'Next Page', url_for(page: page.to_i + 1)
       end

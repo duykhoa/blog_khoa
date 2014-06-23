@@ -19,6 +19,8 @@ body {
   width: $content-width;
   margin: 0 auto;
   color: $text-color-gray;
+  min-height: 100%;
+  margin-bottom: -60px;
 }
 
 .clear {
@@ -81,6 +83,12 @@ body {
 
       .search-box {
         text-align: right;
+        form {
+          input#query {
+            border: none;
+            padding: 1vh 0;
+          }
+        }
       }
     }
   }
