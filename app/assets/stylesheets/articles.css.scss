@@ -215,9 +215,10 @@ body {
 
 .article-container#article_show {
   .left-content {
+    float: left;
     margin-top: 3.5vh;
     line-height: 2.2em;
-    width: 70%;
+    width: 68%;
     .title {
       h1 {
         color: $title;
@@ -249,6 +250,69 @@ body {
             font-size: 0.95vmax;
           }
         }
+      }
+    }
+  }
+
+  .right-content {
+    margin-top: 3.5vh;
+    padding: 3vh 3%;
+    float: right;
+    width: 26%;
+    background-color: #F6F6F6;
+
+    .message {
+      .title {
+        h1 {
+          font-size: 1.9vmax;
+          font-weight: normal;
+          line-height: 1.2em;
+        }
+      }
+
+      .subtitle {
+        h3 {
+          margin: 3vh 0;
+          font-weight: normal;
+          font-size: 1vmax;
+        }
+      }
+    }
+
+    .errors {
+      color: $error-color;
+    }
+
+    .success {
+      color: $green-navbar;
+    }
+
+    .errors, .success {
+      padding-bottom: 2vh;
+    }
+
+    .form {
+      input[type=text] {
+        width: 93%;
+        font-size: 1.3vmax;
+        padding: 3%;
+        color: $text-color-gray;
+        border-color: #DDD;
+        border-style: solid;
+        border-width: 1px;
+        margin-top: 1vh;
+        margin-bottom: 0.8vh;
+      }
+
+      input[type=submit] {
+        padding: 3% 2%;
+        border: 0;
+        background-color: $green-navbar;
+        color: #FAFAFA;
+        width: 100%;
+        font-size: 1.5vmax;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
       }
     }
   }
@@ -310,10 +374,8 @@ body {
     background-color: $gray;
   }
 
+  position: relative;
   @include footer_style();
-
-  position: absolute;
-  bottom: 0;
 
   &:before, &:after {
     @include footer_style();
@@ -321,6 +383,8 @@ body {
     display: block;
     position: absolute;
     width: 0;
+    position: absolute;
+    bottom: 0;
   }
 
   &:before {
@@ -343,7 +407,7 @@ body {
 
     .logo {
       padding-left: 1vw;
-      width: 10%;
+      width: 15%;
       display: table-cell;
       font-weight: 700;
       margin-right: 2vw;

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140622155446) do
+ActiveRecord::Schema.define(version: 20140623235748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(version: 20140622155446) do
     t.integer  "category_id"
   end
 
+  create_table "blog_seos", force: true do |t|
+    t.string   "key"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -57,6 +64,12 @@ ActiveRecord::Schema.define(version: 20140622155446) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "email_subscribes", force: true do |t|
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false

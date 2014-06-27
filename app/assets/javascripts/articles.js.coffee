@@ -26,3 +26,13 @@ $(document).ready ->
   }
   share = new Share(".share-button", config)
   share.open()
+
+  subscribingValidate = ->
+    $('form#new_email_subscribe').bind 'ajax:success', (xhr, data, status) ->
+      if (data.success == false)
+        $(this).parent().prepend("<div class='errors'>Email " + data.error_trace.email + '</div>')
+      else
+        $(this).siblings('div.errors').remove()
+        $(this).parent().append("<div class= 'success'>Thank for subscribing</div>")
+        $(this).toggle()
+  subscribingValidate()

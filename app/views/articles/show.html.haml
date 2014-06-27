@@ -14,6 +14,8 @@
           %li{'data-no-turbolink' => ''}= link_to related_article.title, related_article
     .facebook-comment
       .fb-comments{data: { href: article_url(@article.slug), numposts: "5", colorscheme: "light" }}
+  .right-content
+    = render 'shared/subscriber_box'
 
   :javascript
     (function(d, s, id) {
