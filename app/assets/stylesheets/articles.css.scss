@@ -143,7 +143,7 @@ body {
         font-weight: bold;
 
         &:before {
-          background-color: green;
+          background-color: $lighter-green-color;
         }
       }
     }
@@ -350,7 +350,7 @@ body {
         border-radius: 5px;
 
         &:hover {
-          background-color: #71C348;
+          background-color: $lighter-green-color;
         }
       }
     }
