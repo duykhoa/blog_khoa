@@ -1,7 +1,7 @@
 %ul
   = link_to root_path do
     %li{class: "#{'active' if action_name.eql?('index')}"}>
-      Home
+      = BlogSetting.blog_title
   - @categories.each do |category|
     = link_to category_index_path(encode_url(category)) do
       %li>
