@@ -6,5 +6,14 @@ class EmailSubscribe < ActiveRecord::Base
   protected
 
   def subscribe
+    gb = Gibbon::API.new(BlogSetting.mailchimp_api, {timeout: '30'})
+
+    gb.lists.subscribe(
+      {
+        id: BlogSetting.mailchimp_list,
+        email: {email: email},
+        merge_vars: {FNAME: 'Subscriber First Name', LNAME: 'Subscriber Last Name'},
+        double_optin: false}
+    )
   end
 end

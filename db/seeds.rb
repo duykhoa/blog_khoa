@@ -6,10 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.delete_all
 
 CATEGORY = ['Marketing at Work', 'Marketing Stories', 'Random Stuff']
-CATEGORY.each { |category| Category.create!(name: category) }
+CATEGORY.each { |category| Category.create!(name: category) } if Category.count.eql? 0
 
 if Rails.env.development?
   Article.delete_all
@@ -31,4 +30,8 @@ end
 User.create(
   email: 'admin@phuongbui.me',
   password: 'phuongbui.me'
-)
+) unless User.find_by_email('admin@phuongbui.me')
+
+BlogSetting::DEFAULT_SETTING.each do  |key, value|
+  BlogSetting.create(key: key, value: value)
+end
