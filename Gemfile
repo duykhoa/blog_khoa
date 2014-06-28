@@ -32,6 +32,8 @@ gem 'rails_admin'
 gem 'ckeditor'
 gem 'friendly_id', '~> 5.0.0'
 gem 'tire'
+gem 'gibbon'
+gem 'cancan'
 
 group :test, :development do
   gem 'faker'
