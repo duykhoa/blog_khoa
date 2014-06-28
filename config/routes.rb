@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   get '/(page/:page)' => 'articles#index', as: :index_seo
-  get 'search/category/:category_name(/:query)(page/:page)' => 'articles#category_index', as: :category_index
+  get 'search/category/:category_name(/:query)(/page/:page)' => 'articles#category_index', as: :category_index
   get 'search' => 'articles#search'
   get 'search/:query(/page/:page)' => 'articles#search_seo_friendly', as: :search_seo_friendly
   get 'aboutme' => 'about_mes#index'
