@@ -22,6 +22,7 @@ body {
   margin: 0 auto;
   color: $text-color-gray;
   margin-bottom: -60px;
+  position: relative;
 }
 
 .clear {
@@ -152,6 +153,7 @@ body {
 
 .body.main-content {
   margin-top: 20px;
+  padding-bottom: 20px;
 
   &:after {
     display: block;
@@ -374,7 +376,9 @@ body {
     background-color: $gray;
   }
 
-  position: relative;
+  display: none;
+  position: absolute;
+  bottom: 0;
   @include footer_style();
 
   &:before, &:after {
@@ -400,7 +404,7 @@ body {
     margin-right: -500%;
   }
 
-  display: table;
+  /*display: table;*/
 
   .container {
     display: table-row;
