@@ -46,7 +46,7 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
+    on roles(:app) do
       # Your restart mechanism here, for example:
        execute :touch, release_path.join('tmp/restart.txt')
     end
@@ -82,7 +82,17 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :migrate_db, :elasticsearch_index, :restart
+  task :update_sym_link do
+    on roles(:app) do
+      execute "rm -rf #{release_path}/public/ckeditor_assets"
+      execute "rm -rf #{release_path}/public/system"
+
+      execute "ln -nfs #{shared_path}/ckeditor_assets #{release_path}/public/ckeditor_assets"
+      execute "ln -nfs #{shared_path}/system #{release_path}/public/system"
+    end
+  end
+
+  after :publishing, :migrate_db, :elasticsearch_index, :update_sym_link, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
