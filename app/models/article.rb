@@ -7,6 +7,7 @@ class Article < ActiveRecord::Base
 
   PER_PAGE = 8
   belongs_to :category
+  validates :category, presence: true
 
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
   validates :title, presence: true
