@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :articles
   end
 
+  get 'feed', to: 'articles#index', defaults: {format: 'rss'}
   get '/(page/:page)' => 'articles#index', as: :index_seo
   get 'search/category/:category_name(/:query)(/page/:page)' => 'articles#category_index', as: :category_index
   get 'search' => 'articles#search'
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'articles#index'
+  root 'articles#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
