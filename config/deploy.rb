@@ -89,10 +89,22 @@ namespace :deploy do
 
       execute "ln -nfs #{shared_path}/ckeditor_assets #{release_path}/public/ckeditor_assets"
       execute "ln -nfs #{shared_path}/system #{release_path}/public/system"
+      execute "ln -nfs #{shared_path}/sitemaps #{release_path}/public/sitemaps"
+      execute "ln -nfs #{shared_path}/sitemap.xml #{release_path}/public/sitemaps/sitemap.xml"
     end
   end
 
-  after :publishing, :migrate_db, :elasticsearch_index, :update_sym_link, :restart
+  task :sitemap do
+    on roles(:all) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'sitemap:generate'
+        end
+      end
+    end
+  end
+
+  after :finishing, :migrate_db, :elasticsearch_index, :update_sym_link, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do

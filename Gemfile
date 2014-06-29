@@ -34,6 +34,7 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'tire'
 gem 'gibbon'
 gem 'cancan'
+gem 'dynamic_sitemaps'
 
 group :test, :development do
   gem 'faker'
