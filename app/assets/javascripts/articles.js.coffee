@@ -2,19 +2,28 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready ->
+  activeSocialButton = ->
+    setTimeout ( ->
+      $('.social.middle.right').addClass('active')
+      return
+    ), 10
+
   config = {
     ui: {
       flyout: 'middle right'
     }
     networks: {
       facebook: {
-        app_id: '1505889032957471'
+        app_id: '1505889032957471',
+        after: activeSocialButton
       },
       twitter: {
-        enable: true
+        enable: true,
+        after: activeSocialButton
       }
       google_plus: {
-        enable: true
+        enable: true,
+        after: activeSocialButton
       }
       pinterest: {
         enabled: false
