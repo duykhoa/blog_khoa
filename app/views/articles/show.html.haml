@@ -1,3 +1,8 @@
+= content_for :article_show do
+  %meta{property: 'og:title', content: @article.title}
+  %meta{property: 'og:description', content: @article.short_content}
+  %meta{property: 'og:url', content: article_url(@article)}
+  %meta{property: 'og:image', content: @article.feature_image.url}
 .article-container{id: ['article', action_name]}
   .left-content
     .title

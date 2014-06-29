@@ -5,7 +5,10 @@ class BlogSetting < ActiveRecord::Base
       mailchimp_list: '45c3380fe4',
       ga_id: '',
       fb_app_id: '',
-      blog_title: 'Phuong Bui | Marketing Blog'
+      blog_title: 'Phuong Bui | Marketing Blog',
+      url: 'http://phuongbui.me',
+      fb_image: 'http://phuongbui.me/fbog.jpg',
+      fb_description: 'Phuong Bui Marketing Blog sample content'
     }
 
   after_save :restart_setting
