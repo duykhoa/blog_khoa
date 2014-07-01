@@ -39,14 +39,12 @@ gem 'dynamic_sitemaps'
 group :test, :development do
   gem 'faker'
   gem 'rspec-rails', '~> 3.0.0'
-end
-
-group :test do
-  gem 'database_cleaner'
-  gem 'rspec-instafail'
+  gem 'debugger'
   gem 'shoulda'
   gem 'shoulda-matchers'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'rspec-instafail'
 end
 
 group :development do
@@ -55,7 +53,6 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'debugger'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
