@@ -27,4 +27,31 @@ describe BlogSeo, :type => :model do
       end
     end
   end
+
+  describe "#after_initialize" do
+    before do
+      allow(BlogSetting).to receive(:blog_title).and_return("Blog Title")
+    end
+
+    it "calls initialize" do
+      blog_seo = BlogSeo.new
+      expect(blog_seo.value).not_to eq(nil)
+      expect(blog_seo.value).to eq("<meta property='og:title' content='#{BlogSetting.blog_title}' />" )
+    end
+
+    it "calls initialize" do
+      blog_seo = BlogSeo.new(value: 'blogseo')
+      expect(blog_seo.value).to eq('blogseo')
+    end
+  end
+
+  describe "#clear_metatags" do
+    let!(:blog_seo) { create(:blog_seo) }
+
+    it "calls clear_metatags after save" do
+      blog_seo.value = "Updated Value"
+      expect(blog_seo).to receive(:clear_metatags)
+      blog_seo.save!
+    end
+  end
 end
