@@ -38,13 +38,12 @@ gem 'dynamic_sitemaps'
 
 group :test, :development do
   gem 'faker'
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', '~> 3.0.1'
   gem 'debugger'
   gem 'shoulda'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'rspec-instafail'
 end
 
 group :development do

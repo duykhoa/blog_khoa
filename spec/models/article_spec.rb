@@ -40,18 +40,27 @@ describe Article do
     end
 
     context 'search by catetory' do
-      let!(:marketing_story_category) { create(:category, name: "marketing") }
+      let!(:marketing_story_category) { create(:category, name: "marketingblog") }
       let!(:marketing_story_article) { create(:article, category: marketing_story_category, title: "Blog Article") }
       let!(:another_article) { create(:article, title: "Blog Article") }
-      let!(:search_params) { {query: 'article', page: 1, category_name: marketing_story_category.name} }
+
+      let!(:search_params_with_category) { {query: 'article', page: 1, category_name: marketing_story_category.name} }
+      let!(:search_params1) { {query: 'article', page: 1, category_name: ''} }
+      let!(:search_params2) { {query: 'article', page: 1, category_name: ''} }
       before(:each) { Article.tire.index.refresh }
 
       it "return just 1 article for marketing category" do
-        result = Article.search(search_params)
+        result = Article.search(search_params_with_category)
         expect(result.count).to eq(1)
       end
 
-      # TODO: category have more than 1 word, search fail
+      it "return just all article" do
+        result1 = Article.search(search_params1)
+        expect(result1.count).to eq(2)
+
+        result2 = Article.search(search_params2)
+        expect(result2.count).to eq(2)
+      end
     end
   end
 end
