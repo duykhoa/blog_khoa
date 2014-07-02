@@ -23,7 +23,7 @@ class BlogSetting < ActiveRecord::Base
   class << self
     DEFAULT_SETTING.each do |key, value|
       define_method "#{key}" do
-        BlogSetting.settings.fetch(key.to_s)
+        BlogSetting.settings.fetch(key.to_s) rescue nil
       end
     end
   end
