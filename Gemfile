@@ -40,6 +40,9 @@ group :test, :development do
   gem 'faker'
   gem 'rspec-rails', '~> 3.0.1'
   gem 'debugger'
+end
+
+group :test do
   gem 'shoulda'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
