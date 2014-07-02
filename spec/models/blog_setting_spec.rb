@@ -26,4 +26,15 @@ describe BlogSetting, :type => :model do
       BlogSetting.settings
     end
   end
+
+  describe "#restart_setting" do
+    let!(:blog_setting) { create(:blog_setting) }
+
+    it 'calls restart_setting after save' do
+      blog_setting.value = 'Updated Value'
+
+      expect(blog_setting).to receive(:restart_setting)
+      blog_setting.save!
+    end
+  end
 end
