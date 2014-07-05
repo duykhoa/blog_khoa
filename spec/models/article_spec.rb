@@ -39,13 +39,24 @@ describe Article do
       end
     end
 
+    context "search without query params" do
+      let!(:articles) { create_list(:article, 2)}
+      let(:search_params) { {} }
+
+      before(:each) { Article.tire.index.refresh }
+
+      it "returns all articles" do
+        expect(Article.search(search_params).count).to eq(2)
+      end
+    end
+
     context 'search by catetory' do
       let!(:marketing_story_category) { create(:category, name: "marketingblog") }
       let!(:marketing_story_article) { create(:article, category: marketing_story_category, title: "Blog Article") }
       let!(:another_article) { create(:article, title: "Blog Article") }
 
       let!(:search_params_with_category) { {query: 'article', page: 1, category_name: marketing_story_category.name} }
-      let!(:search_params1) { {query: 'article', page: 1, category_name: ''} }
+      let!(:search_params1) { {query: 'article', page: 1} }
       let!(:search_params2) { {query: 'article', page: 1, category_name: ''} }
       before(:each) { Article.tire.index.refresh }
 
