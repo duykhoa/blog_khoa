@@ -3,10 +3,6 @@ module ApplicationHelper
     DateTime.parse(date).strftime('%B %-d, %Y')
   end
 
-  def page_params(params)
-    params.key?(:page) ? params.fetch(:page).to_i : 1
-  end
-
   def pagination_previous(articles, page)
     if page && page > 1
       content_tag :div, class: 'previous' do

@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  include PaginationExt
+
   has_attached_file(
     :feature_image,
     styles:
