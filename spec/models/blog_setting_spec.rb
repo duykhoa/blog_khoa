@@ -6,7 +6,7 @@ describe BlogSetting, :type => :model do
   describe ".settings" do
     before(:each) do
       BlogSetting.class_eval do
-        @@setting = nil
+        @@settings = nil
       end
 
       settings = double('BlogSetting')
@@ -14,16 +14,28 @@ describe BlogSetting, :type => :model do
       allow(settings).to receive(:inject).and_return({})
     end
 
-    it "hits database for the first time" do
-      expect(BlogSetting).to receive(:all)
-      expect(BlogSetting.settings).to eq({})
+    context "get the setting in the first time" do
+      it "hits database for the first time" do
+        expect(BlogSetting).to receive(:all)
+        BlogSetting.settings
+      end
     end
 
-    it "does not hit database after that" do
-      expect(BlogSetting).to receive(:all).once
+    context "does not hit database in the second time" do
+      it "does not hit database after that" do
+        expect(BlogSetting).to receive(:all).once
 
-      BlogSetting.settings
-      BlogSetting.settings
+        BlogSetting.settings
+        BlogSetting.settings
+      end
+    end
+  end
+
+  describe "dynamic method" do
+    let!(:blog_title) { create(:blog_setting, key: :blog_title, value: 'A') }
+
+    it "gets blog title" do
+      expect(BlogSetting.blog_title).to eq('A')
     end
   end
 
