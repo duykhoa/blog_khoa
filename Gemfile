@@ -40,6 +40,7 @@ group :test, :development do
   gem 'faker'
   gem 'rspec-rails', '~> 3.0.1'
   gem 'debugger'
+  gem 'simplecov'
 end
 
 group :test do
