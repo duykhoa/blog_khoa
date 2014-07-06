@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :destroy]
+  before_action :set_article, only: [:show]
   include ParamsExt
 
   def index
