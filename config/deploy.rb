@@ -91,6 +91,7 @@ namespace :deploy do
       execute "ln -nfs #{shared_path}/system #{release_path}/public/system"
       execute "ln -nfs #{shared_path}/sitemaps #{release_path}/public/sitemaps"
       execute "ln -nfs #{shared_path}/sitemap.xml #{release_path}/public/sitemaps/sitemap.xml"
+      execute "ln -nfs #{shared_path}/config/settings.yml #{release_path}/config/settings.yml"
     end
   end
 
