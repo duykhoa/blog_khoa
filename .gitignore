@@ -19,3 +19,7 @@
 /public/ckeditor_assets
 /public/sitemaps
 /coverage
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

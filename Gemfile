@@ -35,6 +35,7 @@ gem 'tire'
 gem 'gibbon'
 gem 'cancan'
 gem 'dynamic_sitemaps'
+gem 'rails_config'
 
 group :test, :development do
   gem 'faker'
