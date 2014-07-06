@@ -1,0 +1,7 @@
+username: postgres
+password: password
+database_name:
+  development: development_db
+  staging: development_db
+  production: development_db
+  test: development_db
