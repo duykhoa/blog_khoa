@@ -106,10 +106,4 @@ namespace :deploy do
   end
 
   after :finishing, :migrate_db, :elasticsearch_index, :update_sym_link, :restart
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-    end
-  end
 end
