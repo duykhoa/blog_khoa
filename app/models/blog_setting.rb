@@ -8,7 +8,8 @@ class BlogSetting < ActiveRecord::Base
       blog_title: 'Phuong Bui | Marketing Blog',
       url: 'http://phuongbui.me',
       fb_image: 'http://phuongbui.me/fbog.jpg',
-      fb_description: 'Phuong Bui Marketing Blog sample content'
+      fb_description: 'Phuong Bui Marketing Blog sample content',
+      google_analytic_id: 'UA-52636106-1'
     }
 
   after_save :restart_setting
