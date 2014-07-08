@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
 
   private
   def get_categories
-    @categories = Category.pluck :name
+    @categories = Category.all_category_name
   end
 end

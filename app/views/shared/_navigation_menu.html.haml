@@ -2,10 +2,10 @@
   = link_to root_path do
     %li{class: "#{'active' if action_name.eql?('index')}"}>
       Home
-  - @categories.each do |category|
-    = link_to category_index_path(encode_url(category)) do
+  - @categories.each do |real_category, sanitize_category|
+    = link_to category_index_path(sanitize_category) do
       %li>
-        = category
+        = real_category
   = link_to aboutme_path do
     %li>
       About me

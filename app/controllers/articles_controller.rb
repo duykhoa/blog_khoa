@@ -7,6 +7,10 @@ class ArticlesController < ApplicationController
   end
 
   def category_index
+    redirect_to category_index_seo_path(search_params)
+  end
+
+  def category_index_seo
     @articles = Article.search(category_params)
     render 'index'
   end

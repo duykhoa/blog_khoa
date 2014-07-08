@@ -17,8 +17,15 @@ describe ArticlesController do
   end
 
   describe "#category_index" do
+    it "redirect_to category_index path" do
+      get :category_index, category_name: '-'
+      expect(response).to redirect_to(category_index_seo_path(category_name: '-', query: '-'))
+    end
+  end
+
+  describe "#category_index_seo" do
     it "returns a list of article" do
-      get :category_index, category_name: ''
+      get :category_index_seo, category_name: '-', query: '-'
       expect(assigns(:articles).count).to eq(8)
     end
   end
@@ -31,10 +38,10 @@ describe ArticlesController do
   end
 
   describe "#search" do
-    let(:search_params) { {query: '-'} }
+    let(:search_params) { {query: '-', page: 1} }
     it "redirect_to to search_seo_friendly_path" do
       get :search
-      expect(response).to redirect_to(search_seo_friendly_path(search_params[:query], page: 1))
+      expect(response).to redirect_to(search_seo_friendly_path(search_params[:query]))
     end
   end
 end
