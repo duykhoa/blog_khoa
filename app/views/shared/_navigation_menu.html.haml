@@ -4,7 +4,7 @@
       Home
   - @categories.each do |real_category, sanitize_category|
     = link_to category_index_path(sanitize_category) do
-      %li>
+      %li{class: "#{'active' if active_category_name(sanitize_category)}"}>
         = real_category
   = link_to aboutme_path do
     %li>

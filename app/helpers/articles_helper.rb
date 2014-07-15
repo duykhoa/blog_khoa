@@ -10,4 +10,10 @@ module ArticlesHelper
       category_index_path(params[:category_name]) : \
       search_path
   end
+
+  def active_category_name(sanitize_category)
+    action_name.eql?('category_index_seo') &&
+    params.key?(:category_name) &&
+    params.fetch(:category_name).eql?(sanitize_category)
+  end
 end

@@ -8,7 +8,7 @@
   font-family:'Open Sans', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 1vmax;
+  font-size: 1vw;
 }
 
 html {
@@ -69,13 +69,23 @@ body {
 
         li, a:link, a:hover, a:visited, a:active {
           text-decoration: none;
-          color: $text-color-gray;
+          color: #1B1B1B;
+        }
+
+        @media screen and (max-width: 740px) {
+          li.logo {
+            display: none;
+          }
         }
       }
 
       .logo {
         a {
           font-size: 1.2vmax;
+          color: #1B1B1B;
+          @media screen and (max-width: 1024px) {
+            font-size: 16px;
+          }
         }
       }
       .logo, .search-box {
@@ -89,8 +99,21 @@ body {
           input#query {
             border: none;
             padding: 0.5vh 1vw;
-            font-size: 0.8vmax;
+            font-size: 1vmax;
             color: $text-color-gray;
+            &:focus {
+              outline: 0;
+            }
+
+            @media screen and (max-width: 1024px) {
+              font-size: 16px;
+            }
+
+            @media screen and (max-width: 860px) {
+              font-size: 16px;
+              width: 100%;
+              float: left;
+            }
           }
         }
       }
@@ -134,17 +157,30 @@ body {
           height: 2px;
           background-color: $green-navbar;
         }
+
+        @media screen and (max-width: 1024px) {
+          font-size: 16px;
+        }
       }
 
       li:hover {
-        @extend li.active;
-      }
-
-      li.active {
-        font-weight: bold;
+        color: #222;
 
         &:before {
           background-color: $lighter-green-color;
+        }
+      }
+
+      li.active {
+        color: #222;
+        font-weight: 700;
+
+        &:before {
+          background-color: $lighter-green-color;
+        }
+
+        &:hover {
+          font-weight: 700 !important;
         }
       }
     }
@@ -154,6 +190,10 @@ body {
 .body.main-content {
   margin-top: 20px;
   padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
 
   &:after {
     display: block;
@@ -168,11 +208,11 @@ body {
 
   .article-container {
     margin-top: 2vh;
-    width: 48%;
-    float: right;
+    margin-bottom: 10vh;
+    width: 49%;
 
-    &:nth-child(odd) {
-      float: left;
+    &:last-child {
+      margin-left: 2%;
     }
 
     .feature-image {
