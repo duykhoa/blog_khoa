@@ -146,7 +146,7 @@ body {
     width: 100%;
 
     @media screen and (max-width: 850px) {
-      max-width: 40%;
+      max-width: 60%;
       display: none;
       position: absolute;
       z-index: 5;
@@ -300,6 +300,7 @@ body {
 
     .short-content {
       margin-top: 2vh;
+      line-height: 1.7em;
 
       @media screen and (max-width: 850px) {
         font-size: 13px;

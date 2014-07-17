@@ -1,7 +1,7 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-$(document).ready ->
+ready = ->
   activeSocialButton = ->
     setTimeout ( ->
       $('.social.middle.right').addClass('active')
@@ -47,3 +47,5 @@ $(document).ready ->
   subscribingValidate()
   $('ul li.category-responsive').click ->
     $('.navigation-menu ul').toggle()
+$(document).ready(ready)
+$(document).on('page:load', ready)
