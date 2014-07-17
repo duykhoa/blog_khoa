@@ -45,3 +45,5 @@ $(document).ready ->
         $(this).parent().append("<div class= 'success'>Thank for subscribing</div>")
         $(this).toggle()
   subscribingValidate()
+  $('ul li.category-responsive').click ->
+    $('.navigation-menu ul').toggle()
