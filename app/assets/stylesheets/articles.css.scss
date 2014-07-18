@@ -315,19 +315,40 @@ body {
     margin-top: 3.5vh;
     line-height: 2.2em;
     width: 68%;
+
+    @media screen and (max-width: 850px) {
+      width: 100%;
+      float: none;
+    }
+
     .title {
       h1 {
         color: $title;
-        font-size: 1.9vmax;
+        font-size: 23px;
+        line-height: 1.4em;
+
+        @media screen and (max-width: 600px) {
+          font-size: 20px;
+        }
       }
     }
 
     .content {
       color: #333;
       margin-top: 2.5vh;
+      line-height: 1.5em;
+
       a, a:hover, a:visited {
         color: $green-navbar;
         text-decoration: none;
+      }
+
+      @media screen and (max-width: 1024px) {
+        font-size: 15px;
+      }
+
+      @media screen and (max-width: 500px) {
+        font-size: 13px;
       }
     }
 
@@ -335,6 +356,12 @@ body {
       margin-top: 3vh;
       padding-top: 3vh;
       border-top: 1px solid $gray;
+      @media screen and (max-width: 850px) {
+        h2 {
+          font-size: 14px;
+          line-height: 1.6em;
+        }
+      }
 
       ul {
         list-style: none;
@@ -344,6 +371,11 @@ body {
             text-decoration: none;
             color: $green-navbar;
             font-size: 0.95vmax;
+
+            @media screen and (max-width: 850px) {
+              font-size: 12px;
+              line-height: 1.8em;
+            }
           }
         }
       }
@@ -357,12 +389,22 @@ body {
     width: 26%;
     background-color: #F6F6F6;
 
+    @media screen and (max-width: 850px) {
+      width: 100%;
+      float: none;
+    }
+
     .message {
       .title {
         h1 {
           font-size: 1.9vmax;
           font-weight: normal;
           line-height: 1.2em;
+
+          @media screen and (max-width: 850px) {
+            font-size: 22px;
+            line-height: 1.6em;
+          }
         }
       }
 
@@ -371,6 +413,11 @@ body {
           margin: 3vh 0;
           font-weight: normal;
           font-size: 1vmax;
+
+          @media screen and (max-width: 850px) {
+            font-size: 14px;
+            line-height: 1.6em;
+          }
         }
       }
     }
@@ -398,6 +445,11 @@ body {
         border-width: 1px;
         margin-top: 1vh;
         margin-bottom: 0.8vh;
+
+        @media screen and (max-width: 850px) {
+          font-size: 14px;
+          line-height: 1.6em;
+        }
       }
 
       input[type=submit] {
@@ -409,6 +461,11 @@ body {
         font-size: 1.5vmax;
         margin-top: 2vh;
         margin-bottom: 3vh;
+
+        @media screen and (max-width: 850px) {
+          padding: 1.8% 2%;
+          font-size: 25px;
+        }
       }
     }
   }
