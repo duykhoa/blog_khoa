@@ -252,6 +252,7 @@ body {
     }
 
     .feature-image {
+      min-height: 70vh;
       max-height: 70vh;
       overflow: hidden;
       width: 100%;
@@ -389,7 +390,7 @@ body {
     margin-top: 3.5vh;
     padding: 3vh 3%;
     float: right;
-    width: 26%;
+    width: 24%;
     background-color: #F6F6F6;
 
     @media screen and (max-width: 850px) {
