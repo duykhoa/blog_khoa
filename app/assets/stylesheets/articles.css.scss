@@ -343,6 +343,10 @@ body {
         text-decoration: none;
       }
 
+      p {
+        margin-bottom: 1.5em;
+      }
+
       @media screen and (max-width: 1024px) {
         font-size: 15px;
       }
@@ -356,7 +360,7 @@ body {
       margin-top: 3vh;
       padding-top: 3vh;
       border-top: 1px solid $gray;
-      @media screen and (max-width: 850px) {
+      @media screen and (max-width: 1024px) {
         h2 {
           font-size: 14px;
           line-height: 1.6em;
@@ -372,6 +376,10 @@ body {
             color: $green-navbar;
             font-size: 0.95vmax;
 
+            @media screen and (max-width: 1024px) {
+              font-size: 14px;
+              line-height: 1.8em;
+            }
             @media screen and (max-width: 850px) {
               font-size: 12px;
               line-height: 1.8em;
@@ -390,7 +398,7 @@ body {
     background-color: #F6F6F6;
 
     @media screen and (max-width: 850px) {
-      width: 100%;
+      width: 95%;
       float: none;
     }
 
@@ -594,6 +602,19 @@ body {
           &:hover, &:visited {
             @extend li;
           }
+        }
+      }
+    }
+  }
+}
+
+.share-button.sharer-0 {
+  .social {
+    ul {
+      li {
+        @media screen and (max-width: 850px) {
+          padding: 17px 0 !important;
+          height: auto !important;
         }
       }
     }
