@@ -105,8 +105,8 @@ namespace :deploy do
     end
   end
 
-  after :finishing, :migrate_db
-  after :finishing, :elasticsearch_index
   after :finishing, :update_sym_link
+  after :finishing, :elasticsearch_index
+  after :finishing, :migrate_db
   after :finishing, :restart
 end
