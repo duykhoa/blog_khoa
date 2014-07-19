@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :email_subscribes
 
   mount Ckeditor::Engine => '/ckeditor'
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   get 'search/:query(/page/:page)' => 'articles#search_seo_friendly', as: :search_seo_friendly
   get 'aboutme' => 'about_mes#index'
 
+  get '*a', to: 'errors#error_404'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
