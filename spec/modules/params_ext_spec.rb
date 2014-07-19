@@ -14,21 +14,21 @@ shared_examples_for "params_ext" do
   end
 
   describe "#index_params" do
-    let!(:params_0) { ActionController::Parameters.new({page: 1}) }
-    let!(:params_1) { ActionController::Parameters.new({page: 0}) }
+    let!(:params_0) { ActionController::Parameters.new({page: 2}) }
+    let!(:params_1) { ActionController::Parameters.new({page: 1}) }
     let!(:params_2) { ActionController::Parameters.new({}) }
 
     it "returns params include page params" do
       expect(described_class.new.send(:index_params, params_0))
-        .to include({page: 1})
+        .to include({page: 2})
     end
 
-    it "returns the page 1 instead" do
+    it "returns params without page key" do
       expect(described_class.new.send(:index_params, params_1))
-        .to include({page: 1})
+        .not_to include({page: 1})
 
       expect(described_class.new.send(:index_params, params_2))
-        .to include({page: 1})
+        .not_to include({page: 1})
     end
   end
 

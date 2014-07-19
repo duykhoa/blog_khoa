@@ -34,6 +34,8 @@ RSpec.configure do |config|
   config.raise_errors_for_deprecations!
 
   config.before(:each) do
+    allow(BlogSetting).to receive(:theme).and_return('default')
+
     Article.tire.index.delete
     Article.tire.index.create
 

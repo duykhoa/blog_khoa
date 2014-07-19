@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.search(index_params)
-    render File.join(view_path, controller_name, 'index')
+    render custom_path_for
   end
 
   def category_index
@@ -13,10 +13,11 @@ class ArticlesController < ApplicationController
 
   def category_index_seo
     @articles = Article.search(category_params)
-    render File.join(view_path, controller_name, 'index')
+    render custom_path_for
   end
 
   def show
+    render custom_path_for('show')
   end
 
   def search
@@ -25,7 +26,7 @@ class ArticlesController < ApplicationController
 
   def search_seo_friendly
     @articles = Article.search params
-    render File.join(view_path, controller_name, 'index')
+    render custom_path_for
   end
 
   private

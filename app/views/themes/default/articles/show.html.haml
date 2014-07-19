@@ -18,7 +18,7 @@
         - @article.related_articles.each do |related_article|
           %li{'data-no-turbolink' => ''}= link_to related_article.title, related_article
   .right-content
-    = render 'shared/subscriber_box'
+    = render_shortcut 'shared/subscriber_box'
 
 .facebook-comment
   .fb-comments{data: { href: article_url(@article.slug), numposts: "5", colorscheme: "light", width: '550px'} }

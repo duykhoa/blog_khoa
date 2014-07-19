@@ -1,6 +1,6 @@
 class AboutMesController < ApplicationController
   def index
     @about_me = AboutMe.first
-    render File.join(view_path, controller_name, 'index')
+    render custom_path_for
   end
 end
