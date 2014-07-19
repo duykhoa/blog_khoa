@@ -489,6 +489,22 @@ body {
       -webkit-transform: none;
       -ms-transform: none;
       transform: none;
+      ul {
+        li {
+          background-color: #FFF;
+
+          &:before {
+            color: $green-navbar;
+          }
+
+          &:hover {
+            &:before {
+              color: $green-navbar;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
     }
   }
 }
