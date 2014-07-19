@@ -211,10 +211,6 @@ body {
         color: #222;
         font-weight: 700;
 
-        &:before {
-          background-color: $lighter-green-color;
-        }
-
         &:hover {
           font-weight: 700 !important;
         }
