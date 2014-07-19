@@ -22,4 +22,12 @@ module ApplicationHelper
   def total_page(total)
     (total.to_f / Article::PER_PAGE).ceil
   end
+
+  def render_shortcut(template, attr = :partial, *locals)
+    render attr => File.join(view_path, template)
+  end
+
+  def render_collection(partial, collection, resource_name = controller_name)
+    render partial: File.join(view_path, resource_name, partial), collection: collection
+  end
 end

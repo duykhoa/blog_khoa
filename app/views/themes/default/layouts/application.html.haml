@@ -5,13 +5,13 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    = render 'shared/metatag'
+    = render_shortcut "shared/metatag"
   %body
     #fb-root
     .header
-      = render '/shared/header'
+      = render_shortcut '/shared/header'
     .navigation-menu
-      = render '/shared/navigation_menu'
+      = render_shortcut '/shared/navigation_menu'
     = yield
 :javascript
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
