@@ -353,7 +353,6 @@ body {
     }
 
     .related-post {
-      margin-top: 3vh;
       padding-top: 3vh;
       border-top: 1px solid $gray;
       @media screen and (max-width: 1024px) {
@@ -491,15 +490,23 @@ body {
       transform: none;
       ul {
         li {
-          background-color: #FFF;
+          background-color: $green-navbar;
+          border-radius: 100%;
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          margin-left: 5px;
+          &.entypo-twitter {
+            margin-left: 0;
+          }
 
           &:before {
-            color: $green-navbar;
+            line-height: 2em;
+            color: #FFF;
           }
 
           &:hover {
             &:before {
-              color: $green-navbar;
               opacity: 0.5;
             }
           }
@@ -614,19 +621,6 @@ body {
           &:hover, &:visited {
             @extend li;
           }
-        }
-      }
-    }
-  }
-}
-
-.share-button.sharer-0 {
-  .social {
-    ul {
-      li {
-        @media screen and (max-width: 850px) {
-          padding: 17px 0 !important;
-          height: auto !important;
         }
       }
     }
