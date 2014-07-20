@@ -36,6 +36,7 @@ gem 'gibbon'
 gem 'cancan'
 gem 'dynamic_sitemaps'
 gem 'rails_config'
+gem 'whenever', require: false
 
 group :test, :development do
   gem 'faker'
