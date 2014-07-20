@@ -9,7 +9,7 @@ xml.rss :version => "2.0" do
       for article in @articles
         xml.item do
           xml.title article.title
-          xml.short_content article.content
+          xml.short_content article.short_content
           xml.feature_image article.feature_image
           xml.link article_url(article.slug)
         end
