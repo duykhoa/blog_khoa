@@ -109,4 +109,5 @@ namespace :deploy do
   after :finishing, :elasticsearch_index
   after :finishing, :migrate_db
   after :finishing, :restart
+  after :finishing, :sitemap
 end
