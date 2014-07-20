@@ -22,3 +22,7 @@
 every :tuesday, at: '12am', roles: [:app, :db, :web] do
   command "backup perform --trigger blog_khoa"
 end
+
+every :day, roles: [:app, :db, :web] do
+  rake 'sitemap:generate'
+end
