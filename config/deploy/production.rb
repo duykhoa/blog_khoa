@@ -10,8 +10,8 @@
 
 set :deploy_to, '/home/deploy/blog_khoa/'
 set :rails_env, :production
-server 'blameit.info', user: 'deploy', roles: %w{web app db}
-set :rvm_custom_path, '/home/deploy/.rvm'  # only needed if not detected
+server '128.199.137.128', user: 'deploy', roles: %w{web app db}
+set :rvm_custom_path, '/usr/local/rvm'  # only needed if not detected
 
 # Extended Server Syntax
 # ======================

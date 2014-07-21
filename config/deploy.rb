@@ -14,7 +14,7 @@ set :branch, ENV['BRANCH'] || "master"
 
 set :rvm_type, :user
 set :rvm_ruby_version, '2.0.0-p451'      # Defaults to: 'default'
-set :rvm_custom_path, '/home/ubuntu/.rvm'  # only needed if not detected
+set :rvm_custom_path, '/usr/local/rvm'  # only needed if not detected
 set :deploy_via, :copy
 set :migration_role, 'migrator'
 
@@ -106,8 +106,7 @@ namespace :deploy do
   end
 
   after :finishing, :update_sym_link
-  after :finishing, :elasticsearch_index
   after :finishing, :migrate_db
-  after :finishing, :restart
   after :finishing, :sitemap
+  after :finishing, :restart
 end
