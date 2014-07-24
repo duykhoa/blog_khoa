@@ -493,8 +493,19 @@ body {
   }
 }
 
+.fb-like-container {
+  height: 25px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  .fb_iframe_widget {
+    height: 25px;
+  }
+}
+
 .share-social {
   margin-top: 2vh;
+  border-top: 1px solid $gray;
+  padding: 10px 0;
   .share-button.sharer-0 {
     height: auto;
 
@@ -654,4 +665,11 @@ body {
 
 .incap_page-tooltip.incap_from-right.incap_bottom {
   display: none;
+}
+
+._56zz._56z-._56-2#u_0_6 {
+  display: none;
+}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {
+    display: none !important;
 }

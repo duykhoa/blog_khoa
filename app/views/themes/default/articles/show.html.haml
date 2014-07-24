@@ -9,6 +9,8 @@
       %h1= @article.title
     .content
       = @article.content.html_safe
+    .fb-like-container
+      .fb-like{data: { href: article_url(@article.slug), layout: "standard", action: "like", 'show-faces' => "true", share: "false" } }
     .share-social
       .share-button
     .related-post
@@ -19,6 +21,7 @@
           %li{'data-no-turbolink' => ''}= link_to related_article.title, related_article
   .right-content
     = render_shortcut 'shared/subscriber_box'
+  .clear
 
 .facebook-comment
   .fb-comments{data: { href: article_url(@article.slug), numposts: "5", colorscheme: "light", width: '550px'} }
