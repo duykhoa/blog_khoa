@@ -35,4 +35,3 @@ User.create(
 BlogSetting::DEFAULT_SETTING.each do  |key, value|
   BlogSetting.create(key: key, value: value)
 end
-BlogSetting.send(:restart_setting)
