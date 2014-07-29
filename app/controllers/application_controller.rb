@@ -6,10 +6,9 @@ class ApplicationController < ActionController::Base
   before_action :get_categories
 
   theme :custom_theme
-  layout 'application'
 
-  #rescue_from Exception, with: lambda { |exception| render_error 500, exception }
-  #rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound, with: lambda { |exception| render_error 404, exception }
+  rescue_from Exception, with: lambda { |exception| render_error 500, exception }
+  rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound, with: lambda { |exception| render_error 404, exception }
 
   private
   def custom_theme
@@ -18,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def render_error(status, exception)
     respond_to do |format|
-      format.html { render template: File.join(view_path, "errors/error_#{status}"), layout: File.join(view_path, 'layouts/application'), status: status }
+      format.html { render template: "errors/error_#{status}", layout: 'application', status: status }
       format.all { render nothing: true, status: status }
     end
   end

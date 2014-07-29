@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'variable';
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Cabin:700);
 
 * {
   font-family:'Open Sans', Helvetica, Arial, sans-serif;
@@ -12,6 +13,10 @@
 
   @media screen and (max-width: 1024px) {
     font-size: 15px;
+  }
+
+  a, a:hover, a:visited {
+    text-decoration: none;
   }
 }
 
@@ -23,6 +28,7 @@ body {
   min-height: 100%;
   width: 100%;
   overflow-x: hidden;
+  border-top: 10px solid $green-navbar;
 }
 
 .container {
@@ -42,185 +48,164 @@ body {
 }
 
 .header {
-  position: relative;
-  &:before, &:after {
-    content: '';
-    display: inline-block;
-    background-color: #EEE;
-    height: 40px;
-    position: absolute;
-    top: 0;
-  }
-
-  &:before {
-    padding-left: 500%;
-    margin-left: -500%;
-  }
-
-  &:after {
-    padding-right: 500%;
-    margin-right: -500%;
-    right: 0;
-  }
-
-  height: 40px;
-  background-color: #EEE;
   .navbar-content {
     width: 100%;
-    display: inline-block;
-
-    .list-items {
-      display: table;
-      width: 100%;
-      height: 40px;
-
-      ul {
-        display: table-row;
-        list-style: none;
-        font-size: 1.2vmax;
-
-        li, a:link, a:hover, a:visited, a:active {
-          text-decoration: none;
-          color: #1B1B1B;
-        }
-
-        li.category-responsive {
-          display: none;
-          @media screen and (max-width: 850px) {
-            width: 27px;
-            height: 20px;
-            margin-top: 9px;
-            cursor: pointer;
-            background-image: linear-gradient(
-              0,
-              $text-color-gray 0, $text-color-gray 20%,
-              transparent 20%, transparent 40%,
-              $text-color-gray 40%, $text-color-gray 60%,
-              transparent 60%, transparent 80%,
-              $text-color-gray 80%, $text-color-gray 100%
-            );
-            display: inline-block;
-          }
+    text-align: center;
+    padding-top: 20px;
+    .logo {
+      a {
+        font-size: 67px;
+        font-weight: 800;
+        font-family: 'Cabin';
+        line-height: 1.5em;
+        color: #333;
+        @media screen and (max-width: 1024px) {
+          font-size: 30px;
         }
       }
+    }
 
-      .logo {
-        a {
-          font-size: 1.2vmax;
-          color: #1B1B1B;
-          @media screen and (max-width: 1024px) {
-            font-size: 14px;
-          }
-        }
-      }
-      .logo, .search-box {
-        display: table-cell;
-        vertical-align: middle;
-      }
-
-      .search-box {
-        text-align: right;
-        form {
-          input#query {
-            border: none;
-            padding: 0.5vh 1vw;
-            font-size: 1vmax;
-            color: $text-color-gray;
-            &:focus {
-              outline: 0;
-            }
-
-            @media screen and (max-width: 1024px) {
-              font-size: 13px;
-            }
-
-            @media screen and (max-width: 580px) {
-              display: none;
-              font-size: 16px;
-              width: 100%;
-              float: left;
-            }
-          }
-        }
-      }
+    .subtitle {
+      font-size: 26px;
+      color: $text-color-gray;
     }
   }
 }
 
 .navigation-menu {
-  ul {
-    text-align: center;
-    list-style: none;
-    width: 100%;
+  border-top: 2px solid $green-navbar;
+  margin-top: 25px;
+  .search-box {
+    padding: 10px;
+    padding-right: 0;
+    float: right;
+    form {
+      input#query {
+        border: 1px solid #EEE;
+        border-radius: 3px;
+        padding: 5px 22px;
+        font-size: 1vmax;
+        color: $text-color-gray;
 
-    @media screen and (max-width: 850px) {
-      max-width: 60%;
-      display: none;
-      position: absolute;
-      z-index: 5;
-      background-color: #FFF;
-      box-shadow: 0 5px 5px 2px #DDD;
-      padding: 0 3px;
-    }
-
-    a:link, a:hover, a:visited {
-      text-decoration: none;
-      color: $text-color-gray;
-
-      li {
-        display: inline-block;
-        padding: 10px 0;
-        width: 20%;
-        text-align: center;
-        position: relative;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        overflow: hidden;
-        white-space: nowrap;
-
-        @media screen and (max-width: 850px) {
-          width: 100%;
-          text-align: left;
+        &::-webkit-input-placeholder {
+          color: $text-color-gray;
+        }
+        &:-moz-placeholder {
+          color: $text-color-gray;
+        }
+        &::-moz-placeholder {
+          color: $text-color-gray;
+        }
+        &:-ms-input-placeholder {
+          color: $text-color-gray;
         }
 
-        &:before {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 0;
-          width: 100%;
-          height: 2px;
-          background-color: $green-navbar;
-
-          @media screen and (max-width: 850px) {
-            height: 0;
-          }
+        &:focus {
+          outline: 0;
         }
 
         @media screen and (max-width: 1024px) {
           font-size: 13px;
         }
 
-        @media screen and (max-width: 850px) {
+        @media screen and (max-width: 580px) {
+          display: none;
+          font-size: 16px;
+          width: 100%;
+          float: left;
+        }
+      }
+
+
+      span.glass {
+        width: 8px;
+        height: 8px;
+        border: 2px solid $text-color-gray;
+        border-radius: 100%;
+        content: '';
+        display: block;
+        position: relative;
+        top: -24px;
+        left: 5px;
+
+        &:after {
+          content: '';
           display: block;
+          width: 2px;
+          height: 7px;
+          background: $text-color-gray;
+          transform: rotate(-35deg);
+          -moz-transform: rotate(-35deg);
+          -webkit-transform: rotate(-35deg);
+          position: absolute;
+          top: 8px;
+          left: 8px;
         }
       }
+    }
+  }
 
-      li:hover {
-        color: #222;
+  .menu-items {
+    float: left;
+    ul {
+      list-style: none;
+      width: 100%;
 
-        &:before {
-          background-color: $text-color-gray;
-        }
+      @media screen and (max-width: 850px) {
+        max-width: 60%;
+        display: none;
+        position: absolute;
+        z-index: 5;
+        background-color: #FFF;
+        box-shadow: 0 5px 5px 2px #DDD;
+        padding: 0 3px;
       }
 
-      li.active {
-        color: #222;
-        font-weight: 700;
+      a:link, a:hover, a:visited {
+        text-decoration: none;
+        color: $text-color-gray;
 
-        &:hover {
-          font-weight: 700 !important;
+        li {
+          display: inline-block;
+          padding: 15px 20px;
+          min-width: 5%;
+          text-align: center;
+          position: relative;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          overflow: hidden;
+          white-space: nowrap;
+
+          &:first-child {
+            padding-left: 0;
+          }
+
+          @media screen and (max-width: 850px) {
+            width: 100%;
+            text-align: left;
+          }
+
+          @media screen and (max-width: 1024px) {
+            font-size: 13px;
+          }
+
+          @media screen and (max-width: 850px) {
+            display: block;
+          }
+        }
+
+        li:hover {
+          color: #222;
+        }
+
+        li.active {
+          color: #222;
+          font-weight: 700;
+
+          &:hover {
+            font-weight: 700 !important;
+          }
         }
       }
     }
@@ -295,7 +280,7 @@ body {
         text-decoration: none;
         color: $title;
         font-weight: bold;
-        font-size: 1.3vmax;
+        font-size: 22px;
 
         @media screen and (max-width: 850px) {
           font-size: 18px;
@@ -308,7 +293,7 @@ body {
     }
 
     .short-content {
-      margin-top: 2vh;
+      margin-top: 25px;
       line-height: 1.7em;
 
       @media screen and (max-width: 850px) {
@@ -374,6 +359,9 @@ body {
     .related-post {
       padding-top: 3vh;
       border-top: 1px solid $gray;
+      h2 {
+        font-size: 15px;
+      }
       @media screen and (max-width: 1024px) {
         h2 {
           font-size: 14px;
@@ -388,7 +376,10 @@ body {
           a {
             text-decoration: none;
             color: $green-navbar;
-            font-size: 0.95vmax;
+            font-size: 15px;
+            &:hover {
+              color: $title-hover;
+            }
 
             @media screen and (max-width: 1024px) {
               font-size: 14px;
@@ -483,6 +474,14 @@ body {
         font-size: 1.5vmax;
         margin-top: 2vh;
         margin-bottom: 3vh;
+        cursor: pointer;
+        transition: background-color 0.5s;
+        -webkit-transition: background-color 0.5s;
+        -moz-transition: background-color 0.5s;
+
+        &:hover {
+          background-color: $lighter-green-color;
+        }
 
         @media screen and (max-width: 850px) {
           padding: 1.8% 2%;
@@ -536,9 +535,7 @@ body {
           }
 
           &:hover {
-            &:before {
-              opacity: 0.5;
-            }
+            background-color: $lighter-green-color;
           }
         }
       }

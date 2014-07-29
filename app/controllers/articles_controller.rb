@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  layout 'application'
   before_action :set_article, only: [:show]
   include ParamsExt
 
@@ -24,6 +25,7 @@ class ArticlesController < ApplicationController
 
   def search_seo_friendly
     @articles = Article.search params
+    render 'index'
   end
 
   private

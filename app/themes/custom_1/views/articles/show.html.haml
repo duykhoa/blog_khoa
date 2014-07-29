@@ -15,7 +15,7 @@
       .share-button
     .related-post
       %h2
-        You may also like
+        You might also like
       %ul
         - @article.related_articles.each do |related_article|
           %li{'data-no-turbolink' => ''}= link_to related_article.title, related_article
