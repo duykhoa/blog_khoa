@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
   before_action :get_categories
+  theme  BlogSetting.theme
+  layout 'application'
 
-  layout :theme_layout
-
-  rescue_from Exception, with: lambda { |exception| render_error 500, exception }
-  rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound, with: lambda { |exception| render_error 404, exception }
+  #rescue_from Exception, with: lambda { |exception| render_error 500, exception }
+  #rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound, with: lambda { |exception| render_error 404, exception }
 
   private
   def render_error(status, exception)
@@ -19,21 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-  def theme_layout
-    File.join(view_path, 'layouts/application')
-  end
-
-  def view_path
-    ['themes', BlogSetting.theme]
-  end
-
   def get_categories
     @categories = Category.all_category_name
   end
-
-  def custom_path_for(action = 'index')
-    File.join(view_path, controller_name, action)
-  end
-
-  helper_method :view_path
 end
