@@ -4,13 +4,18 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
   before_action :get_categories
-  theme  BlogSetting.theme
+
+  theme :custom_theme
   layout 'application'
 
   #rescue_from Exception, with: lambda { |exception| render_error 500, exception }
   #rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound, with: lambda { |exception| render_error 404, exception }
 
   private
+  def custom_theme
+    BlogSetting.theme || 'default'
+  end
+
   def render_error(status, exception)
     respond_to do |format|
       format.html { render template: File.join(view_path, "errors/error_#{status}"), layout: File.join(view_path, 'layouts/application'), status: status }

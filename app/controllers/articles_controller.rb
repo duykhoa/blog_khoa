@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
 
   def category_index_seo
     @articles = Article.search(category_params)
+    render 'index'
   end
 
   def show
