@@ -34,8 +34,11 @@ class Article < ActiveRecord::Base
   mapping do
     indexes :id, type: 'integer'
     indexes :title, type: 'string', analyzer: 'snowball', boost: 5
+    indexes :title_latin, as: 'title.to_url', type: 'string', analyzer: 'snowball', boost: 5
     indexes :content, type: 'string', analyzer: 'snowball'
+    indexes :content_latin, as: 'content.to_url', type: 'string', analyzer: 'snowball'
     indexes :short_content, type: 'string', analyzer: 'snowball'
+    indexes :short_content_latin, as: 'short_content.to_url', type: 'string', analyzer: 'snowball'
     indexes :feature_image, as: 'feature_image.url(:medium)', type: 'string'
     indexes :category_name, as: 'category.sanitize_name', type: 'string', index: :not_analyzed
     indexes :created_at, type: 'date'
@@ -47,7 +50,7 @@ class Article < ActiveRecord::Base
       tire.search(page: Article.page_params(search_params), per_page: PER_PAGE) do
         query do
           if search_params[:query].present? && search_params[:query] != '-'
-            string search_params[:query], fields: %W(title short_content content)
+            string search_params[:query], fields: %W(title title_latin short_content short_content_latin content content_latin)
           else
             all
           end

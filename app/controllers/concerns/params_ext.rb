@@ -4,7 +4,7 @@ module ParamsExt
   private
 
     def sanitize_params(arg)
-      arg ? arg.gsub(/\W/, '-') : '-'
+      arg ? arg.to_url : '-'
     end
 
     def index_params(index_params = params)
