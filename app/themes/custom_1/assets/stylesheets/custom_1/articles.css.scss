@@ -29,6 +29,10 @@ body {
   width: 100%;
   overflow-x: hidden;
   border-top: 10px solid $green-navbar;
+
+  @media screen and (max-width: 800px) {
+    border-top: 4px solid $green-navbar;
+  }
 }
 
 .container {
@@ -62,12 +66,22 @@ body {
         @media screen and (max-width: 1024px) {
           font-size: 30px;
         }
+        @media screen and (max-width: 500px) {
+          font-size: 23px;
+        }
       }
     }
 
     .subtitle {
       font-size: 26px;
       color: $text-color-gray;
+      @media screen and (max-width: 1024px) {
+        font-size: 23px;
+      }
+
+      @media screen and (max-width: 500px) {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -75,16 +89,62 @@ body {
 .navigation-menu {
   border-top: 2px solid $green-navbar;
   margin-top: 25px;
+
+  .category-responsive {
+    width: 30px;
+    height: 25px;
+    display: none;
+    cursor: pointer;
+    background-image: linear-gradient(0,
+                      $green-navbar 0, $green-navbar 20%,
+                      #FFF 20%, #FFF 40%,
+                      $green-navbar 40%, $green-navbar 60%,
+                      #FFF 60%, #FFF 80%,
+                      $green-navbar 80%, $green-navbar 95%);
+    @media screen and (max-width: 800px) {
+      margin-top: 14px;
+      display: block;
+      float: left;
+    }
+
+    &:hover {
+      background-image: linear-gradient(0,
+                        $lighter-green-color 0, $lighter-green-color 20%,
+                        #FFF 20%, #FFF 40%,
+                        $lighter-green-color 40%, $lighter-green-color 60%,
+                        #FFF 60%, #FFF 80%,
+                        $lighter-green-color 80%, $lighter-green-color 95%);
+    }
+  }
+
   .search-box {
     padding: 10px;
     padding-right: 0;
     float: right;
+
+    @media screen and (max-width: 1054px) {
+      font-size: 13px;
+    }
+
+    @media screen and (max-width: 950px) {
+      padding: 5px 0;
+      float: left;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 80%;
+      padding: 0;
+      float: right;
+      margin-top: 12px;
+    }
+
     form {
       input#query {
         border: 1px solid #EEE;
         border-radius: 3px;
         padding: 5px 22px;
-        font-size: 1vmax;
+        font-size: 13px;
         color: $text-color-gray;
 
         &::-webkit-input-placeholder {
@@ -104,18 +164,21 @@ body {
           outline: 0;
         }
 
-        @media screen and (max-width: 1024px) {
-          font-size: 13px;
+        @media screen and (max-width: 1054px) {
+          width: 100px;
         }
 
-        @media screen and (max-width: 580px) {
-          display: none;
-          font-size: 16px;
-          width: 100%;
-          float: left;
+        @media screen and (max-width: 950px) {
+          padding: 5px 20px;
+          width: 92%;
+        }
+
+        @media screen and (max-width: 800px) {
+          padding: 5px 5%;
+          width: 82%;
+          float: right;
         }
       }
-
 
       span.glass {
         width: 8px;
@@ -141,6 +204,10 @@ body {
           top: 8px;
           left: 8px;
         }
+
+        @media screen and (max-width: 800px) {
+          display: none;
+        }
       }
     }
   }
@@ -151,7 +218,7 @@ body {
       list-style: none;
       width: 100%;
 
-      @media screen and (max-width: 850px) {
+      @media screen and (max-width: 800px) {
         max-width: 60%;
         display: none;
         position: absolute;
@@ -171,6 +238,7 @@ body {
           min-width: 5%;
           text-align: center;
           position: relative;
+          font-size: 13px;
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -181,16 +249,7 @@ body {
             padding-left: 0;
           }
 
-          @media screen and (max-width: 850px) {
-            width: 100%;
-            text-align: left;
-          }
-
-          @media screen and (max-width: 1024px) {
-            font-size: 13px;
-          }
-
-          @media screen and (max-width: 850px) {
+          @media screen and (max-width: 800px) {
             display: block;
           }
         }
