@@ -82,5 +82,4 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.assets.enabled = true
   config.assets.precompile += Ckeditor.assets
-  config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
 end
