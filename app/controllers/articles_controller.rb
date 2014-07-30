@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-  layout 'application'
   before_action :set_article, only: [:show]
   include ParamsExt
 
