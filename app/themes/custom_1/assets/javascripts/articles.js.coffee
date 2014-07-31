@@ -45,7 +45,11 @@ ready = ->
         $(this).parent().append("<div class= 'success'>Thank for subscribing</div>")
         $(this).toggle()
   subscribingValidate()
-  $('.navigation-menu .category-responsive').click ->
-    $(this).siblings('.menu-items').children('ul').toggle()
+
+  responsiveCategory = ->
+    $('.navigation-menu .category-responsive').click ->
+      $(this).siblings('.menu-items').children('ul').toggle()
+  responsiveCategory()
+
 $(document).ready(ready)
 $(document).on('page:load', ready)
