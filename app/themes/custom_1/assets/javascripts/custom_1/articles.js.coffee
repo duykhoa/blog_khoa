@@ -48,6 +48,7 @@ ready = ->
 
   responsiveCategory = ->
     $('.navigation-menu .category-responsive').click ->
+      $(this).toggleClass('is-clicked')
       $(this).siblings('.menu-items').children('ul').toggle()
   responsiveCategory()
 
