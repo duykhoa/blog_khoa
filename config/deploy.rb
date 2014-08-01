@@ -8,7 +8,7 @@ set :repo_url, 'git@bitbucket.org:duykhoa_tran/blog_khoa.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/blog_khoa/'
+#set :deploy_to, '/home/blog_khoa/'
 
 set :branch, ENV['BRANCH'] || "master"
 

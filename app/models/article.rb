@@ -31,6 +31,8 @@ class Article < ActiveRecord::Base
     self.class.where.not(id: id).limit(number)
   end
 
+  index_name "itviec-trantat#{Rails.env}"
+
   mapping do
     indexes :id, type: 'integer'
     indexes :title, type: 'string', analyzer: 'snowball', boost: 5
