@@ -106,6 +106,16 @@ namespace :deploy do
     end
   end
 
+  task :ckeditor_assets_compile do
+    on roles(:all) do
+      within release_path do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'ckeditor:create_nondigest_assets'
+        end
+      end
+    end
+  end
+
   after :finishing, :update_sym_link
   after :finishing, :migrate_db
   after :finishing, :sitemap

@@ -11,6 +11,7 @@ namespace :ckeditor do
 end
 
 # auto run ckeditor:create_nondigest_assets after assets:precompile
-Rake::Task['assets:precompile'].enhance do
-  Rake::Task['ckeditor:create_nondigest_assets'].invoke
-end
+# TURN OFF THIS TO SPEEDUP PERFORMANCE OF DEPLOYMENT PROCESS.
+#Rake::Task['assets:precompile'].enhance do
+  #Rake::Task['ckeditor:create_nondigest_assets'].invoke
+#end
