@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
 
   include Tire::Model::Search
   include Tire::Model::Callbacks
-  index_name "blog_khoa_#{Rails.env}"
+  index_name "blog_khoa_#{BlogSetting.blog_title}"
 
   extend FriendlyId
   friendly_id :article_url, use: [:slugged, :finders]
@@ -30,8 +30,6 @@ class Article < ActiveRecord::Base
   def related_articles(number = 3)
     self.class.where.not(id: id).limit(number)
   end
-
-  index_name "itviec-trantat#{Rails.env}"
 
   mapping do
     indexes :id, type: 'integer'
