@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'variable';
-@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,400&subset=latin,vietnamese);
 
 * {
-  font-family:'Josefin Slab', Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family:'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  font-style: italic;
   margin: 0;
   padding: 0;
   font-size: 1vw;
@@ -79,7 +80,6 @@ body {
     }
 
     .subtitle {
-      font-family: 'Josefin Slab';
       font-weight: 400;
       font-size: 17px;
       color: $light-gray;
