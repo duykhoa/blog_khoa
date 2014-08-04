@@ -13,7 +13,6 @@ set :repo_url, 'git@bitbucket.org:duykhoa_tran/blog_khoa.git'
 set :branch, ENV['BRANCH'] || "master"
 
 set :rvm_type, :system
-set :rvm_custom_path, '/usr/local/rvm'  # only needed if not detected
 set :rvm_ruby_version, '2.0.0-p451'      # Defaults to: 'default'
 
 set :deploy_via, :copy
