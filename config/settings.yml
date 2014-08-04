@@ -5,6 +5,4 @@ database_name:
   staging: development_db
   production: development_db
   test: development_db
-deploy_path: '/'
-server_ip: localhost
-deploy_user: user_deploy
+
