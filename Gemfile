@@ -58,9 +58,8 @@ group :development do
   gem 'capistrano-ext'
   gem 'capistrano', '> 3.0'
   gem 'capistrano-rvm'
-  gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'capistrano-multiconfig'
+  gem 'capistrano-bundler'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
