@@ -19,10 +19,10 @@ class Article < ActiveRecord::Base
   index_name "blog_khoa_#{BlogSetting.blog_title.parameterize}"
 
   extend FriendlyId
-  friendly_id :article_url, use: [:slugged, :finders]
+  friendly_id :article_url_slug, use: [:slugged, :finders]
 
-  def article_url
-    [:title]
+  def article_url_slug
+    title.to_url
   end
 
   default_scope lambda { order(created_at: :desc) }
