@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
 
   include Tire::Model::Search
   include Tire::Model::Callbacks
-  index_name "blog_khoa_#{BlogSetting.blog_title}"
+  index_name "blog_khoa_#{BlogSetting.blog_title.parameterize}"
 
   extend FriendlyId
   friendly_id :article_url, use: [:slugged, :finders]
