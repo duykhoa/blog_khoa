@@ -2,14 +2,14 @@ require 'rails_helper'
 
 describe Article do
   it { should belong_to(:category) }
-  it { should validate_presence_of(:category) }
-  it { should validate_presence_of(:title) }
+  #it { should validate_presence_of(:category) }
+  #it { should validate_presence_of(:title) }
 
-  describe "#article_url" do
-    let!(:article) { build(:article) }
+  describe "#article_url_slug" do
+    let!(:article) { build(:article, title: 'đây là test data') }
 
     it 'returns an url with title' do
-      expect(article.article_url).to eq([:title])
+      expect(article.article_url_slug).to eq('day-la-test-data')
     end
   end
 
