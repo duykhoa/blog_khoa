@@ -122,6 +122,6 @@ namespace :deploy do
 
   after :finishing, :update_sym_link
   after :finishing, :migrate_db
-  after :finishing, :sitemap
+  #after :finishing, :sitemap
   after :finishing, :restart
 end
