@@ -49,7 +49,7 @@ end
 
 group :test do
   gem 'shoulda'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
   gem 'factory_girl_rails'
   gem 'database_cleaner'
 end
