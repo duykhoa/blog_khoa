@@ -6,6 +6,6 @@ describe Category, :type => :model do
   it { should validate_uniqueness_of(:position) }
 
   it "reorder by created at asc" do
-    expect(Category.all.to_sql).to eq(Category.reorder('').order(created_at: :asc).to_sql)
+    expect(Category.all.to_sql).to eq(Category.reorder('').order(position: :asc, created_at: :asc).to_sql)
   end
 end

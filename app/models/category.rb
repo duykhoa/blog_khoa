@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  default_scope lambda { order(created_at: :asc) }
+  default_scope lambda { order(position: :asc, created_at: :asc) }
 
   validates :position, numericality: { only_integer:true }
   validates_uniqueness_of :position

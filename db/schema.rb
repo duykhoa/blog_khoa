@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20140807152436) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "position"
+    t.integer  "position",   default: 5
   end
 
   create_table "ckeditor_assets", force: true do |t|
