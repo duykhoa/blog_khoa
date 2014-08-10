@@ -31,6 +31,4 @@ Ckeditor.setup do |config|
   # Customize ckeditor assets path
   # By default: nil
   # config.asset_path = "http://www.example.com/assets/ckeditor/"
-  config.assets_languages = ['en']
-  config.assets_plugins = ['image', 'smiley']
 end
