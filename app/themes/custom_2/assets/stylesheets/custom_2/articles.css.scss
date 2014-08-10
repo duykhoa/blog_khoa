@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'variable';
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,400&subset=latin,vietnamese);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic,400&subset=latin,vietnamese);
 
 * {
   font-family:'Source Sans Pro', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   margin: 0;
   padding: 0;
