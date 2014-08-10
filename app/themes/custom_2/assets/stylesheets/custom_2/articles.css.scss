@@ -590,6 +590,9 @@ body {
   height: 30px;
   overflow: hidden;
   margin-bottom: 10px;
+  .fb_iframe_widget {
+    height: 25px;
+  }
 }
 
 .share-social {
