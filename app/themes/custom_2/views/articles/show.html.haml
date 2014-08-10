@@ -10,7 +10,7 @@
     .content
       = @article.content.html_safe
     .fb-like-container
-      .fb-like{data: { href: article_url(@article.slug), layout: "standard", action: "like", 'show-faces' => "true", share: "false" } }
+      .fb-like{data: { href: article_url(@article.slug), layout: "standard", action: "like", 'show-faces' => "true", send: "false", share: "false" } }
     .share-social
       .share-button
     .related-post
