@@ -55,7 +55,7 @@ body {
   .navbar-content {
     width: 100%;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 5px;
     .logo {
       a {
         font-size: 67px;
@@ -292,7 +292,6 @@ body {
 }
 
 .body.main-content {
-  margin-top: 20px;
   padding-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -311,8 +310,8 @@ body {
   }
 
   .article-container {
-    margin-top: 2vh;
-    margin-bottom: 10vh;
+    margin-top: 15px;
+    margin-bottom: 25px;
     width: 49%;
 
     @media screen and (max-width: 850px) {
@@ -335,8 +334,8 @@ body {
     }
 
     .feature-image {
-      min-height: 350px;
-      max-height: 350px;
+      min-height: 285px;
+      max-height: 285px;
       overflow: hidden;
       width: 100%;
       border: 1px solid $gray;
@@ -402,9 +401,9 @@ body {
 }
 
 .article-container#article_show {
+  margin-bottom: 30px;
   .left-content {
     float: left;
-    margin-top: 3.5vh;
     line-height: 2.2em;
     width: 68%;
 
@@ -437,6 +436,11 @@ body {
 
       p {
         margin-bottom: 1.5em;
+        img {
+          width: auto !important;
+          max-width: 100% !important;
+          height: auto !important;
+        }
       }
 
       @media screen and (max-width: 1024px) {
@@ -494,8 +498,8 @@ body {
   }
 
   .right-content {
-    margin-top: 3.5vh;
-    padding: 3vh 3%;
+    margin-top: 25px;
+    padding: 30px 3%;
     float: right;
     width: 24%;
     background-color: #F6F6F6;
@@ -508,7 +512,7 @@ body {
     .message {
       .title {
         h1 {
-          font-size: 1.9vmax;
+          font-size: 25px;
           font-weight: normal;
           line-height: 1.2em;
 
@@ -521,9 +525,9 @@ body {
 
       .subtitle {
         h3 {
-          margin: 3vh 0;
+          margin: 20px 0;
           font-weight: normal;
-          font-size: 1vmax;
+          font-size: 14px;
 
           @media screen and (max-width: 850px) {
             font-size: 14px;
@@ -595,13 +599,10 @@ body {
   height: 30px;
   overflow: hidden;
   margin-bottom: 10px;
-  .fb_iframe_widget {
-    height: 25px;
-  }
 }
 
 .share-social {
-  margin-top: 2vh;
+  margin-top: 35px;
   border-top: 1px solid $gray;
   padding: 10px 0;
   .share-button.sharer-0 {
@@ -617,6 +618,7 @@ body {
       -ms-transform: none;
       transform: none;
       ul {
+        top: 3px;
         li {
           background-color: $green-navbar;
           border-radius: 100%;
