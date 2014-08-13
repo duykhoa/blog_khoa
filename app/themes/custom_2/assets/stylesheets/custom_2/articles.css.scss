@@ -62,7 +62,7 @@ body {
   .navbar-content {
     width: 100%;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 5px;
     .logo {
       a {
         font-size: 78px;
@@ -337,8 +337,8 @@ body {
     }
 
     .feature-image {
-      min-height: 350px;
-      max-height: 350px;
+      min-height: 285px;
+      max-height: 285px;
       overflow: hidden;
       width: 100%;
       border: 1px solid $gray;
