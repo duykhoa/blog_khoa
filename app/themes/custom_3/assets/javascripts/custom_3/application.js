@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require share.min
-//= require custom_1/articles
+//= require custom_3/articles
