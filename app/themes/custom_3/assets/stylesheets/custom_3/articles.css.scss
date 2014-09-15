@@ -27,7 +27,7 @@ body {
   min-height: 100%;
   width: 100%;
   overflow-x: hidden;
-  border-top: 10px solid $green-navbar;
+  background: image-url('custom_3/bg.png');
 
   @media screen and (max-width: 800px) {
     border-top: 4px solid $green-navbar;
@@ -51,16 +51,17 @@ body {
 }
 
 .header {
+  background: white;
+
   .navbar-content {
     width: 100%;
     text-align: center;
     padding-top: 5px;
     .logo {
       a {
-        font-size: 67px;
-        font-weight: 700;
+        font-size: 42px;
         line-height: 1.5em;
-        color: #333;
+        color: #1D1D1D;
         @media screen and (max-width: 1024px) {
           font-size: 30px;
         }
@@ -73,6 +74,7 @@ body {
     .subtitle {
       font-size: 26px;
       color: $text-color-gray;
+      display: none;
       @media screen and (max-width: 1024px) {
         font-size: 23px;
       }
@@ -85,8 +87,9 @@ body {
 }
 
 .navigation-menu {
-  border-top: 2px solid $green-navbar;
-  margin-top: 25px;
+  text-align: center;
+  background: white;
+  padding-bottom: 20px;
 
   .category-responsive {
     width: 30px;
@@ -120,6 +123,7 @@ body {
   }
 
   .search-box {
+    display: none;
     padding: 10px;
     padding-right: 0;
     float: right;
@@ -215,8 +219,10 @@ body {
   }
 
   .menu-items {
+    width: 100%;
     float: left;
     position: relative;
+    margin-top: 35px;
 
     &:after {
       @extend .clear;
@@ -246,11 +252,12 @@ body {
 
       a:link, a:hover, a:visited {
         text-decoration: none;
-        color: $text-color-gray;
+        color: #1D1D1D;
 
         li {
+          text-transform: uppercase;
           display: inline-block;
-          padding: 15px 20px;
+          padding: 15px 10px;
           min-width: 5%;
           text-align: center;
           position: relative;
@@ -260,6 +267,7 @@ body {
           box-sizing: border-box;
           overflow: hidden;
           white-space: nowrap;
+          font-weight: 700;
 
           &:first-child {
             padding-left: 0;
@@ -270,19 +278,19 @@ body {
             text-align: left;
             padding: 10px 0 10px 10px;
           }
+
+          &:after {
+            display: inline-block;
+            content: '/';
+          }
         }
 
         li:hover {
-          color: #222;
+          color: #f0982f;
         }
 
         li.active {
-          color: #222;
-          font-weight: 700;
-
-          &:hover {
-            font-weight: 700 !important;
-          }
+          color: #f0982f;
         }
       }
     }
@@ -290,6 +298,8 @@ body {
 }
 
 .body.main-content {
+  background: white;
+  margin-top: 25px;
   padding-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
