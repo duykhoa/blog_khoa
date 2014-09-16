@@ -303,7 +303,7 @@ body {
   padding-bottom: 20px;
   @include display(flex);
   @include flex-wrap(wrap);
-  @include align-items(stretch);
+  @include align-items(flex-start);
   @include justify-content(space-between);
 
   &:after {
@@ -318,22 +318,14 @@ body {
   }
 
   .article-wrapper {
-    width: calc(100% - 220px);
+    width: calc(100% - 320px);
     background: white;
   }
 
   .article-container {
     margin-top: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     width: 100%;
-
-    @media screen and (max-width: 850px) {
-      width: 100%;
-    }
-
-    &:last-child {
-      margin-left: 2%;
-    }
 
     &:hover {
       .feature-image {
@@ -351,10 +343,6 @@ body {
       max-height: 285px;
       overflow: hidden;
       width: 100%;
-      border: 1px solid $gray;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
       transition: all .3s;
       -webkit-transition: all .3s;
       -moz-transition: all .3s;
@@ -377,7 +365,7 @@ body {
     }
 
     .post-time {
-      margin: 1.2vh 0;
+      margin: 1.2vh 10px;
       font-size: 0.92vmax;
       color: $date;
 
@@ -387,6 +375,7 @@ body {
     }
 
     .title {
+      margin-left: 10px;
       a, a:hover, a:visited {
         transition: all .3s;
         -webkit-transition: all .3s;
@@ -403,7 +392,7 @@ body {
     }
 
     .short-content {
-      margin-top: 25px;
+      margin: 25px 10px 0 10px;
       line-height: 1.7em;
 
       @media screen and (max-width: 850px) {
@@ -413,13 +402,14 @@ body {
   }
 
   .about-me-promotion {
-    width: 200px;
-    margin-left: 20px;
+    width: 280px;
+    margin-left: 40px;
     background: white;
   }
 }
 
 .article-container#article_show {
+  padding: 0 20px;
   margin-bottom: 30px;
   .left-content {
     float: left;
@@ -673,11 +663,12 @@ body {
         text-decoration: none;
         color: #FFF;
         padding: 1vh 1vw;
-        background-color: $green-navbar;
+        background-color: $lighter-green-color;
         border-radius: 5px;
+        @include transition(all 0.1s);
 
         &:hover {
-          background-color: $lighter-green-color;
+          opacity: 0.9;
         }
       }
     }
