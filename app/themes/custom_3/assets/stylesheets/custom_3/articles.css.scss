@@ -299,7 +299,6 @@ body {
 }
 
 .body.main-content {
-  background: white;
   margin-top: 25px;
   padding-bottom: 20px;
   @include display(flex);
@@ -316,6 +315,11 @@ body {
   .love {
     width: $content-width;
     margin: 0 auto;
+  }
+
+  .article-wrapper {
+    width: calc(100% - 220px);
+    background: white;
   }
 
   .article-container {
@@ -406,6 +410,12 @@ body {
         font-size: 13px;
       }
     }
+  }
+
+  .about-me-promotion {
+    width: 200px;
+    margin-left: 20px;
+    background: white;
   }
 }
 

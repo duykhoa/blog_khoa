@@ -1,5 +1,8 @@
 .body.main-content
-  = render partial: "article", collection: @articles
+  .article-wrapper
+    = render partial: "article", collection: @articles
+  .about-me-promotion
+    HESDUCDANG
 .pagination-container
   = render 'shared/pagination'
   .clear
