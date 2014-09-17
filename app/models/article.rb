@@ -7,7 +7,7 @@ class Article < ActiveRecord::Base
       { :medium => "450x300#", :thumb => "100x100>" },
     default_url: "/images/missing.png")
 
-  PER_PAGE = 8
+  PER_PAGE = 4
   belongs_to :category
   validates :category, presence: true
 

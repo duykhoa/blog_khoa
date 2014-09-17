@@ -405,6 +405,22 @@ body {
     width: 280px;
     margin-left: 40px;
     background: white;
+
+    .avatar {
+      text-align: center;
+      margin-top: 15px;
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+      }
+    }
+
+    .short-content {
+      padding: 25px 20px;
+      text-align: justify;
+    }
   }
 }
 
@@ -630,7 +646,7 @@ body {
       ul {
         top: 3px;
         li {
-          background-color: $gray;
+          background-color: #AAA;
           border-radius: 100%;
           width: 40px;
           height: 40px;
