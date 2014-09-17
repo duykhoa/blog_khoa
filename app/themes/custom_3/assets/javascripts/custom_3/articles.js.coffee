@@ -52,5 +52,19 @@ ready = ->
       $(this).siblings('.menu-items').children('ul').toggle()
   responsiveCategory()
 
+  $('.article-container').first().toggleClass('active')
+
+scrollEffect = ->
+  distance = Math.round($(window).height() * 3 / 4)
+  firstArticle = $('.article-container').not('.active').first()
+  topOffset = $(firstArticle).offset().top
+  scrollTop = $(window).scrollTop()
+
+  if scrollTop + distance >= topOffset
+    $(firstArticle).toggleClass('active')
+
 $(document).ready(ready)
 $(document).on('page:load', ready)
+
+$(window).scroll ->
+  scrollEffect()

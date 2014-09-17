@@ -323,9 +323,19 @@ body {
   }
 
   .article-container {
+    position: relative;
+    top: 40px;
     margin-top: 15px;
     margin-bottom: 35px;
     width: 100%;
+    opacity: 0;
+
+    @include transition(opacity 1s ease-in-out, top 1s ease-in-out);
+
+    &.active {
+      top: 0;
+      opacity: 1;
+    }
 
     &:hover {
       .feature-image {

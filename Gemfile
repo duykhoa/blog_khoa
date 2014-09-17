@@ -62,6 +62,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-multiconfig', require: false
   gem 'capistrano-bundler'
+  gem 'spring'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
