@@ -664,12 +664,12 @@ body {
         text-decoration: none;
         color: #FFF;
         padding: 1vh 1vw;
-        background-color: $lighter-green-color;
+        background-color: #AAA;
         border-radius: 5px;
         @include transition(all 0.1s);
 
         &:hover {
-          opacity: 0.9;
+          opacity: 0.8;
         }
       }
     }
