@@ -35,3 +35,5 @@ User.create(
 BlogSetting::DEFAULT_SETTING.each do  |key, value|
   BlogSetting.create(key: key, value: value)
 end
+
+AboutMe.create unless AboutMe.count > 0
