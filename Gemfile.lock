@@ -305,6 +305,7 @@ DEPENDENCIES
   shoulda-matchers
   simplecov
   spring
+  sprockets-rails
   sqlite3
   stringex
   themes_on_rails

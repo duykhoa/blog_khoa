@@ -41,6 +41,8 @@ gem 'whenever', require: false
 gem 'themes_on_rails'
 gem 'bourbon'
 
+gem 'sprockets-rails', :require => 'sprockets/railtie', group: :production
+
 group :test, :development do
   gem 'faker'
   gem 'rspec-rails', '~> 3.0.1'
