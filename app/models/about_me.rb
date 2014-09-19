@@ -4,6 +4,7 @@ class AboutMe < ActiveRecord::Base
     styles:
       { :w70 => "70x70>" },
     default_url: "/images/missing.png")
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   rails_admin do
     label_plural "About me"
