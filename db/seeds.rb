@@ -8,7 +8,7 @@
 
 
 CATEGORY = ['Marketing at Work', 'Marketing Stories', 'Random Stuff']
-CATEGORY.each { |category| Category.create!(name: category) } if Category.count.eql? 0
+#CATEGORY.each_with_index { |category, index| Category.create!(name: category, position: index) } if Category.count.eql? 0
 
 if Rails.env.development?
   Article.delete_all

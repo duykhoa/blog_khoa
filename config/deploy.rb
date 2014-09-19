@@ -15,6 +15,8 @@ set :branch, ENV['BRANCH'] || "master"
 set :rvm_type, :system
 set :rvm_ruby_version, '2.0.0-p451'      # Defaults to: 'default'
 
+set :use_sudo, true
+
 set :deploy_via, :copy
 set :migration_role, 'migrator'
 #set :default_shell, '/bin/bash -l'
