@@ -14,7 +14,7 @@ ready = ->
     }
     networks: {
       facebook: {
-        app_id: '1505889032957471',
+        app_id: '1532797393618093',
         after: activeSocialButton
       },
       twitter: {
