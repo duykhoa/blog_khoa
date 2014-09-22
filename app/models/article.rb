@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
   has_attached_file(
     :feature_image,
     styles:
-      { :medium => "450x300#", :thumb => "100x100>" },
+      { :medium => "750x500#", :thumb => "100x100>" },
     default_url: "/images/missing.png")
 
   PER_PAGE = 4
