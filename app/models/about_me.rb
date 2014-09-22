@@ -10,6 +10,7 @@ class AboutMe < ActiveRecord::Base
     label_plural "About me"
     edit do
       field :avatar
+      field :short_content
       field :content, :ck_editor
     end
   end

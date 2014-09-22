@@ -1,4 +1,4 @@
 .avatar
   = image_tag @about_me.avatar.url(:thumb)
 .short-content
-  = @about_me.content.html_safe
+  = raw @about_me.short_content

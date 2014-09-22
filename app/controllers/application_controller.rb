@@ -8,8 +8,10 @@ class ApplicationController < ActionController::Base
 
   theme :custom_theme
 
-  rescue_from Exception, with: lambda { |exception| render_error 500, exception }
-  rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound, with: lambda { |exception| render_error 404, exception }
+  if Rails.env.eql?('production')
+    rescue_from Exception, with: lambda { |exception| render_error 500, exception }
+    rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound, with: lambda { |exception| render_error 404, exception }
+  end
 
   private
   def custom_theme
