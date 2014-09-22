@@ -56,12 +56,13 @@ ready = ->
 
 scrollEffect = ->
   distance = Math.round($(window).height() * 3 / 4)
-  firstArticle = $('.article-container').not('.active').first()
-  topOffset = $(firstArticle).offset().top
-  scrollTop = $(window).scrollTop()
+  if $('.article-container').not('.active').length > 0
+    firstArticle = $('.article-container').not('.active').first()
+    topOffset = $(firstArticle).offset().top
+    scrollTop = $(window).scrollTop()
 
-  if scrollTop + distance >= topOffset
-    $(firstArticle).toggleClass('active')
+    if scrollTop + distance >= topOffset
+      $(firstArticle).toggleClass('active')
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
