@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'bourbon';
 @import 'variable';
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,latin-ext);
 
 * {
@@ -433,8 +435,26 @@ body {
     }
 
     .short-content {
-      padding: 25px 20px;
+      padding: 25px 20px 0 25px;
       text-align: justify;
+    }
+
+    .social-link {
+      text-align: center;
+      padding-bottom: 15px;
+
+      a {
+        text-decoration: none;
+
+        i {
+          color: #DDD;
+          @include transition(color 0.5s ease-in-out);
+
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
     }
   }
 }

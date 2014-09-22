@@ -42,6 +42,7 @@ gem 'themes_on_rails'
 gem 'bourbon'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie', group: :production
+gem 'font-awesome-sass'
 
 group :test, :development do
   gem 'faker'

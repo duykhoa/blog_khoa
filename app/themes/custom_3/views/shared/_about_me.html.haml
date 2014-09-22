@@ -2,3 +2,10 @@
   = image_tag @about_me.avatar.url(:thumb)
 .short-content
   = raw @about_me.short_content
+.social-link
+  = link_to 'https://www.facebook.com/skyofvongola' do
+    = icon 'facebook-square fa-2x'
+  = link_to 'https://www.linkedin.com/profile/view?id=329459086' do
+    = icon 'linkedin-square fa-2x'
+  = link_to ' https://plus.google.com/103096225630631541687' do
+    = icon 'google-plus-square fa-2x'
