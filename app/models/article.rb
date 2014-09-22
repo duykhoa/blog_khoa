@@ -9,10 +9,12 @@ class Article < ActiveRecord::Base
 
   PER_PAGE = 4
   belongs_to :category
+
   validates :category, presence: true
 
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
   validates :title, presence: true
+  validates :short_content, length: { maximum: 500 }
 
   include Tire::Model::Search
   include Tire::Model::Callbacks
