@@ -45,7 +45,7 @@ body {
   position: relative;
 
   @media screen and (max-width: 700px) {
-    width: 85%;
+    width: 100%;
   }
 }
 
@@ -99,12 +99,11 @@ body {
     height: 25px;
     display: none;
     cursor: pointer;
-    background-image: linear-gradient(0,
-                      $green-navbar 0, $green-navbar 20%,
-                      #FFF 20%, #FFF 40%,
-                      $green-navbar 40%, $green-navbar 60%,
-                      #FFF 60%, #FFF 80%,
-                      $green-navbar 80%, $green-navbar 95%);
+
+    i {
+      font-size: 20px;
+      color: $title;
+    }
     @media screen and (max-width: 800px) {
       margin-top: 14px;
       display: block;
@@ -308,6 +307,10 @@ body {
   @include align-items(flex-start);
   @include justify-content(space-between);
 
+  @media (max-width: 850px) {
+    @include flex-direction(column);
+  }
+
   &:after {
     display: block;
     content: '';
@@ -322,6 +325,14 @@ body {
   .article-wrapper {
     width: calc(100% - 320px);
     background: white;
+
+    @media (max-width: 1024px) {
+      width: calc(100% - 200px);
+    }
+
+    @media (max-width: 850px) {
+      width: calc(100%);
+    }
   }
 
   .article-container {
@@ -417,6 +428,19 @@ body {
     width: 280px;
     margin-left: 40px;
     background: white;
+
+    @media (max-width: 1024px) {
+      width: 160px;
+
+      .short_content {
+        display: none;
+      }
+    }
+
+    @media (max-width: 850px) {
+      width: 100%;
+      margin-left: 0;
+    }
 
     .avatar {
       text-align: center;
@@ -657,7 +681,7 @@ body {
 }
 
 .fb-like-container {
-  height: 30px;
+  height: 50px;
   overflow: hidden;
   margin-bottom: 10px;
 }
