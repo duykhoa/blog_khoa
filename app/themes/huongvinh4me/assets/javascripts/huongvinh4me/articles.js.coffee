@@ -53,8 +53,8 @@ ready = ->
   responsiveCategory()
 
   $('.article-container').first().toggleClass('active')
-
   s = skrollr.init()
+
   console.log 'hehe'
 
 $(document).ready(ready)

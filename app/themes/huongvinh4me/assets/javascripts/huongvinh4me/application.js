@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require share.min
 //= require huongvinh4me/articles
 //= require skrollr
