@@ -5,6 +5,7 @@
 @import 'variable';
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "mixins";
 @import "header";
 @import "header-image";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext);
@@ -232,14 +233,14 @@ h1 {
             text-align: left;
             padding: 10px 0 10px 10px;
           }
+
+          @include underline-decoration();
         }
 
-        li:hover {
-          color: $orange;
-        }
-
-        li.active {
-          color: $orange;
+        li:hover, li.active {
+          &:before {
+            width: 100%;
+          }
         }
       }
     }
@@ -351,8 +352,21 @@ h1 {
       margin: 5px 20px 20px 20px;
 
       a {
+        position: relative;
         text-decoration: none;
         color: #333;
+
+        @include underline-decoration();
+
+        &:before {
+          bottom: -5px;
+        }
+
+        &:hover {
+          &:before {
+            width: 100%;
+          }
+        }
       }
     }
   }
