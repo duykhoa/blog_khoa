@@ -2,6 +2,7 @@
 
 .header {
   background: white;
+  overflow: hidden;
 
   .navbar-content {
     width: 100%;
@@ -32,6 +33,7 @@
       font-size: 26px;
       color: $text-color-gray;
       display: none;
+
       @media screen and (max-width: 1024px) {
         font-size: 23px;
       }

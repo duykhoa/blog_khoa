@@ -54,5 +54,8 @@ ready = ->
 
   $('.article-container').first().toggleClass('active')
 
+  s = skrollr.init()
+  console.log 'hehe'
+
 $(document).ready(ready)
 $(document).on('page:load', ready)

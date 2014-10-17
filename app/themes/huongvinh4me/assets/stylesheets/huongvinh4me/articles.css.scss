@@ -55,7 +55,6 @@ h1 {
 .navigation-menu {
   text-align: center;
   background: white;
-  padding-bottom: 20px;
 
   .category-responsive {
     width: 30px;
@@ -184,10 +183,14 @@ h1 {
   }
 
   .menu-items {
+    z-index: 1001;
     width: 100%;
     float: left;
     position: relative;
-    margin-top: 35px;
+    padding-top: 35px;
+    padding-bottom: 10px;
+    background-color: white;
+    border-bottom: 1px solid #EEE;
 
     &:after {
       @extend .clear;
@@ -248,7 +251,7 @@ h1 {
 }
 
 .body.main-content {
-  margin-top: -100px;
+  padding-top: 50px;
   padding-bottom: 20px;
   @include display(flex);
   @include flex-wrap(wrap);

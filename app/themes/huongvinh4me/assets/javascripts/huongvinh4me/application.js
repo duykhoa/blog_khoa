@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require share.min
 //= require huongvinh4me/articles
+//= require skrollr

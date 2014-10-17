@@ -47,5 +47,6 @@ ready = ->
   subscribingValidate()
   $('ul li.category-responsive').click ->
     $('.navigation-menu ul').toggle()
+
 $(document).ready(ready)
 $(document).on('page:load', ready)
