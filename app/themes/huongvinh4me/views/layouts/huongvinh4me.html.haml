@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title= BlogSetting.blog_title
+    = stylesheet_link_tag    'huongvinh4me/application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'huongvinh4me/application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = favicon_link_tag '/favicon.ico'
+    = render "shared/metatag"
+  %body
+    #fb-root
+    .header
+      = render '/shared/header'
+    .navigation-menu
+      .category-responsive
+        = icon 'reorder'
+      .menu-items
+        = render '/shared/navigation_menu'
+      .clear
+    - if controller_name.eql?('articles') && action_name.eql?('index')
+      .header-image
+        = image_tag BlogSetting.fb_image
+        .subtitle
+          %h2= BlogSetting.blog_sub_title
+    .container
+      = yield
