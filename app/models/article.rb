@@ -1,11 +1,5 @@
 class Article < ActiveRecord::Base
-  has_attached_file(
-    :feature_image,
-    styles:
-      { :medium => "750x500#", :thumb => "100x100>" },
-    default_url: "/images/missing.png")
 
-  validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
   validates :title, presence: true
   validates :short_content, length: { maximum: 500 }
 
