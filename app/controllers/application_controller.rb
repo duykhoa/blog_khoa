@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
 
   protect_from_forgery with: :exception
-  before_action :get_categories
-  before_action :about_me_load
 
   theme :custom_theme
 
@@ -26,12 +24,4 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-
-  def get_categories
-    @categories = Category.all_category_name
-  end
-
-  def about_me_load
-    @about_me = AboutMe.first
-  end
 end

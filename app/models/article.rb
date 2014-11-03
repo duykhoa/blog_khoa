@@ -7,8 +7,6 @@ class Article < ActiveRecord::Base
       { :medium => "750x500#", :thumb => "100x100>" },
     default_url: "/images/missing.png")
 
-  PER_PAGE = 4
-
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
   validates :title, presence: true
   validates :short_content, length: { maximum: 500 }
@@ -45,7 +43,7 @@ class Article < ActiveRecord::Base
 
   class << self
     def search(search_params = {})
-      tire.search(page: Article.page_params(search_params), per_page: PER_PAGE) do
+      tire.search do
         query do
           if search_params[:query].present? && search_params[:query] != '-'
             string search_params[:query], fields: %W(title title_latin short_content short_content_latin content content_latin)
