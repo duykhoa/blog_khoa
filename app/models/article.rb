@@ -39,7 +39,6 @@ class Article < ActiveRecord::Base
     indexes :short_content, type: 'string', analyzer: 'snowball'
     indexes :short_content_latin, as: 'short_content.to_url', type: 'string', analyzer: 'snowball'
     indexes :feature_image, as: 'feature_image.url(:medium)', type: 'string'
-    indexes :category_name, as: 'category.sanitize_name', type: 'string', index: :not_analyzed
     indexes :created_at, type: 'date'
     indexes :slug, index: :not_analyzed
   end
@@ -53,10 +52,6 @@ class Article < ActiveRecord::Base
           else
             all
           end
-        end
-
-        if search_params[:category_name].present? && search_params[:category_name] != '-'
-          filter :term, category_name: search_params[:category_name]
         end
 
         sort do
@@ -74,8 +69,6 @@ class Article < ActiveRecord::Base
     edit do
       field :title
       field :short_content
-      field :category
-      field :feature_image
       field :content, :ck_editor
     end
   end
