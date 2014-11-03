@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   include ParamsExt
 
   def index
-    @articles = Article.search(index_params)
+    @articles = Article.search
   end
 
   def category_index
