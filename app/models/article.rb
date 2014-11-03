@@ -30,7 +30,6 @@ class Article < ActiveRecord::Base
     indexes :content_latin, as: 'content.to_url', type: 'string', analyzer: 'snowball'
     indexes :short_content, type: 'string', analyzer: 'snowball'
     indexes :short_content_latin, as: 'short_content.to_url', type: 'string', analyzer: 'snowball'
-    indexes :feature_image, as: 'feature_image.url(:medium)', type: 'string'
     indexes :created_at, type: 'date'
     indexes :slug, index: :not_analyzed
   end
@@ -61,7 +60,7 @@ class Article < ActiveRecord::Base
     edit do
       field :title
       field :short_content
-      field :content, :ck_editor
+      field :content
     end
   end
 end

@@ -4,4 +4,5 @@
   .post-time
     = format_date(article.created_at)
   .content
-    = raw article.content
+    - markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    = markdown.render(article.content).html_safe

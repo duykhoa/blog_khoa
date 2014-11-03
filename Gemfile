@@ -31,6 +31,7 @@ gem 'stringex'
 #gem 'whenever', require: false
 gem 'themes_on_rails'
 gem 'bourbon'
+gem 'redcarpet'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie', group: :production
 gem 'font-awesome-sass'
