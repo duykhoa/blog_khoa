@@ -31,11 +31,10 @@ class Ability
     #
     alias_action :edit, :read, :update, to: :setting
 
-    %w(Article EmailSubscribe BlogSeo Category User Ckeditor::AttachmentFile Ckeditor::Picture).each  do |model_name|
+    %w(Article EmailSubscribe BlogSeo User).each  do |model_name|
       can :manage, model_name.constantize
     end
 
-    can :setting, AboutMe
     can :setting, BlogSetting
     can :access, :rails_admin
     can :dashboard
