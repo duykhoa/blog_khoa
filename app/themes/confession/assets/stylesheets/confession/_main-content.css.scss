@@ -1,0 +1,52 @@
+@import 'variables';
+
+svg {
+  symbol#icon-heart {
+    fill: $confession-gray-color;
+  }
+}
+
+.container {
+  @include display(flex);
+  @include justify-content(flex-end);
+}
+
+.main-content {
+  color: white;
+  width: $width;
+
+  .article-wraper {
+    margin-top: 25px;
+
+    .article-container {
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px dotted $confession-gray-color;
+
+      .title {
+        width: 70%;
+
+        a {
+          text-decoration: none;
+          color: $confession-white-color;
+          font-size: 65px;
+          font-weight: 700;
+          line-height: 1.1em;
+          outline: none;
+        }
+      }
+
+      .post-time {
+        color: $confession-gray-color;
+        margin-top: 20px;
+      }
+
+      .content {
+        font-size: 25px;
+        line-height: 1.6em;
+        width: 90%;
+        color: $confession-gray-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+= content_for :article_show do
+  %meta{property: 'og:title', content: @article.title}
+  %meta{property: 'og:description', content: @article.short_content}
+  %meta{property: 'og:url', content: article_url(@article)}
+  %meta{property: 'og:image', content: BlogSetting.url + @article.feature_image.url}
+.article-container{id: ['article', action_name]}
+  .left-content
+    .title
+      %h1= @article.title
+    .content
+      = @article.content.html_safe
+    .fb-like-container
+      .fb-like{data: { href: article_url(@article.slug), layout: "standard", action: "like", 'show-faces' => "false", share: "false", send: "false" } }
+    .share-social
+      .share-button
+    .related-post
+      %h2
+        You might also like
+      %ul
+        - @article.related_articles.each do |related_article|
+          %li{'data-no-turbolink' => ''}= link_to related_article.title, related_article
+  .right-content
+    = render 'shared/subscriber_box'
+  .clear
+
+.facebook-comment
+  .fb-comments{data: { href: article_url(@article.slug), numposts: "5", colorscheme: "light", width: '550px'} }
+  :javascript
+    if ($(window).width() < 700) {
+      width = Math.floor(0.8375 * $(window).width());
+      $('.fb-comments').attr('data-width', width + 'px');
+    }
+
+    function initFB(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1532797393618093&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+    initFB(document, 'script', 'facebook-jssdk');

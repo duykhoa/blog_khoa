@@ -1,0 +1,27 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//
+
+@import "main-content";
+
+body {
+  background: $confession-dark-color;
+  margin: 0 25px;
+  margin-top: 10px;
+  font-family: 'Arimo';
+}
+
+.header-text {
+  a {
+    color: $confession-gray-color;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 4px double $confession-gray-color;
+
+    h1 {
+      margin: 0;
+    }
+  }
+}
