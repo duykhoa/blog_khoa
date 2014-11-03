@@ -14,13 +14,11 @@ body {
 
 .header-text {
   a {
-    color: white;
-    font-size: 30px;
     text-decoration: none;
-    font-weight: 700;
-    border-bottom: 4px double $confession-gray-color;
-
     h1 {
+      color: white;
+      font-weight: 700;
+      font-size: 30px;
       margin: 0;
     }
   }
