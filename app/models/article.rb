@@ -5,7 +5,7 @@ class Article < ActiveRecord::Base
 
   include Tire::Model::Search
   include Tire::Model::Callbacks
-  index_name "blog_khoa_#{BlogSetting.blog_title.parameterize rescue 'test'}"
+  index_name "confession_#{Rails.env}"
 
   extend FriendlyId
   friendly_id :article_url_slug, use: [:slugged, :finders]
@@ -19,6 +19,8 @@ class Article < ActiveRecord::Base
   def related_articles(number = 3)
     self.class.where.not(id: id).limit(number)
   end
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
 
   mapping do
     indexes :id, type: 'integer'
