@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
     rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound, with: lambda { |exception| render_error 404, exception }
   end
 
+  before_filter :authenticate_user!
+
   private
   def custom_theme
     BlogSetting.theme || 'default'
