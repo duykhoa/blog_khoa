@@ -34,6 +34,12 @@
       .comment-container {
         padding: 10px;
         color: $confession-gray-color;
+
+        .author {
+          font-size: 11px;
+          margin-top: 15px;
+          margin-left: 15px;
+        }
       }
     }
   }
