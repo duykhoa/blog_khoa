@@ -18,6 +18,6 @@ class ArticlesController < ApplicationController
     end
 
     def set_comments
-      @comments = @article.comments
+      @comments = @article.comments.includes(:user)
     end
 end
