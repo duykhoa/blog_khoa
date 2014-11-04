@@ -35,6 +35,7 @@ gem 'redcarpet'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie', group: :production
 gem 'font-awesome-sass'
+gem 'acts_as_commentable'
 
 group :test, :development do
   gem 'spring'
