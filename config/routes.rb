@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :email_subscribes, only: [:index, :create]
+  resources :comments, only: [:create]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
