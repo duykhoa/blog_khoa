@@ -1,10 +1,13 @@
 class Article < ActiveRecord::Base
+  default_scope lambda { order(created_at: :desc) }
 
+  acts_as_commentable
   validates :title, presence: true
   validates :short_content, length: { maximum: 500 }
 
   include Tire::Model::Search
   include Tire::Model::Callbacks
+
   index_name "confession_#{Rails.env}"
 
   extend FriendlyId
@@ -13,8 +16,6 @@ class Article < ActiveRecord::Base
   def article_url_slug
     title.to_url
   end
-
-  default_scope lambda { order(created_at: :desc) }
 
   def related_articles(number = 3)
     self.class.where.not(id: id).limit(number)
