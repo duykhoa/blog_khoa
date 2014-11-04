@@ -16,11 +16,38 @@ body {
 .header-text {
   a {
     text-decoration: none;
+
     h1 {
       color: white;
       font-weight: 700;
       font-size: 30px;
       margin: 0;
+    }
+  }
+}
+
+form#new_user {
+  width: 70%;
+
+  input[type='email'], input[type='password'] {
+    margin-top: 30px;
+    padding: 10px 2%;
+    border: 0;
+    border-radius: 3px;
+    width: 96%;
+    background: $confession-gray-color;
+    color: $confession-white-color;
+  }
+
+  input[type='submit'] {
+    @extend input[type='email'];
+    width: 100%;
+    cursor: pointer;
+
+    @include transition(opacity 0.2s ease);
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 }
