@@ -11,9 +11,9 @@ svg {
   @include justify-content(flex-end);
 }
 
-
 .main-content {
   width: $width;
+  color: $confession-white-color;
 
   .article-container {
     margin-bottom: 40px;
