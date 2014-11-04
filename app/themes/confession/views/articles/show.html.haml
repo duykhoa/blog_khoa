@@ -10,6 +10,6 @@
     .content
       = @article.content.html_safe
   .comment-box
-    = render partial: "/articles/comment_form"
-    .comment-wrapper
-      -#= render partial: "/article/comment", collection: @comments
+    = render partial: "/articles/comment_form", locals: { article: @article }
+    .comment-list
+      = render partial: "/articles/comment", collection: @comments
