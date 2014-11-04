@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 describe Article do
-  it { should belong_to(:category) }
-  #it { should validate_presence_of(:category) }
-  #it { should validate_presence_of(:title) }
 
   describe "#article_url_slug" do
     let!(:article) { build(:article, title: 'đây là test data') }
@@ -47,30 +44,6 @@ describe Article do
 
       it "returns all articles" do
         expect(Article.search(search_params).count).to eq(2)
-      end
-    end
-
-    context 'search by catetory' do
-      let!(:marketing_story_category) { create(:category, name: "marketingblog") }
-      let!(:marketing_story_article) { create(:article, category: marketing_story_category, title: "Blog Article") }
-      let!(:another_article) { create(:article, title: "Blog Article") }
-
-      let!(:search_params_with_category) { {query: 'article', page: 1, category_name: marketing_story_category.name} }
-      let!(:search_params1) { {query: 'article', page: 1} }
-      let!(:search_params2) { {query: 'article', page: 1, category_name: ''} }
-      before(:each) { Article.tire.index.refresh }
-
-      it "return just 1 article for marketing category" do
-        result = Article.search(search_params_with_category)
-        expect(result.count).to eq(1)
-      end
-
-      it "return just all article" do
-        result1 = Article.search(search_params1)
-        expect(result1.count).to eq(2)
-
-        result2 = Article.search(search_params2)
-        expect(result2.count).to eq(2)
       end
     end
   end

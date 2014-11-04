@@ -9,6 +9,5 @@ FactoryGirl.define do
     sequence :content do |n|
       "Content #{n}"
     end
-    association :category
   end
 end

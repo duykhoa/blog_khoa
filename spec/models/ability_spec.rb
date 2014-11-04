@@ -5,7 +5,7 @@ describe 'Ability' do
   let!(:ability) { Ability.new(user) }
 
   it "admin user permission" do
-    %w(Article EmailSubscribe AboutMe BlogSeo Category User Ckeditor::AttachmentFile Ckeditor::Picture).each  do |model_name|
+    %w(Article EmailSubscribe BlogSeo User).each  do |model_name|
       expect(ability.can?(:manage, model_name.constantize.new)).to be true
     end
 
