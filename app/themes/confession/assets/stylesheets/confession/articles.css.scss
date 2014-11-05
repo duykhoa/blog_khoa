@@ -25,7 +25,13 @@ body {
     }
 
     @media (max-width: 900px) {
-      display: none;
+      text-align: center;
+
+      h1 {
+        margin: 25px 0 40px 0;
+        border-bottom: 1px solid $confession-gray-color;
+        padding-bottom: 10px;
+      }
     }
   }
 }

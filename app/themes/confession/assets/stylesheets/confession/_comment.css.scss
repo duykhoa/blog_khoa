@@ -16,6 +16,8 @@
       color: $confession-white-color;
       font-size: 20px;
 
+      @include box-sizing(border-box);
+
       @media (max-width: 800px) {
         width: 100%;
       }
