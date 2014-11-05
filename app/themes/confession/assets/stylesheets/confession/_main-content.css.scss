@@ -13,6 +13,11 @@ svg {
 
 .main-content {
   width: $width;
+
+  @media (max-width: 900px) {
+    width: $small-size-width;
+  }
+
   color: $confession-white-color;
 
   .article-container {
@@ -26,6 +31,10 @@ svg {
       font-size: 65px;
       font-weight: 700;
       line-height: 1.1em;
+
+      @media (max-width: 500px) {
+        font-size: 30px;
+      }
 
       a {
         @include link-style();
@@ -43,6 +52,10 @@ svg {
       width: 90%;
       color: $confession-gray-color;
 
+      @media (max-width: 500px) {
+        font-size: 17px;
+      }
+
       a {
         @include link-style();
       }
@@ -54,6 +67,12 @@ svg {
       img, table, input {
         @extend iframe;
       }
+    }
+  }
+
+  .top-cover {
+    img {
+      max-width: 100%;
     }
   }
 

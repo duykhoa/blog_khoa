@@ -23,6 +23,10 @@ body {
       font-size: 30px;
       margin: 0;
     }
+
+    @media (max-width: 900px) {
+      display: none;
+    }
   }
 }
 
