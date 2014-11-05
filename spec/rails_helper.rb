@@ -32,6 +32,7 @@ RSpec.configure do |config|
   config.include Paperclip::Shoulda::Matchers
   config.include FactoryGirl::Syntax::Methods
   config.raise_errors_for_deprecations!
+  config.include Devise::TestHelpers, type: :controller
 
   config.before(:each) do
     allow(BlogSetting).to receive(:theme).and_return('default')

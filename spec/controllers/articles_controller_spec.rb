@@ -2,10 +2,17 @@ require 'spec_helper'
 
 describe ArticlesController do
   let!(:articles) { create_list(:article, 8) }
-  before { Article.tire.index.refresh }
+  let!(:admin_user) { create(:user) }
+
+  before do
+    Article.tire.index.refresh
+    sign_in admin_user
+  end
 
   describe "#set_article" do
     it "calls set_article method when visit to show action" do
+      allow(controller).to receive(:set_comments).and_return(true)
+
       expect(controller).to receive(:set_article)
       get :show, id: 1
     end
