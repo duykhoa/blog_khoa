@@ -18,6 +18,8 @@
     input[type='submit'] {
       @extend textarea;
 
+      @include button-appearance();
+
       margin-left: 1%;
       width: 9%;
       font-weight: 700;

@@ -44,7 +44,7 @@ form#new_user {
     width: 100%;
     cursor: pointer;
 
-    @include transition(opacity 0.2s ease);
+    @include button-appearance();
 
     &:hover {
       opacity: 0.8;

@@ -3,3 +3,8 @@
   outline: none;
   color: $confession-white-color;
 }
+
+@mixin button-appearance {
+  @include transition(opacity 0.2s ease);
+  @include appearance(none);
+}
