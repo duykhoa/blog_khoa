@@ -28,10 +28,15 @@ if Rails.env.development?
 end
 
 User.create(
-  email: 'admin@phuongbui.me',
-  password: 'phuongbui.me'
-) unless User.find_by_email('admin@phuongbui.me')
+  email: 'phuong@poiu.com',
+  password: 'poiu.com'
+)
 
-BlogSetting::DEFAULT_SETTING.each do  |key, value|
-  BlogSetting.create(key: key, value: value)
-end
+User.create(
+  email: 'khoa@poiu.com',
+  password: 'poiu.com'
+)
+
+#BlogSetting::DEFAULT_SETTING.each do  |key, value|
+  #BlogSetting.create(key: key, value: value)
+#end
