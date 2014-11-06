@@ -1,14 +1,21 @@
 @import 'variables';
 
-svg {
-  symbol#icon-heart {
-    fill: $confession-gray-color;
-  }
-}
+.body-container {
+  width: $width;
+  margin: 0 auto;
 
-.container {
-  @include display(flex);
-  @include justify-content(flex-end);
+  .slogan {
+    margin-top: 35px;
+    padding-bottom: 30px;
+    width: 100%;
+
+    border-bottom: 2px solid $confession-dark-color;
+
+    h1 {
+      font-size: 40px;
+      font-weight: 300;
+    }
+  }
 }
 
 .main-content {

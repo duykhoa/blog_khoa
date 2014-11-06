@@ -7,20 +7,46 @@
 @import "comment";
 
 body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
   background: $confession-dark-color;
-  margin: 0 25px;
-  margin-top: 10px;
-  font-family: 'Arimo';
+  padding: 15px 0;
+}
+
+nav {
+  ul.category {
+    list-style: none;
+    padding: 15px 10px;
+    margin: 0;
+    border-bottom: 1px solid $confession-dark-color;
+
+    @include display(flex);
+    @include justify-content(space-between);
+
+    li {
+      display: inline-block;
+
+      a {
+        @include link-style(black);
+      }
+    }
+  }
 }
 
 .header-text {
+  width: $width;
+  margin: 0 auto;
   a {
     text-decoration: none;
 
     h1 {
       color: white;
-      font-weight: 700;
-      font-size: 30px;
+      font-weight: 300;
+      font-size: 24px;
       margin: 0;
     }
 

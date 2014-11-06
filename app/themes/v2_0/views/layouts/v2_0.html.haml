@@ -9,7 +9,11 @@
     = render "shared/metatag"
   %body
     #fb-root
-    .header
+    %header
       = render '/shared/header'
-    .container
-      = yield
+    .body-container
+      .slogan
+        %h1= BlogSetting.blog_sub_title
+      %nav
+        = render 'shared/nav'
+      -#= yield
