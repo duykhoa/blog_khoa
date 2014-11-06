@@ -1,7 +1,10 @@
 .article-container
+  .feature-image
   .title
     = link_to article.title, article_path(article.slug)
   .post-time
     = format_date(article.created_at)
   .content
-    = markdown.render(article.content).html_safe
+    = article.short_content
+  .read-more
+    = link_to "Read full story", article_path(article.slug)

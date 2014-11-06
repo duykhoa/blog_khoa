@@ -19,49 +19,33 @@
 }
 
 .main-content {
-  width: $width;
-
-  @media (max-width: 900px) {
-    width: $small-size-width;
-  }
-
-  color: $confession-white-color;
-
   .article-container {
     margin-bottom: 40px;
     padding-bottom: 20px;
     border-bottom: 1px dotted $confession-gray-color;
 
     .title {
-      width: 70%;
-      color: $confession-white-color;
-      font-size: 65px;
-      font-weight: 700;
+      color: $confession-dark-color;
+      font-size: 30px;
       line-height: 1.1em;
-
-      @media (max-width: 500px) {
-        font-size: 30px;
-      }
+      font-weight: 300;
 
       a {
-        @include link-style();
+        @include link-style($confession-dark-color);
       }
     }
 
     .post-time {
       color: $confession-gray-color;
-      margin-top: 20px;
+      font-size: 12px;
+      margin: 20px 0 10px 0;
     }
 
     .content {
-      font-size: 25px;
+      font-size: 17px;
       line-height: 1.6em;
-      width: 90%;
-      color: $confession-gray-color;
-
-      @media (max-width: 500px) {
-        font-size: 17px;
-      }
+      font-weight: 300;
+      color: $confession-dark-color;
 
       a {
         @include link-style();
@@ -73,6 +57,20 @@
 
       img, table, input {
         @extend iframe;
+      }
+    }
+
+    .read-more {
+      margin-top: 25px;
+      font-size: 14px;
+      background: $confession-gray-read-more-color;
+      border-radius: 3px;
+      padding: 5px 0;
+      text-align: center;
+
+      a {
+        @include link-style($confession-dark-color);
+        font-weight: 400;
       }
     }
   }
