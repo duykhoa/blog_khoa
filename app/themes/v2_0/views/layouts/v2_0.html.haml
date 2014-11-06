@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title= BlogSetting.blog_title
+    = stylesheet_link_tag    'v2_0/application'
+    = javascript_include_tag 'v2_0/application'
+    = csrf_meta_tags
+    = favicon_link_tag '/favicon.ico'
+    = render "shared/metatag"
+  %body
+    #fb-root
+    .header
+      = render '/shared/header'
+    .container
+      = yield

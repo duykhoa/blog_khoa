@@ -1,0 +1,85 @@
+@import 'variables';
+
+svg {
+  symbol#icon-heart {
+    fill: $confession-gray-color;
+  }
+}
+
+.container {
+  @include display(flex);
+  @include justify-content(flex-end);
+}
+
+.main-content {
+  width: $width;
+
+  @media (max-width: 900px) {
+    width: $small-size-width;
+  }
+
+  color: $confession-white-color;
+
+  .article-container {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted $confession-gray-color;
+
+    .title {
+      width: 70%;
+      color: $confession-white-color;
+      font-size: 65px;
+      font-weight: 700;
+      line-height: 1.1em;
+
+      @media (max-width: 500px) {
+        font-size: 30px;
+      }
+
+      a {
+        @include link-style();
+      }
+    }
+
+    .post-time {
+      color: $confession-gray-color;
+      margin-top: 20px;
+    }
+
+    .content {
+      font-size: 25px;
+      line-height: 1.6em;
+      width: 90%;
+      color: $confession-gray-color;
+
+      @media (max-width: 500px) {
+        font-size: 17px;
+      }
+
+      a {
+        @include link-style();
+      }
+
+      iframe {
+        max-width: 100% !important;
+      }
+
+      img, table, input {
+        @extend iframe;
+      }
+    }
+  }
+
+  .top-cover {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .article-wraper {
+    margin-top: 25px;
+    .article-container {
+      @extend .article-container;
+    }
+  }
+}
