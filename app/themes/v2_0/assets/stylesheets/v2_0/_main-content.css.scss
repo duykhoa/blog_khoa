@@ -20,6 +20,7 @@
 
 .main-content {
   @include display(flex);
+  @include justify-content(space-around);
 
   .article-container {
     margin-bottom: 40px;
