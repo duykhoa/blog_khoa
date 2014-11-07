@@ -29,6 +29,7 @@
     .feature-image {
       max-height: 400px;
       overflow: hidden;
+      margin-bottom: 10px;
 
       img {
         max-height: 400px;
@@ -74,14 +75,17 @@
 
     .read-more {
       margin-top: 25px;
-      font-size: 14px;
-      background: $confession-gray-read-more-color;
-      border-radius: 3px;
-      padding: 5px 0;
-      text-align: center;
 
       a {
+        display: block;
+        font-size: 14px;
+        background: $confession-gray-read-more-color;
+        border-radius: 3px;
+        padding: 5px 0;
+        text-align: center;
+
         @include link-style($confession-dark-color);
+        @include button-hover-effect();
         font-weight: 400;
       }
     }
