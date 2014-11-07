@@ -1,6 +1,9 @@
 class Article < ActiveRecord::Base
   default_scope lambda { order(created_at: :desc) }
 
+  has_attached_file :feature_image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/v2_0/missing.png"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
   belongs_to :category
   validates :title, presence: true
   validates :short_content, length: { maximum: 500 }
