@@ -4,12 +4,13 @@
   %meta{property: 'og:url', content: article_url(@article)}
 
 .main-content
-  .article-container
-    .title
-      = @article.title
-    .content
-      = @article.content.html_safe
-  .comment-box
-    = render partial: "/articles/comment_form", locals: { article: @article }
-    .comment-list
-      = render partial: "/articles/comment", collection: @comments
+  .article-wraper
+    .article-container
+      .title
+        = @article.title
+      .content
+        = @article.content.html_safe
+    .comment-box
+      -# FB comment
+  .right-container
+    = render partial: 'email_subscribes/form'
