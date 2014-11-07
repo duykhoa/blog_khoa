@@ -19,7 +19,7 @@ gem 'jbuilder', '~> 2.0'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'pg'
 gem 'haml'
-gem "paperclip", "~> 4.1"
+gem "paperclip", "~> 4.2"
 gem 'devise'
 gem 'rails_admin'
 gem 'friendly_id', '~> 5.0.0'
