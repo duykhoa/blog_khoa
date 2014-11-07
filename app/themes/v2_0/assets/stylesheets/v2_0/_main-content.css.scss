@@ -26,6 +26,16 @@
     padding-bottom: 20px;
     border-bottom: 1px dotted $confession-gray-color;
 
+    .feature-image {
+      max-height: 400px;
+      overflow: hidden;
+
+      img {
+        max-height: 400px;
+        max-width: 100%;
+      }
+    }
+
     .title {
       color: $confession-dark-color;
       font-size: 30px;
