@@ -19,6 +19,8 @@
 }
 
 .main-content {
+  @include display(flex);
+
   .article-container {
     margin-bottom: 40px;
     padding-bottom: 20px;
@@ -83,8 +85,15 @@
 
   .article-wraper {
     margin-top: 25px;
+    width: 70%;
+
     .article-container {
       @extend .article-container;
     }
+  }
+
+  .right-container {
+    min-width: 250px;
+    width: 30%;
   }
 }
