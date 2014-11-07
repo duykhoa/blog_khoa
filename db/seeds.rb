@@ -8,7 +8,7 @@
 
 
 CATEGORY = ['Marketing at Work', 'Marketing Stories', 'Random Stuff']
-#CATEGORY.each_with_index { |category, index| Category.create!(name: category, position: index) } if Category.count.eql? 0
+CATEGORY.each_with_index { |category, index| Category.create!(name: category, position: index) } if Category.count.eql? 0
 
 if Rails.env.development?
   Article.delete_all
@@ -37,6 +37,8 @@ User.create(
   password: 'poiu.com'
 )
 
-#BlogSetting::DEFAULT_SETTING.each do  |key, value|
-  #BlogSetting.create(key: key, value: value)
-#end
+BlogSetting.destroy_all
+
+BlogSetting::DEFAULT_SETTING.each do  |key, value|
+  BlogSetting.create(key: key, value: value)
+end

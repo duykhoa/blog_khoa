@@ -1,7 +1,7 @@
 class Article < ActiveRecord::Base
   default_scope lambda { order(created_at: :desc) }
 
-  acts_as_commentable
+  belongs_to :category
   validates :title, presence: true
   validates :short_content, length: { maximum: 500 }
 
@@ -31,6 +31,7 @@ class Article < ActiveRecord::Base
     indexes :content_latin, as: 'content.to_url', type: 'string', analyzer: 'snowball'
     indexes :short_content, type: 'string', analyzer: 'snowball'
     indexes :short_content_latin, as: 'short_content.to_url', type: 'string', analyzer: 'snowball'
+    indexes :category, as: 'category.name', index: :not_analyzed
     indexes :created_at, type: 'date'
     indexes :slug, index: :not_analyzed
   end
