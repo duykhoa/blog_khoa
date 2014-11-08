@@ -68,6 +68,7 @@ class Article < ActiveRecord::Base
       field :short_content
       field :content
       field :feature_image
+      field :category
     end
   end
 end
