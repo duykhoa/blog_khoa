@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   before_filter :authenticate_user!
+  before_action :category_list
 
   private
   def custom_theme
@@ -26,4 +27,8 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
+  def category_list
+    @categories ||= Category.all
+  end
 end
