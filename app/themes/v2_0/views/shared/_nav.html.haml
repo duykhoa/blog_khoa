@@ -1,8 +1,3 @@
 %ul.category
-  %li= link_to "Home", "#"
-  %li= link_to "Home", "#"
-  %li= link_to "Home", "#"
-  %li= link_to "Home", "#"
-  %li= link_to "Home", "#"
-  %li= link_to "Home", "#"
-  %li= link_to "Home", "#"
+  - @categories.each do |category|
+    %li= link_to category.name, root_path
