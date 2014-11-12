@@ -1,3 +1,3 @@
 %ul.category
   - @categories.each do |category|
-    %li= link_to category.name, root_path
+    %li= link_to category.name, seo_search_path(category.name)

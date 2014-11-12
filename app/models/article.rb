@@ -34,7 +34,7 @@ class Article < ActiveRecord::Base
     indexes :content_latin, as: 'content.to_url', type: 'string', analyzer: 'snowball'
     indexes :short_content, type: 'string', analyzer: 'snowball'
     indexes :short_content_latin, as: 'short_content.to_url', type: 'string', analyzer: 'snowball'
-    indexes :category, as: 'category.name', index: :not_analyzed
+    indexes :category_name, as: 'category.sanitize_name', type: 'string', index: :not_analyzed
     indexes :created_at, type: 'date'
     indexes :slug, index: :not_analyzed
     indexes :feature_image, as: 'feature_image.url(:medium)', index: :not_analyzed
@@ -43,6 +43,10 @@ class Article < ActiveRecord::Base
   class << self
     def search(search_params = {})
       tire.search do
+        if search_params[:category_name].present? && search_params[:category_name] != '-'
+          filter :term, category_name: search_params[:category_name]
+        end
+
         query do
           if search_params[:query].present? && search_params[:query] != '-'
             string search_params[:query], fields: %W(title title_latin short_content short_content_latin content content_latin)

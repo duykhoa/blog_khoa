@@ -10,6 +10,11 @@ class ArticlesController < ApplicationController
   def show
   end
 
+  def search
+    @articles = Article.search(category_params)
+    render "index"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
