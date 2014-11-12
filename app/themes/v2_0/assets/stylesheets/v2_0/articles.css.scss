@@ -33,6 +33,11 @@ nav {
 
       a {
         @include link-style(black);
+        @include transition(color 0.2s ease-in-out);
+
+        &:hover {
+          color: $confession-gray-color;
+        }
       }
 
       &.active {
