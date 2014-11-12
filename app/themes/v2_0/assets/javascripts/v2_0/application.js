@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require confession/articles
+//= require v2_0/articles
+//= require jquery.share
