@@ -10,8 +10,11 @@
         = @article.title
       .content
         = @article.content.html_safe
-    .comment-box
-      -# FB comment
   .right-container
     = render partial: 'email_subscribes/form'
+
 #share-social
+.fb-comment-wrapper
+  .fb-comments(data-href="#{request.original_url}" data-numposts="5" data-colorscheme="light")
+
+= render partial: 'shared/facebook_comment'
