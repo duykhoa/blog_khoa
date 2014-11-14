@@ -3,14 +3,12 @@ class BlogSetting < ActiveRecord::Base
     {
       mailchimp_api: '8ae750bfd7f6d3d8f7a5c3c45a2a9a2a-us8',
       mailchimp_list: '45c3380fe4',
-      ga_id: '',
       fb_app_id: '',
       blog_title: 'Phuong Bui | Marketing Blog',
       blog_sub_title: 'A Marketing Blog (mostly stories)',
       url: 'http://phuongbui.me',
       fb_image: 'http://phuongbui.me/fbog.jpg',
       fb_description: 'Phuong Bui Marketing Blog sample content',
-      google_analytic_id: 'UA-52636106-1',
       theme: 'v2_0',
       subscribe_email: 'Please subscribe'
     }
