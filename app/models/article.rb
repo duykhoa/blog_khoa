@@ -5,6 +5,8 @@ class Article < ActiveRecord::Base
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
 
   belongs_to :category
+
+  validates :category, presence: true
   validates :title, presence: true
   validates :short_content, length: { maximum: 500 }
 
