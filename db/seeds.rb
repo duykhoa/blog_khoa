@@ -28,13 +28,8 @@ if Rails.env.development?
 end
 
 User.create(
-  email: 'phuong@poiu.com',
-  password: 'poiu.com'
-)
-
-User.create(
-  email: 'khoa@poiu.com',
-  password: 'poiu.com'
+  email: 'admin@admin.com',
+  password: '1234qwer'
 )
 
 BlogSetting.destroy_all
