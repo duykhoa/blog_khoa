@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
     rescue_from ActionController::RoutingError, ActionController::UnknownController, ::AbstractController::ActionNotFound, ActiveRecord::RecordNotFound, with: lambda { |exception| render_error 404, exception }
   end
 
-  before_filter :authenticate_user!
   before_action :category_list
 
   private
