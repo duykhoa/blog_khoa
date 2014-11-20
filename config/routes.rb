@@ -17,6 +17,12 @@ Rails.application.routes.draw do
   get 'feed', to: 'articles#index', defaults: {format: 'rss'}, as: :feed
   get '/(page/:page)' => 'articles#index', as: :index_seo
 
-  get '*a', to: 'errors#error_404'
   root 'articles#index'
+
+  namespace :v2_admin do
+    root 'homes#index'
+    resources "homes"
+  end
+
+  get '*a', to: 'errors#error_404'
 end
