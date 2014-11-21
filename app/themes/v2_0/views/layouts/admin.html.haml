@@ -1,11 +1,30 @@
 !!!
-%html
+%html.fixed.html.sidebar-left-xs
   %head
-    %title= BlogSetting.blog_title
+    %title= BlogSetting.blog_title + " Admin"
     = stylesheet_link_tag    'v2_0/application'
     = javascript_include_tag 'v2_0/application'
     = csrf_meta_tags
     = favicon_link_tag '/favicon.ico'
-  %body
-    .container
-      = yield
+  %body.admin
+    %section.body
+      %header.header
+        = render partial: 'shared/v2_0_admin/header'
+
+      .inner-wrapper
+        %aside#sidebar-left.sidebar-left
+          .sidebar-header
+            .sidebar-title
+              Admin Panel Tenluaweb
+            .nano.has-scrollbar
+              .nano-content
+                Slide Bar
+              .nano-pane
+
+        %section.content-body
+          %header.page-header
+            %h2 Page
+            .right-wrapper.pull-right
+          .row
+            .col-lg-12
+              Test
