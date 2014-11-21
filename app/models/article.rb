@@ -39,6 +39,7 @@ class Article < ActiveRecord::Base
     indexes :short_content, type: 'string', analyzer: 'snowball'
     indexes :short_content_latin, as: 'short_content.to_url', type: 'string', analyzer: 'snowball'
     indexes :category_name, as: 'category.sanitize_name', type: 'string', index: :not_analyzed
+    indexes :category_latin, as: 'category.name', type: 'string', index: :not_analyzed
     indexes :created_at, type: 'date'
     indexes :slug, index: :not_analyzed
     indexes :feature_image, as: 'feature_image.url(:medium)', index: :not_analyzed

@@ -3,3 +3,21 @@
   .right-wrapper.pull-right
 .row
   .col-lg-12
+    %table#articles.table.table-hover.mb-none
+      %thead
+        %tr
+          %th
+          %th Title
+          %th Category
+          %th Post Date
+          %th Action
+      %tbody
+        - @articles.each do |article|
+          %tr
+            %td
+            %td= article.title
+            %td= article.category_latin
+            %td= article.created_at
+            %td.actions-hover.action-fade
+              = link_to "#" do
+                = fa_icon "edit"
