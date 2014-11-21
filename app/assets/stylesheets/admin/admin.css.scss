@@ -31,4 +31,25 @@ body.admin {
       color: $admin-green-color;
     }
   }
+
+  .btn {
+    background: $admin-green-color;
+
+    @include transition(opacity 0.3s ease, transform 1s ease-out);
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+      @include transform(translateX(10px));
+    }
+  }
+
+  header.page-header {
+    a.btn {
+      color: $admin-white-text-color;
+      margin-top: 5px;
+      font-family: "Lobster", Arial, sans-serif;
+      font-size: 18px;
+    }
+  }
 }

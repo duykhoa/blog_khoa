@@ -1,5 +1,7 @@
 %header.page-header
-  %h2 Page
+  %h2 Post
+  .new-post.pull-left
+    = link_to "Add new Post", new_v2_admin_article_path, class: 'btn'
   .right-wrapper.pull-right
 .row
   .col-lg-12
@@ -27,7 +29,7 @@
             %td.actions-hover.action-fade
               = link_to "#" do
                 = fa_icon "edit"
-              = link_to v2_admin_article_path(article.id), method: :delete do
+              = link_to v2_admin_article_path(article.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-row' do
                 = fa_icon "trash-o"
     .paginate
       %span

@@ -8,6 +8,10 @@ class V2Admin::ArticlesController < V2Admin::HomesController
     @articles = Article.search(index_params(params))
   end
 
+  def new
+    @article = Article.new
+  end
+
   def destroy
     status = @article.destroy ? { success: true, action: :destroy } : { success: false, action: destroy }
 
