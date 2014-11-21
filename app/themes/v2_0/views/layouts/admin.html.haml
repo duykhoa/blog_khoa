@@ -1,5 +1,5 @@
 !!!
-%html.fixed.html.sidebar-left-xs
+%html.fixed.js.flexbox.flexboxlegacy.csstransforms.csstransforms3d.no-overflowscrolling.no-mobile-device.custom-scroll.sidebar-left-xs
   %head
     %title= BlogSetting.blog_title + " Admin"
     = stylesheet_link_tag    'v2_0/application'
@@ -20,14 +20,17 @@
           .sidebar-header
             .sidebar-title
               Admin Panel Tenluaweb
-            .nano.has-scrollbar
-              .nano-content
-                %nav.menu.nav-main(role = "navigation")
-                  %ul.nav.nav-main
+          .nano.has-scrollbar
+            .nano-content
+              %nav.menu.nav-main(role = "navigation")
+                %ul.nav.nav-main
+                  - 30.times do
                     %li
                       = link_to v2_admin_root_path do
                         = fa_icon 'home'
                         %span Dash Board
+            .nano-pane
+              .nano-slider
 
         %section.content-body
           %header.page-header

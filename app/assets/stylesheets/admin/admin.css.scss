@@ -1,14 +1,13 @@
 @import "theme";
 
+html.fixed {
+  height: 100%;
+}
+
 body.admin {
+  height: 100%;
 
-  header {
-    padding: 0;
-  }
-
-  .nav {
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
+  .nano-content {
+    height: 100%;
   }
 }
