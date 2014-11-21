@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   namespace :v2_admin do
     root 'homes#index'
     resources "homes"
+    resources "articles"
   end
 
   get '*a', to: 'errors#error_404'

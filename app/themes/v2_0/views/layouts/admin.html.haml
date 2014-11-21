@@ -19,9 +19,4 @@
         %aside#sidebar-left.sidebar-left
           = render partial: 'shared/v2_0_admin/sidebar_left'
         %section.content-body
-          %header.page-header
-            %h2 Page
-            .right-wrapper.pull-right
-          .row
-            .col-lg-12
-              Test
+          = yield

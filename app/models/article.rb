@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
   default_scope lambda { order(created_at: :desc) }
 
+  PER_PAGE = 20
+
   has_attached_file :feature_image, :styles => { :medium => "730x400#" }, :default_url => "missing.png"
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
 
@@ -43,8 +45,12 @@ class Article < ActiveRecord::Base
   end
 
   class << self
+    def page(params)
+      params.key?(:page) ? params[:page] : 1
+    end
+
     def search(search_params = {})
-      tire.search do
+      tire.search(per_page: PER_PAGE, page: page(search_params)) do
         if search_params[:category_name].present? && search_params[:category_name] != '-'
           filter :term, category_name: search_params[:category_name]
         end
