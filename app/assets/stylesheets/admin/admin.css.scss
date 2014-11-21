@@ -1,4 +1,5 @@
 @import "theme";
+@import "admin_font";
 
 html.fixed {
   height: 100%;
@@ -9,5 +10,26 @@ body.admin {
 
   .nano-content {
     height: 100%;
+  }
+
+  .logo-container {
+    display: inline;
+  }
+
+  .logo-block {
+    display: inline-block;
+    margin-left: 10px;
+
+    .logo-link {
+      font-size: 18px;
+      font-family: "Lobster", Arial, sans-serif;
+    }
+
+    .logo-text {
+      text-align: right;
+      font-size: 11px;
+      font-weight: 700;
+      color: $admin-green-color;
+    }
   }
 }

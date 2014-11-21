@@ -1,5 +1,14 @@
 .logo-container
-  = link_to BlogSetting.blog_title, v2_admin_root_path, class: "logo"
+  .logo-block
+    .logo-link
+      = BlogSetting.blog_title
+    .logo-text
+      Admin
 .header-right
-  Welcome!
-  -#= current_admin_user
+  .userbox#userbox
+    .profile-info
+      %span.name
+        Welcome,
+        = current_user
+      %span.role
+        Administrator
