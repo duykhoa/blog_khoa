@@ -17,7 +17,9 @@
             %td
             %td= article.title
             %td= article.category_latin
-            %td= article.created_at
+            %td= format_date article.created_at
             %td.actions-hover.action-fade
               = link_to "#" do
                 = fa_icon "edit"
+              = link_to "#" do
+                = fa_icon "trash-o"
