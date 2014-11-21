@@ -3,8 +3,12 @@ module ApplicationHelper
     @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML)
   end
 
-  def format_date(date)
-    DateTime.parse(date).strftime('%B %-d, %Y')
+  def format_date(date, without_hours: true)
+    if without_hours
+      DateTime.parse(date).strftime('%B %-d, %Y')
+    else
+      DateTime.parse(date).strftime('<p>%B %-d, %Y</p><p>%r</p>')
+    end
   end
 
   def pagination_previous(articles, page)

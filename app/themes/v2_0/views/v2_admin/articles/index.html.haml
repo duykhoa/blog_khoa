@@ -6,7 +6,7 @@
     %table#articles.table.table-hover.mb-none
       %thead
         %tr
-          %th
+          %th= check_box_tag :all
           %th Title
           %th Category
           %th Post Date
@@ -14,10 +14,10 @@
       %tbody
         - @articles.each do |article|
           %tr
-            %td
+            %td= check_box_tag :select_box, nil, false, data: {article_id: article.id}
             %td= article.title
             %td= article.category_latin
-            %td= format_date article.created_at
+            %td= format_date(article.created_at, without_hours: false).html_safe
             %td.actions-hover.action-fade
               = link_to "#" do
                 = fa_icon "edit"
