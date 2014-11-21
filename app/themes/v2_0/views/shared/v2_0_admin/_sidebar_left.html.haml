@@ -1,0 +1,12 @@
+.sidebar-header
+  .sidebar-title
+    Admin Panel Tenluaweb
+.nano.has-scrollbar
+  .nano-content
+    %nav.menu.nav-main(role = "navigation")
+      %ul.nav.nav-main
+        - 30.times do
+          %li
+            = link_to v2_admin_root_path do
+              = fa_icon 'home'
+              %span Dash Board
