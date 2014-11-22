@@ -33,6 +33,7 @@ gem 'themes_on_rails'
 gem 'bourbon'
 gem 'redcarpet'
 gem 'kaminari'
+gem 'simple_form'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie', group: :production
 gem 'font-awesome-sass'

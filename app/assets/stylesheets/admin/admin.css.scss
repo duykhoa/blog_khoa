@@ -32,7 +32,7 @@ body.admin {
     }
   }
 
-  .btn {
+  .btn.btn-custom {
     background: $admin-green-color;
 
     @include transition(opacity 0.3s ease, transform 1s ease-out);
@@ -51,5 +51,30 @@ body.admin {
       font-family: "Lobster", Arial, sans-serif;
       font-size: 18px;
     }
+  }
+
+  .input.required {
+    label.required {
+      font-size: 15px;
+      color: $admin-gray-text-form-color;
+    }
+
+    abbr {
+      color: red;
+    }
+  }
+
+  .row {
+    background: white;
+    padding: 15px 0;
+    border-radius: 3px;
+  }
+
+  section.content-body {
+    background: #EEE;
+  }
+
+  .input {
+    width: 100%;
   }
 }
