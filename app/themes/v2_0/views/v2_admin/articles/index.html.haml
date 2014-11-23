@@ -27,7 +27,7 @@
             %td= article.category_latin
             %td= format_date(article.created_at, without_hours: false).html_safe
             %td.actions-hover.action-fade
-              = link_to "#" do
+              = link_to edit_v2_admin_article_path(article) do
                 = fa_icon "edit"
               = link_to v2_admin_article_path(article.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-row' do
                 = fa_icon "trash-o"

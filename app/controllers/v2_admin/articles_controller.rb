@@ -13,12 +13,14 @@ class V2Admin::ArticlesController < V2Admin::HomesController
   end
 
   def create
-    debugger
     @article = Article.new(article_params)
 
     @article.save
 
     redirect_to v2_admin_articles_path
+  end
+
+  def edit
   end
 
   def destroy
