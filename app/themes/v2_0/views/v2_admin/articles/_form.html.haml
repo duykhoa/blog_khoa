@@ -1,8 +1,26 @@
 = simple_form_for @article do |f|
-  .col-lg-8
-    = f.input :title, label: false, input_html: { placeholder: "Your Post title here", class: "form-control" }
-    = f.input :content, label: false, input_html: { class: "form-control input-lg mb-md" }
-  .col-lg-4
-    = f.association :category, label: false, prompt: "Choose a category", input_html: { class: 'form-control mb-md' }
-    %span.btn.btn-default.btn-file
-      = f.input :feature_image
+  .row
+    .col-lg-8
+      = f.input :title, label: false, input_html: { placeholder: "Your Post title here", class: "form-control" }
+      = f.input :content, label: false, input_html: { class: "form-control input-lg mb-md" }
+    .col-lg-4
+      = f.association :category, label: false, prompt: "Choose a category", input_html: { class: 'form-control' }
+      %span.btn.btn-default.btn-file
+        = f.input :feature_image
+      .row
+        .col-lg-12
+          = f.input :short_content, label: false, input_html: { placeholder: "Exerpt", class: 'form-control' }
+
+      .row
+        .col-lg-12
+          %section.panel
+            %header.panel-heading
+              %h2.panel-title Publishing
+            .panel-body
+              .row
+                .col-lg-6
+                  = f.submit "Publish", class: 'btn article-submit-button'
+                .col-lg-6
+                  = f.submit "Save Draft", class: 'btn btn-default btn-custom-default'
+                -#.col-lg-4
+                  -#= f.button :preview, class: 'btn btn-success'
