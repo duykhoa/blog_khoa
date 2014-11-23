@@ -21,7 +21,7 @@ class Article < ActiveRecord::Base
   friendly_id :article_url_slug, use: [:slugged, :finders]
 
   def article_url_slug
-    title.to_url
+    title.to_url if title
   end
 
   def related_articles(number = 3)

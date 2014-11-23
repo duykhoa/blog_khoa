@@ -12,6 +12,15 @@ class V2Admin::ArticlesController < V2Admin::HomesController
     @article = Article.new
   end
 
+  def create
+    debugger
+    @article = Article.new(article_params)
+
+    @article.save
+
+    redirect_to v2_admin_articles_path
+  end
+
   def destroy
     status = @article.destroy ? { success: true, action: :destroy } : { success: false, action: destroy }
 
@@ -21,10 +30,14 @@ class V2Admin::ArticlesController < V2Admin::HomesController
   private
 
   def set_article
-    @article = Article.find article_param[:id]
+    @article = Article.find article_id_param[:id]
   end
 
-  def article_param
+  def article_id_param
     params.permit :id
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :content, :category_id, :feature_image, :short_content)
   end
 end
