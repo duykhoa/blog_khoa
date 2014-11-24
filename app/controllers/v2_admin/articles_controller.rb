@@ -1,6 +1,6 @@
 class V2Admin::ArticlesController < V2Admin::HomesController
 
-  before_action :set_article, only: [:show, :edit, :destroy]
+  before_action :set_article, only: [:show, :edit, :destroy, :update]
 
   include ParamsExt
 
@@ -21,6 +21,12 @@ class V2Admin::ArticlesController < V2Admin::HomesController
   end
 
   def edit
+  end
+
+  def update
+    @article.update(article_params)
+
+    redirect_to v2_admin_articles_path
   end
 
   def destroy
