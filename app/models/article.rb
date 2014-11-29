@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
   default_scope lambda { order(created_at: :desc) }
 
   PER_PAGE = 20
+  DRAFT = "Save Draft"
 
   has_attached_file :feature_image, :styles => { :medium => "730x400#" }, :default_url => "missing.png"
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
@@ -27,6 +28,12 @@ class Article < ActiveRecord::Base
   def related_articles(number = 3)
     self.class.where.not(id: id).limit(number)
   end
+
+  def create_or_update_with_commit_type(commit_type)
+    self.publish = false if commit_type.eql?(DRAFT)
+    self.save
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

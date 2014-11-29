@@ -15,7 +15,7 @@ class V2Admin::ArticlesController < V2Admin::HomesController
   def create
     @article = Article.new(article_params)
 
-    @article.save
+    @article.create_or_update_with_commit_type(commit_type_param[:commit])
 
     redirect_to v2_admin_articles_path
   end
@@ -47,5 +47,9 @@ class V2Admin::ArticlesController < V2Admin::HomesController
 
   def article_params
     params.require(:article).permit(:title, :content, :category_id, :feature_image, :short_content)
+  end
+
+  def commit_type_param
+    params.permit :commit
   end
 end
