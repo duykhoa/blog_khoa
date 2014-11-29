@@ -30,7 +30,7 @@ class Article < ActiveRecord::Base
   end
 
   def create_or_update_with_commit_type(commit_type)
-    self.publish = false if commit_type.eql?(DRAFT)
+    self.publish = published_status(commit_type)
     self.save
   end
 
@@ -95,5 +95,11 @@ class Article < ActiveRecord::Base
       field :feature_image
       field :category
     end
+  end
+
+  private
+
+  def published_status(commit_type)
+    commit_type.eql?(DRAFT) ? false : true
   end
 end
