@@ -106,3 +106,13 @@ body.admin {
     border: 1px solid $admin-gray-border-color;
   }
 }
+
+.label.published {
+  font-size: 11px;
+  background: $admin-green-color;
+}
+
+.label.draft {
+  @extend .label.published;
+  background: $admin-orange-color;
+}

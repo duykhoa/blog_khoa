@@ -17,14 +17,17 @@
           %th= check_box_tag :all
           %th Title
           %th Category
+          %th Published
           %th Post Date
           %th Action
       %tbody
         - @articles.each do |article|
+          - decorated_article = ArticleDecorator.decorate(article)
           %tr
             %td= check_box_tag :select_box, nil, false, data: {article_id: article.id}
             %td= article.title
             %td= article.category_latin
+            %td= raw decorated_article.publish_type
             %td= format_date(article.created_at, without_hours: false).html_safe
             %td.actions-hover.action-fade
               = link_to edit_v2_admin_article_path(article) do

@@ -81,6 +81,11 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.4)
+    draper (1.4.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.2.1)
     factory_girl (4.4.0)
@@ -174,6 +179,7 @@ GEM
     rake (10.3.2)
     redcarpet (3.2.0)
     remotipart (1.2.1)
+    request_store (1.1.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec-core (3.0.2)
@@ -271,6 +277,7 @@ DEPENDENCIES
   database_cleaner
   debugger
   devise
+  draper
   factory_girl_rails
   faker
   font-awesome-sass

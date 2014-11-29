@@ -50,6 +50,7 @@ class Article < ActiveRecord::Base
     indexes :created_at, type: 'date'
     indexes :slug, index: :not_analyzed
     indexes :feature_image, as: 'feature_image.url(:medium)', index: :not_analyzed
+    indexes :publish, type: 'boolean', index: :not_analyzed
   end
 
   class << self

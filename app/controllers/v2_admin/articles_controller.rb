@@ -26,6 +26,8 @@ class V2Admin::ArticlesController < V2Admin::HomesController
   def update
     @article.update(article_params)
 
+    @article.create_or_update_with_commit_type(commit_type_param[:commit])
+
     redirect_to v2_admin_articles_path
   end
 
