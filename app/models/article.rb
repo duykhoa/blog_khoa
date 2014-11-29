@@ -58,10 +58,14 @@ class Article < ActiveRecord::Base
       params.key?(:page) ? params[:page] : 1
     end
 
-    def search(search_params = {})
+    def search(finder = nil, search_params = {})
       tire.search(per_page: PER_PAGE, page: page(search_params)) do
-        if search_params[:category_name].present? && search_params[:category_name] != '-'
+        if search_params.key?(:category_name) && search_params[:category_name] != '-'
           filter :term, category_name: search_params[:category_name]
+        end
+
+        unless finder.eql?(:all)
+          filter :term, publish: true
         end
 
         query do
