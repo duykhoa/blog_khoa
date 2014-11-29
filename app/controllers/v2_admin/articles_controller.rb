@@ -32,7 +32,7 @@ class V2Admin::ArticlesController < V2Admin::HomesController
   end
 
   def destroy
-    status = @article.destroy ? { success: true, action: :destroy } : { success: false, action: destroy }
+    status = @article.destroy ? { success: true, action: :destroy } : { success: false, action: :destroy }
 
     redirect_to v2_admin_articles_path, flash: status
   end
