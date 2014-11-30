@@ -40,6 +40,8 @@ gem 'sprockets-rails', :require => 'sprockets/railtie', group: :production
 gem 'font-awesome-sass'
 gem 'acts_as_commentable'
 
+gem 'dropbox-api'
+
 group :test, :development do
   gem 'spring'
   gem 'faker'
