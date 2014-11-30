@@ -46,6 +46,7 @@ group :test, :development do
   gem 'rspec-rails', '~> 3.0.1'
   gem 'debugger'
   gem 'simplecov'
+  gem "spring-commands-rspec"
 end
 
 group :test do
