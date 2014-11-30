@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe BlogSeo, :type => :model do
-  it { should validate_presence_of(:value) }
+  #it { should validate_presence_of(:value) }
 
   describe ".metatags" do
     let!(:blog_seo) { create(:blog_seo) }
