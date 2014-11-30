@@ -31,7 +31,7 @@ describe Article do
       before(:each) { Article.tire.index.refresh }
 
       it 'returns articles matched the query in title' do
-        search_result = Article.search(search_params)
+        search_result = Article.search(:all, search_params)
         expect(search_result.count).to eq(1)
       end
     end
@@ -45,6 +45,37 @@ describe Article do
       it "returns all articles" do
         expect(Article.search(search_params).count).to eq(2)
       end
+    end
+  end
+
+  describe "#create_or_update_with_commit_type" do
+    let(:article) { build(:article) }
+
+    context "save as draft" do
+      before { article.create_or_update_with_commit_type(Article::DRAFT) }
+
+      it "saves new article as draft" do
+        expect(article.publish?).to be false
+      end
+    end
+
+    context "publish new article" do
+      before { article.create_or_update_with_commit_type(:no_draft) }
+
+      it "publishes article" do
+        expect(article.publish?).to be true
+      end
+    end
+  end
+
+  describe "#related_articles" do
+    let!(:article) { create(:article) }
+    let!(:other_articles) { create_list(:article, 3) }
+
+    before { Article.tire.index.refresh }
+
+    it "returns a list of related articles" do
+      expect(article.related_articles).not_to include(:article)
     end
   end
 end
