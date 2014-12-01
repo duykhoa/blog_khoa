@@ -1,8 +1,6 @@
 class DropboxUploader
   #Dropbox::API::Client.new(token: Settings.dropbox.access_token, secret: Settings.dropbox.access_secret)
 
-  attr_reader :uploader
-
   def initialize
     @uploader = Dropbox::API::Client.new(token: Settings.dropbox.access_token, secret: Settings.dropbox.access_secret)
   end
