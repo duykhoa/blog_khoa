@@ -93,6 +93,8 @@ body.admin {
     color: $admin-gray-text-form-color;
     border: 1px solid $admin-green-color;
     background: white;
+    padding-left: 25px;
+    padding-right: 25px;
 
     @include transition(all 0.8s ease-in-out);
 
