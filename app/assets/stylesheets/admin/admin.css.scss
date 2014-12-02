@@ -1,3 +1,7 @@
+@import "variables";
+@import "bourbon";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "theme";
 @import "admin_font";
 @import "summernote/summernote";
@@ -44,6 +48,10 @@ body.admin {
       opacity: 1;
       @include transform(translateX(10px));
     }
+  }
+
+  .btn-file {
+    width: 100%;
   }
 
   header.page-header {

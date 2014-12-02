@@ -14,6 +14,3 @@
 //= require jquery_ujs
 //= require v2_0/articles
 //= require jquery.share
-//= require admin/home
-//= require summernote/summernote
-//= require notify.min
