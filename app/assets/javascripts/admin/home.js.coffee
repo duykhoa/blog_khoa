@@ -4,11 +4,18 @@ admin_ready = () ->
     height: 300,
     onImageUpload: (files, editor, welEditable) ->
       sendFile files[0], (data) ->
-        debugger
         editor.insertImage(welEditable, data.path)
   )
 
+  $(document).ajaxStart () ->
+     NProgress.start()
+
+  $(document).ajaxComplete () ->
+     NProgress.done()
+
   sendFile = (file, callback) ->
+    # TODO check file is less than 1MB
+
     data = new FormData()
     data.append("path", file)
     $.ajax {
@@ -19,7 +26,6 @@ admin_ready = () ->
       processData: false,
       type: 'POST',
       success: (data) ->
-        debugger
         callback(data)
     }
 $(document).ready(admin_ready)
