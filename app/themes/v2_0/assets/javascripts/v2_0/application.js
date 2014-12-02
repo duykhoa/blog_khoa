@@ -16,3 +16,4 @@
 //= require jquery.share
 //= require admin/home
 //= require summernote/summernote
+//= require notify.min

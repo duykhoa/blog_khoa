@@ -116,3 +116,12 @@ body.admin {
   @extend .label.published;
   background: $admin-orange-color;
 }
+
+#nprogress .bar {
+  background: $admin-green-color !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: $admin-light-green-color !important;
+  border-left-color: $admin-light-green-color !important;
+}

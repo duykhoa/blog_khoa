@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :v2_admin do
+    resources :assets, only: :create
+  end
+
   resources :email_subscribes, only: [:index, :create]
   resources :comments, only: [:create]
 
