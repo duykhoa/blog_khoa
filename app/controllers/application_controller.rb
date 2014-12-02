@@ -28,6 +28,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def category_list
-    @categories ||= Category.all
+    @categories ||= Category.list
   end
 end

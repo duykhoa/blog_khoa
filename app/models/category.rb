@@ -4,6 +4,10 @@ class Category < ActiveRecord::Base
     name.parameterize_string
   end
 
+  def self.list
+    @@categories ||= all
+  end
+
   rails_admin do
   end
 end
