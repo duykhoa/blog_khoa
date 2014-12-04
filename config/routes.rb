@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   namespace :v2_admin do
     resources :assets, only: :create
+    resources :blog_settings, only: :index
+
+    patch 'blog_settings/updates' => 'blog_settings#update', as: :v2_admin_blog_settings
   end
 
   resources :email_subscribes, only: [:index, :create]
@@ -29,5 +32,5 @@ Rails.application.routes.draw do
     resources "articles"
   end
 
-  get '*a', to: 'errors#error_404'
+  get '*a', to: 'errors#error_404' if Rails.env.production?
 end

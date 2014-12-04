@@ -88,7 +88,7 @@ body.admin {
     width: 100%;
   }
 
-  input[type='submit'].article-submit-button {
+  input[type='submit'].article-submit-button, input[type='submit'].blog-settings-submit-button {
     font-size: 14px;
     color: $admin-gray-text-form-color;
     border: 1px solid $admin-green-color;
@@ -134,4 +134,18 @@ body.admin {
 #nprogress .spinner-icon {
   border-top-color: $admin-light-green-color !important;
   border-left-color: $admin-light-green-color !important;
+}
+
+#blog_settings_form {
+  label {
+    color: $admin-gray-text-form-color;
+    font-size: 15px;
+    abbr {
+      display: none;
+    }
+  }
+
+  .input {
+    margin-bottom: 10px;
+  }
 }
