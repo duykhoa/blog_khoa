@@ -5,12 +5,12 @@ class BlogSetting < ActiveRecord::Base
       mailchimp_list: '45c3380fe4',
       fb_app_id: '',
       blog_title: 'Phuong Bui | Marketing Blog',
-      blog_sub_title: 'A Marketing Blog (mostly stories)',
+      blog_description: 'A Marketing Blog (mostly stories)',
       url: 'http://phuongbui.me',
       fb_image: 'http://phuongbui.me/fbog.jpg',
       fb_description: 'Phuong Bui Marketing Blog sample content',
       theme: 'v2_0',
-      subscribe_email: 'Please subscribe'
+      email_subscriber_text: 'Please subscribe'
     }
 
   after_save :restart_setting
