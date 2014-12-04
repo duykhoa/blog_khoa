@@ -10,7 +10,7 @@
     %section.panel
       .panel-body
         .row
-          = simple_form_for :blog_setting, url: v2_admin_blog_settings_path, method: :patch, html: { class: 'form-horizontal form-bordered', id: 'blog_settings_form' } do |f|
+          = simple_form_for :blog_setting, url: v2_admin_update_blog_settings_path, method: :patch, html: { class: 'form-horizontal form-bordered', id: 'blog_settings_form' } do |f|
 
             .form-group
               = f.label :blog_title, class: 'control-label col-md-3'

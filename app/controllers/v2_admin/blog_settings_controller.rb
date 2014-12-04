@@ -5,5 +5,6 @@ class V2Admin::BlogSettingsController < ApplicationController
   end
 
   def update
+    debugger
   end
 end
