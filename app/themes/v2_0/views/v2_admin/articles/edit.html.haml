@@ -1,5 +1,7 @@
 %header.page-header
   %h2 Edit post
+  .back.pull-left
+    = link_to "Go Back", v2_admin_articles_path, class: 'btn btn-default btn-custom-default'
 .row
   .col-lg-12
     = render partial: 'form'
