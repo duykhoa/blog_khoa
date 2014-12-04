@@ -147,5 +147,9 @@ body.admin {
 
   .input {
     margin-bottom: 10px;
+
+    input, textarea {
+      font-weight: 400;
+    }
   }
 }

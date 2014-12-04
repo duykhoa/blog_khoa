@@ -21,7 +21,6 @@ class BlogSetting < ActiveRecord::Base
     @@settings ||= BlogSetting.all.inject({}) { |hash, setting| hash.merge(setting.key => setting.value) }
   end
 
-
   class << self
     DEFAULT_SETTING.each do |key, value|
       define_method "#{key}" do
