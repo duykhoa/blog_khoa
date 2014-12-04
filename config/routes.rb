@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :v2_admin do
+  get 'email_subscribers/index'
+  end
+
+  namespace :v2_admin do
     resources :assets, only: :create
     resources :blog_settings, only: :index
 
