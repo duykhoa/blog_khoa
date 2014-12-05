@@ -9,7 +9,7 @@
       .title
         = @article.title
       .content
-        = @article.content.html_safe
+        = markdown.render(@article.content).html_safe
   .right-container
     = render partial: 'email_subscribes/form'
 
