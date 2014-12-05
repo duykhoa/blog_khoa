@@ -13,6 +13,10 @@
   .right-container
     = render partial: 'email_subscribes/form'
 
+
+.fb-like-container
+  .fb-like{data: { href: article_url(@article.slug), layout: "standard", action: "like", 'show-faces' => "false", share: "false", send: "false" } }
+
 #share-social
 .fb-comment-wrapper
   .fb-comments(data-href="#{request.original_url}" data-numposts="5" data-colorscheme="light")

@@ -100,6 +100,12 @@ form#new_user {
   }
 }
 
+.fb-like-container {
+  margin-bottom: 10px;
+  height: 50px;
+  overflow: hidden;
+}
+
 a.share-square {
   background: url(asset-path('v2_0/images/social-icons.png')) no-repeat scroll left top transparent;
 
