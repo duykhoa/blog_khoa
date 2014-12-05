@@ -81,4 +81,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.assets.enabled = true
+  config.assets.precompile += %w( v2_0/images/social-icons.png )
 end

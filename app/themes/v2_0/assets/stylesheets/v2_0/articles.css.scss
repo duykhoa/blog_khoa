@@ -99,3 +99,23 @@ form#new_user {
     }
   }
 }
+
+a.share-square {
+  background: url(asset-path('v2_0/images/social-icons.png')) no-repeat scroll left top transparent;
+
+  &.share-square-facebook {
+    background-position: -384px -44px;
+  }
+
+  &.share-square-googleplus {
+    background-position: -288px -44px;
+  }
+
+  &.share-square-twitter {
+    background-position: -64px -44px;
+  }
+
+  &.share-square-linkedin {
+    background-position: -224px -44px;
+  }
+}
