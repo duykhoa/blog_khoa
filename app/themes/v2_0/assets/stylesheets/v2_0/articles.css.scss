@@ -26,10 +26,17 @@ nav {
     border-bottom: 1px solid $confession-dark-color;
 
     @include display(flex);
+    @include flex-wrap(wrap);
     @include justify-content(space-between);
 
     li {
+      @include flex-grow(1);
       display: inline-block;
+
+      @media (max-width: 500px) {
+        padding-top: 15px;
+        text-align: right;
+      }
 
       a {
         @include link-style(black);

@@ -1,6 +1,8 @@
 form {
-  width: 90%;
-  margin-left: 10%;
+  @media (min-width: 972px) {
+    margin-left: 10%;
+    width: 90%;
+  }
 
   .email-subscriber-wrapper {
     color: white;

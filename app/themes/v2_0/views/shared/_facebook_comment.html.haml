@@ -1,4 +1,9 @@
 :javascript
+  if ($(window).width() < 700) {
+    width = Math.floor(0.8375 * $(window).width());
+    $('.fb-comments').attr('data-width', width + 'px');
+  }
+
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
