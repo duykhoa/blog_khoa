@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :assets, only: :create
     resources :blog_settings, only: :index
     resources :categories, only: :index
+    resources :email_subscribers, only: :index
 
     patch 'blog_settings/updates' => 'blog_settings#update', as: :update_blog_settings
   end

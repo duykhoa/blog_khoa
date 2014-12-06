@@ -1,2 +1,27 @@
-<h1>V2Admin::EmailSubscribers#index</h1>
-<p>Find me in app/views/v2_admin/email_subscribers/index.html.erb</p>
+%header.page-header
+  %h2 Post
+  .new-post.pull-left
+    = link_to "Add new Post", new_v2_admin_article_path, class: 'btn btn-custom'
+  .right-wrapper.pull-right
+.row
+  .col-lg-12
+    .paginate
+      %span
+        %strong Page:
+      = paginate @email_subscribers
+    %table#articles.table.table-hover.mb-none
+      %thead
+        %tr
+          %th ID
+          %th Email
+          %th Subscribe Date
+      %tbody
+        - @email_subscribers.each do |subscriber|
+          %tr
+            %td= subscriber.id
+            %td= subscriber.email
+            %td= subscriber.created_at
+    .paginate
+      %span
+        %strong Page:
+      = paginate @email_subscribers
