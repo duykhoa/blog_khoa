@@ -135,3 +135,27 @@
 .fb-comment-wrapper {
   margin-top: 20px;
 }
+
+ul.related-articles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+
+  h5 {
+    margin: 10px 0;
+  }
+
+  li a {
+    margin-left: 10px;
+    font-size: 14px;
+
+    @include link-style($confession-gray-color);
+    @include transition(margin 0.2s ease);
+
+    &:hover {
+      margin-left: 15px;
+      font-weight: 400;
+    }
+  }
+}

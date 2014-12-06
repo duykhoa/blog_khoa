@@ -13,6 +13,10 @@
   .right-container
     = render partial: 'email_subscribes/form'
 
+  %ul.related-articles
+    %h5 Related Posts:
+    - @article.related_articles.each do |relate_article|
+      %li= link_to relate_article.title, article_path(relate_article.slug)
 
 .fb-like-container
   .fb-like{data: { href: article_url(@article.slug), layout: "standard", action: "like", 'show-faces' => "false", share: "false", send: "false" } }
