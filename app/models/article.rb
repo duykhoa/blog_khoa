@@ -23,7 +23,7 @@ class Article < ActiveRecord::Base
   end
 
   def related_articles(number = 4)
-    self.class.where.not(id: id, category: category).limit(number)
+    self.class.where.not(id: id).limit(number)
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
