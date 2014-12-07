@@ -46,7 +46,8 @@
       color: $confession-dark-color;
       font-size: 30px;
       line-height: 1.1em;
-      font-weight: 300;
+      font-weight: 700;
+      margin-bottom: 20px;
 
       @media (max-width: 500px) {
         font-size: 21px;
@@ -56,9 +57,10 @@
       a {
         @include link-style($confession-dark-color);
         @include transition(all 0.1s);
+        font-weight: 700;
 
         &:hover {
-          opacity: 0.9;
+          color: $link-green-color;
         }
       }
     }

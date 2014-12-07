@@ -8,7 +8,7 @@
 @mixin button-hover-effect {
   &:hover {
     opacity: 0.9;
-    background: $confession-green-color;
+    background: $link-green-color;
     border-color: white;
     color: white;
   }
