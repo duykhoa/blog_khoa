@@ -55,6 +55,11 @@
 
       a {
         @include link-style($confession-dark-color);
+        @include transition(all 0.1s);
+
+        &:hover {
+          opacity: 0.9;
+        }
       }
     }
 
