@@ -76,7 +76,7 @@
       color: $confession-dark-color;
 
       a {
-        @include link-style();
+        @include link-style($link-green-color);
       }
 
       iframe {
@@ -155,7 +155,7 @@ ul.related-articles {
     margin-left: 10px;
     font-size: 14px;
 
-    @include link-style($confession-gray-color);
+    @include link-style($link-green-color);
     @include transition(margin 0.2s ease);
 
     &:hover {
