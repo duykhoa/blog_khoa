@@ -104,6 +104,7 @@
         text-align: center;
 
         @include link-style($confession-dark-color);
+        color: $light-gray-text-color;
         @include button-hover-effect();
         font-weight: 400;
       }
