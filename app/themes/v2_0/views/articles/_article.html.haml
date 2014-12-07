@@ -8,4 +8,6 @@
   .content
     = article.short_content
   .read-more
-    = link_to "Continue Reading", article_path(article.slug)
+    = link_to article_path(article.slug) do
+      %span Continue Reading
+      %span= fa_icon "angle-double-right"
