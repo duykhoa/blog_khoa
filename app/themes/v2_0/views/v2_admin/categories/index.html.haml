@@ -17,17 +17,17 @@
             = link_to "Add new", "#"
         .row#add-new-category
           .col-xs-6
-            .col-xs-6
-              = form_tag do |f|
+            = form_tag do |f|
+              .col-xs-6
                 = text_field_tag "New Category", nil, class: "form-control", data: { validate: "required" }
 
-            .col-xs-1
-              = link_to "#", class: 'btn' do
-                = fa_icon "check"
+              .col-xs-1
+                = button_tag type: "submit", class: 'btn' do
+                  = fa_icon "check"
 
-            .col-xs-1
-              = link_to "#", class: 'btn' do
-                = fa_icon "times"
+              .col-xs-1
+                = link_to "#", class: 'btn' do
+                  = fa_icon "times"
 
         .row
           .col-xs-6
