@@ -37,6 +37,30 @@ admin_ready = () ->
         callback(data)
     }
 
-  Sortable.create(categories)
+  if $("#categories")
+    Sortable.create(categories)
+
+  # Category JS
+  $("#add-new-category-link").on 'click', () ->
+    $("#add-new-category-form").toggleClass('hidden')
+    false
+
+  $("#add-new-category-form-tag").on 'submit', (e) ->
+    text = $("#new-category-text-field").val()
+
+    if text != ""
+      $("#new-category-text-field").val("")
+      $("ul#categories").append("<li contenteditable='true' class='list-group-item'>" +
+        "<div class='col-xs-8'>" +
+        text +
+        "</div>" +
+        "<div class='col-xs-1 col-xs-offset-3'>" +
+        "<a href='#'>" +
+        "<i class='fa fa-trash-o'/>" +
+        "</a>" +
+        "</div>" +
+        "</li>
+        ")
+    false
 
 $(document).ready(admin_ready)

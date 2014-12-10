@@ -14,12 +14,12 @@
 
         .row#add-new-category
           .col-xs-6
-            = link_to "Add new", "#"
-        .row#add-new-category
+            = link_to "Add new", "#", id: "add-new-category-link"
+        .row#add-new-category-form.hidden
           .col-xs-6
-            = form_tag do |f|
+            = form_tag "", id: "add-new-category-form-tag" do |f|
               .col-xs-6
-                = text_field_tag "New Category", nil, class: "form-control", data: { validate: "required" }
+                = text_field_tag "New Category", nil, class: "form-control", id: 'new-category-text-field'
 
               .col-xs-1
                 = button_tag type: "submit", class: 'btn' do
