@@ -11,12 +11,34 @@
             %h3 Categories list
             %h5
               %i Drag them to order. Click on to edit
+
+        .row#add-new-category
+          .col-xs-6
+            = link_to "Add new", "#"
+        .row#add-new-category
+          .col-xs-6
+            .col-xs-6
+              = text_field_tag "New Category", nil, class: "form-control"
+
+            .col-xs-1
+              = link_to "#", class: 'btn' do
+                = fa_icon "check"
+
+            .col-xs-1
+              = link_to "#", class: 'btn' do
+                = fa_icon "times"
+
         .row
           .col-xs-6
             %ul#categories.list-group
               - @categories.each do |category|
                 %li(id="#{category.id}" contenteditable="true" class="list-group-item")
-                  = category.name
+                  .col-xs-8
+                    = category.name
+                  .col-xs-1.col-xs-offset-3
+                    = link_to "#" do
+                      = fa_icon "trash-o"
+
         .row
           .col-xs-6
-            = button_tag "Submit", class: 'btn saving-button', id: "category-saving-button"
+            = button_tag "Done Editing", class: 'btn saving-button', id: "category-saving-button"
