@@ -1,2 +1,22 @@
-<h1>V2Admin::EmailSubscribers#index</h1>
-<p>Find me in app/views/v2_admin/email_subscribers/index.html.erb</p>
+%header.page-header
+  %h2 Category
+  .new-post.pull-left
+  .right-wrapper.pull-right
+.row
+  .col-lg-12
+    %section.panel
+      .panel-body
+        .row
+          .col-xs-6
+            %h3 Categories list
+            %h5
+              %i Drag them to order. Click on to edit
+        .row
+          .col-xs-6
+            %ul#categories.list-group
+              - @categories.each do |category|
+                %li(id="#{category.id}" contenteditable="true" class="list-group-item")
+                  = category.name
+        .row
+          .col-xs-6
+            = button_tag "Submit", class: 'btn saving-button', id: "category-saving-button"

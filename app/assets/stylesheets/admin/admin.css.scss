@@ -88,7 +88,7 @@ body.admin {
     width: 100%;
   }
 
-  input[type='submit'].article-submit-button, input[type='submit'].blog-settings-submit-button {
+  input[type='submit'].article-submit-button, input[type='submit'].blog-settings-submit-button, button.saving-button {
     font-size: 14px;
     color: $admin-gray-text-form-color;
     border: 1px solid $admin-green-color;
@@ -151,5 +151,13 @@ body.admin {
     input, textarea {
       font-weight: 400;
     }
+  }
+}
+
+ul#categories {
+  list-style: none;
+
+  li.list-group-item {
+    outline: none;
   }
 }

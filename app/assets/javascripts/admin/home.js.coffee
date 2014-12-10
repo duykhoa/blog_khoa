@@ -36,4 +36,7 @@ admin_ready = () ->
       success: (data) ->
         callback(data)
     }
+
+  Sortable.create(categories)
+
 $(document).ready(admin_ready)
