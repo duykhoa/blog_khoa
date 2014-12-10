@@ -18,7 +18,8 @@
         .row#add-new-category
           .col-xs-6
             .col-xs-6
-              = text_field_tag "New Category", nil, class: "form-control"
+              = form_tag do |f|
+                = text_field_tag "New Category", nil, class: "form-control", data: { validate: "required" }
 
             .col-xs-1
               = link_to "#", class: 'btn' do
