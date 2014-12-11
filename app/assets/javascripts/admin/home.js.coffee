@@ -37,7 +37,7 @@ admin_ready = () ->
         callback(data)
     }
 
-  if $("#categories")
+  if $("#categories").length > 0
     Sortable.create(categories)
 
   # Category JS

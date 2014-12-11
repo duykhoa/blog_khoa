@@ -31,7 +31,7 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-  config.assets.precompile += %w( admin/admin.js )
+  config.assets.precompile += %w( admin/admin.js Chart.min.js )
   config.assets.precompile += %w( admin/admin.css )
 
   # Raises error for missing translations

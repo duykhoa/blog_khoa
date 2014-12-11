@@ -161,3 +161,16 @@ ul#categories {
     outline: none;
   }
 }
+
+.row.no-background {
+  background: transparent !important;
+}
+
+.dashboard-subscribers {
+  margin-top: 10px;
+
+  .fa-stack {
+    font-size: 32px;
+    color: $admin-orange-color;
+  }
+}
