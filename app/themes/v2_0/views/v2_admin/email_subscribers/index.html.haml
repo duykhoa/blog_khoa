@@ -1,14 +1,10 @@
 %header.page-header
-  %h2 Post
-  .new-post.pull-left
-    = link_to "Add new Post", new_v2_admin_article_path, class: 'btn btn-custom'
+  %h2 Subscribers
+  .back.pull-left
+    = link_to "Go Back", v2_admin_root_path, class: 'btn btn-default btn-custom-default'
   .right-wrapper.pull-right
 .row
   .col-lg-12
-    .paginate
-      %span
-        %strong Page:
-      = paginate @email_subscribers
     %table#articles.table.table-hover.mb-none
       %thead
         %tr
@@ -21,7 +17,3 @@
             %td= subscriber.id
             %td= subscriber.email
             %td= subscriber.created_at
-    .paginate
-      %span
-        %strong Page:
-      = paginate @email_subscribers
