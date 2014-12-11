@@ -27,7 +27,7 @@
               .col-md-4
                 = f.input :facebook_image_url, label: false, input_html: { class: 'form-control', value: BlogSetting.facebook_image_url }
                 = f.input :facebook_description, as: :text, label: false, input_html: { class: 'form-control', value: BlogSetting.facebook_description }
-                = f.input :facebook_app_id, as: :text, label: false, input_html: { class: 'form-control', value: BlogSetting.facebook_description }
+                = f.input :facebook_app_id, label: false, input_html: { class: 'form-control', value: BlogSetting.facebook_app_id }
 
             .form-group
               = f.label :mailchimp_config, class: 'control-label col-md-3'
