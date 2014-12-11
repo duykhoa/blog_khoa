@@ -135,12 +135,8 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.3.5)
-<<<<<<< HEAD
     multi_json (1.10.1)
     multi_xml (0.5.5)
-=======
-    multi_json (1.7.9)
->>>>>>> v2.0_admin
     nested_form (0.3.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
