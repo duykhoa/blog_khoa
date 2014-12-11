@@ -2,7 +2,7 @@ class V2Admin::CategoriesController < V2Admin::HomesController
   layout "admin"
 
   def index
-    @categories = Category.all
+    @categories = Category.position_ordering
   end
 
   def create

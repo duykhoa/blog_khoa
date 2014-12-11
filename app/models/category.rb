@@ -1,5 +1,7 @@
 class Category < ActiveRecord::Base
 
+  scope :position_ordering, -> { all.order(position: :asc) }
+
   def sanitize_name
     name.parameterize_string
   end
