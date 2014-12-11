@@ -63,4 +63,14 @@ admin_ready = () ->
         ")
     false
 
+  $(".remove-category-link").on 'click', () ->
+    $(this).closest("li.list-group-item").remove()
+
+  $(".add-new-category-cancel-button").on 'click', () ->
+    $("input#new-category-text-field").val("")
+    false
+
+  $("#changing-category-list").on 'submit', () ->
+    $('ul#categories li')
+
 $(document).ready(admin_ready)

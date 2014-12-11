@@ -26,7 +26,7 @@
                   = fa_icon "check"
 
               .col-xs-1
-                = link_to "#", class: 'btn' do
+                = link_to "#", class: 'btn add-new-category-cancel-button' do
                   = fa_icon "times"
 
         .row
@@ -37,7 +37,7 @@
                   .col-xs-8
                     = category.name
                   .col-xs-1.col-xs-offset-3
-                    = link_to "#" do
+                    = link_to "#", class: "remove-category-link" do
                       = fa_icon "trash-o"
 
         .row
@@ -45,3 +45,4 @@
             = form_tag "", id: "changing-category-list" do |f|
               = hidden_field_tag :category_list
               = button_tag "Done Editing", class: 'btn saving-button', id: "category-saving-button"
+              = link_to "Cancel", v2_admin_categories_path, class: 'btn', type: 'reset'
