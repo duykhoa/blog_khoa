@@ -7,6 +7,10 @@ module ParamsExt
       arg ? arg.to_url : '-'
     end
 
+    def index_params(params)
+      params.permit(:page)
+    end
+
     def search_params(search_params = params)
       search_params.permit(:query, :page).tap do |args|
         args[:query] = args[:query].present? ? sanitize_params(args[:query]) : '-'

@@ -1,0 +1,44 @@
+%header.page-header
+  %h2 BlogSettings
+  .back.pull-left
+    = link_to "Go Back", v2_admin_blog_settings_path, class: 'btn btn-default btn-custom-default'
+  .right-wrapper.pull-right
+.row
+  .col-lg-12
+    .alert-pane
+      = render partial: 'shared/v2_0_admin/alert', locals: { flash: flash }
+    %section.panel
+      .panel-body
+        .row
+          = simple_form_for :blog_setting, url: v2_admin_update_blog_settings_path, method: :patch, html: { class: 'form-horizontal form-bordered', id: 'blog_settings_form' } do |f|
+
+            .form-group
+              = f.label :blog_title, class: 'control-label col-md-3'
+              .col-md-4
+                = f.input :blog_title, label: false, input_html: { class: 'form-control', value:  BlogSetting.blog_title }
+
+            .form-group
+              = f.label :blog_description, class: 'control-label col-md-3'
+              .col-md-4
+                = f.input :blog_description, as: :text, label: false, input_html: { class: 'form-control', value: BlogSetting.blog_description }
+
+            .form-group
+              = f.label :facebook_config, class: 'control-label col-md-3'
+              .col-md-4
+                = f.input :facebook_image_url, label: false, input_html: { class: 'form-control', value: BlogSetting.facebook_image_url }
+                = f.input :facebook_description, as: :text, label: false, input_html: { class: 'form-control', value: BlogSetting.facebook_description }
+
+            .form-group
+              = f.label :mailchimp_config, class: 'control-label col-md-3'
+              .col-md-4
+                = f.input :mailchimp_api_key, label: false, input_html: { class: 'form-control', value: BlogSetting.mailchimp_api_key }
+                = f.input :mailchimp_list_id, label: false, input_html: { class: 'form-control', value: BlogSetting.mailchimp_list_id }
+
+            .form-group
+              = f.label :email_subscriber_text, class: 'control-label col-md-3'
+              .col-md-4
+                = f.input :email_subscriber_text, label: false, input_html: { class: 'form-control', value: BlogSetting.email_subscriber_text }
+
+            .form-group
+              .col-md-offset-3.col-md-4
+                = f.submit "Save Change", class: 'btn blog-settings-submit-button'

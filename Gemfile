@@ -32,11 +32,16 @@ gem 'stringex'
 gem 'themes_on_rails'
 gem 'bourbon'
 gem 'redcarpet'
+gem 'kaminari'
+gem 'simple_form'
+gem 'draper'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie', group: :production
 gem 'font-awesome-sass'
 gem 'acts_as_commentable'
 gem 'gibbon'
+
+gem 'dropbox-api'
 
 group :test, :development do
   gem 'spring'
@@ -44,6 +49,7 @@ group :test, :development do
   gem 'rspec-rails', '~> 3.0.1'
   gem 'debugger'
   gem 'simplecov'
+  gem "spring-commands-rspec"
 end
 
 group :test do

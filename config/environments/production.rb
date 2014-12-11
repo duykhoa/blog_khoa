@@ -82,4 +82,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.assets.enabled = true
   config.assets.precompile += %w( v2_0/images/social-icons.png )
+  config.assets.precompile += %w( admin/admin.js Chart.min.js )
+  config.assets.precompile += %w( admin/admin.css )
 end

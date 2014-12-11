@@ -35,7 +35,7 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
 
   config.before(:each) do
-    allow(BlogSetting).to receive(:theme).and_return('default')
+    allow(BlogSetting).to receive(:theme).and_return('v2_0')
 
     Article.tire.index.delete
     Article.tire.index.create

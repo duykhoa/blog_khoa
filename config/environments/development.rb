@@ -31,8 +31,8 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-  config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-  config.assets.precompile += %w( v2_0/images/social-icons.png )
+  config.assets.precompile += %w( admin/admin.js Chart.min.js )
+  config.assets.precompile += %w( admin/admin.css )
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
