@@ -6,8 +6,12 @@ class V2Admin::CategoriesController < V2Admin::HomesController
   end
 
   def create
+    Category.update_or_create(category_list_params)
   end
 
-  def update
+  private
+
+  def category_list_params
+    params.require(:category_list)
   end
 end

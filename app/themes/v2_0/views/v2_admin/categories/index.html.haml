@@ -43,6 +43,5 @@
         .row
           .col-xs-6
             = form_tag "", id: "changing-category-list" do |f|
-              = hidden_field_tag :category_list
               = button_tag "Done Editing", class: 'btn saving-button', id: "category-saving-button"
               = link_to "Cancel", v2_admin_categories_path, class: 'btn', type: 'reset'

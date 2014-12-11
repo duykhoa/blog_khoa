@@ -50,7 +50,7 @@ admin_ready = () ->
 
     if text != ""
       $("#new-category-text-field").val("")
-      $("ul#categories").append("<li contenteditable='true' data-origin-name='" + text + "' class='list-group-item'>" +
+      $("ul#categories").append("<li contenteditable='true' data-original-name='" + text + "' class='list-group-item'>" +
         "<div class='col-xs-8'>" +
         text +
         "</div>" +
@@ -71,6 +71,21 @@ admin_ready = () ->
     false
 
   $("#changing-category-list").on 'submit', () ->
-    $('ul#categories li')
+    values = []
+    $('ul#categories li').each (index, item) ->
+      original_name = $(item).data('original-name')
+      value = $(item).text().trim()
+      values.push([original_name, value])
+
+    data = { category_list: values }
+
+    $.ajax {
+      url: '/v2_admin/categories',
+      data: data,
+      type: 'POST',
+      success: (data) ->
+        console.log("cool")
+    }
+    false
 
 $(document).ready(admin_ready)
