@@ -17,7 +17,7 @@ class V2Admin::BlogSettingsController < ApplicationController
       .require(:blog_setting)
       .permit(
         :blog_title, :blog_description, :facebook_image_url, :facebook_description,
-        :mailchimp_api_key, :mailchimp_list_id, :email_subscriber_text
+        :facebook_app_id, :mailchimp_api_key, :mailchimp_list_id, :email_subscriber_text
       )
   end
 end

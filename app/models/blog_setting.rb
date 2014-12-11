@@ -8,6 +8,7 @@ class BlogSetting < ActiveRecord::Base
       facebook_image_url: 'http://phuongbui.me/fbog.jpg',
       facebook_description: 'Phuong Bui Marketing Blog sample content',
       email_subscriber_text: 'Please subscribe',
+      facebook_app_id: '',
       theme: 'v2_0',
       url: 'http://phuongbui.me'
     }
