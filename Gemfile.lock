@@ -90,6 +90,7 @@ GEM
       hashie (~> 2.0.5)
       multi_json (~> 1.7.9)
       oauth (~> 0.4.7)
+    dynamic_sitemaps (2.0.0)
     erubis (2.7.0)
     execjs (2.2.1)
     factory_girl (4.4.0)
@@ -135,7 +136,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.6.0)
     minitest (5.3.5)
-    multi_json (1.10.1)
+    multi_json (1.7.9)
     multi_xml (0.5.5)
     nested_form (0.3.2)
     net-scp (1.2.1)
@@ -294,6 +295,7 @@ DEPENDENCIES
   devise
   draper
   dropbox-api
+  dynamic_sitemaps
   factory_girl_rails
   faker
   font-awesome-sass
