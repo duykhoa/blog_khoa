@@ -6,6 +6,11 @@
   %meta{property: 'og:image', content: BlogSetting.facebook_image_url}
   %meta{property: 'og:url', content: BlogSetting.url}
 
+%title
+  - if @article
+    = @article.title.truncate(30)
+    = "|"
+  = BlogSetting.blog_title
 %meta{name: 'description', content: BlogSetting.blog_description}
 %meta{name: 'viewport', content: 'content="width=device-width, minimum-scale=1.0, initial-scale=1.0'}
 %meta{name: "apple-mobile-web-app-capable", content: "yes"}
