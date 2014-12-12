@@ -40,6 +40,11 @@ admin_ready = () ->
   if $("#categories").length > 0
     Sortable.create(categories)
 
+  #article Form
+  $("form#new_article input[type='submit']").on 'click', () ->
+    $("#hidden-commit-field input#article_commit").val($(this).val())
+
+
   # Category JS
   $("#add-new-category-link").on 'click', () ->
     $("#add-new-category-form").toggleClass('hidden')

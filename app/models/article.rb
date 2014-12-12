@@ -7,6 +7,8 @@ class Article < ActiveRecord::Base
   has_attached_file :feature_image, :styles => { :medium => "730x400#" }, :default_url => "missing.png"
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
 
+  attr_accessor :commit
+
   belongs_to :category
 
   validates :category, presence: true

@@ -52,6 +52,6 @@ class V2Admin::ArticlesController < V2Admin::HomesController
   end
 
   def commit_type_param
-    params.permit :commit
+    params.require(:article).permit :commit
   end
 end
