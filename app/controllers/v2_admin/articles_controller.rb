@@ -5,6 +5,7 @@ class V2Admin::ArticlesController < V2Admin::HomesController
   include ParamsExt
 
   def index
+    sleep 1 #waiting Elastic update index
     @articles = Article.search(:all, index_params(params))
   end
 
