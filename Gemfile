@@ -25,7 +25,7 @@ gem 'rails_admin'
 gem 'friendly_id', '~> 5.0.0'
 gem 'tire'
 gem 'cancan'
-#gem 'dynamic_sitemaps'
+gem 'dynamic_sitemaps'
 gem 'rails_config'
 gem 'stringex'
 #gem 'whenever', require: false
