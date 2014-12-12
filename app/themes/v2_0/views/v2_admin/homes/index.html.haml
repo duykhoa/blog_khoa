@@ -2,9 +2,9 @@
   %h2 DashBoard
 .row.no-background
   .col-md-6.col-xs-12
-    %section.panel
+    %section.panel.panel-info
       %header.panel-heading
-        %h1.panel-title Post Summary
+        %h1.panel-title Glance
       .panel-body
         .row
           .col-md-6.col-xs-12
@@ -23,7 +23,7 @@
             %canvas#post-chart
 
   .col-md-6.col-xs-12
-    %section.panel
+    %section.panel.panel-success
       %header.panel-heading
         %h1.panel-title Activity
       .panel-body
@@ -41,18 +41,23 @@
                     = link_to edit_v2_admin_article_path(@last_post) do
                       = fa_icon 'edit'
 
-              .clearfix
+  .clearfix
 
-              .col-xs-3.dashboard-subscribers
-                %span.fa-stack.fa-lg
-                  = fa_icon "square-o stack-2x"
-                  = fa_icon "users stack-1x"
+  .col-md-6.col-xs-12
+    %section.panel.panel-warning
+      %header.panel-heading
+        %h1.panel-title Subscribers
+      .panel-body
+        .row
+          .col-xs-3.dashboard-subscribers
+            %span.fa-stack.fa-lg
+              = fa_icon "square-o stack-2x"
+              = fa_icon "users stack-1x"
 
-              .col-xs-4.dashboard-subscribers
-                %h4
-                  %span
-                    = "Subscribers: #{@subscribers}"
-
+          .col-xs-4.dashboard-subscribers
+            %h4
+              %span
+                = "Subscribers: #{@subscribers}"
 
 = javascript_include_tag 'Chart.min'
 
