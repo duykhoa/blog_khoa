@@ -1,13 +1,14 @@
 .article-container
   .title
-    = link_to article.title, article_path(article.slug)
+    %h2= link_to article.title, article_path(article.slug)
   .feature-image
     = image_tag article.feature_image
   .post-time
-    = format_date(article.created_at)
+    %h4= format_date(article.created_at)
   .content
-    = article.short_content
+    %h5= article.short_content
   .read-more
     = link_to article_path(article.slug) do
-      %span Continue Reading
-      %span= fa_icon "angle-double-right"
+      %h6
+        Continue Reading
+        = fa_icon "angle-double-right"
