@@ -1,3 +1,6 @@
+Dropbox::API::Config.app_key    =  Settings.dropbox.app_key
+Dropbox::API::Config.app_secret =  Settings.dropbox.app_secret
+
 class DropboxUploader
   #Dropbox::API::Client.new(token: Settings.dropbox.access_token, secret: Settings.dropbox.access_secret)
 
