@@ -1,4 +1,4 @@
-= simple_form_for [:v2_admin, @article] do |f|
+= simple_form_for [:v2_admin, @article], html: { class: "article-new-or-edit" } do |f|
   .row
     .col-lg-8
       = f.input :title, label: false, input_html: { placeholder: "Your Post title here", class: "form-control" , data: { validate: 'required' } }

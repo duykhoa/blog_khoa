@@ -41,9 +41,8 @@ admin_ready = () ->
     Sortable.create(categories)
 
   #article Form
-  $("form#new_article input[type='submit']").on 'click', () ->
+  $("form.article-new-or-edit input[type='submit']").on 'click', () ->
     $("#hidden-commit-field input#article_commit").val($(this).val())
-
 
   # Category JS
   $("#add-new-category-link").on 'click', () ->
