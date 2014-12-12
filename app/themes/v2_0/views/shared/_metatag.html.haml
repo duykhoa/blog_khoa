@@ -6,7 +6,8 @@
   %meta{property: 'og:image', content: BlogSetting.facebook_image_url}
   %meta{property: 'og:url', content: BlogSetting.url}
 
-%meta{name: 'viewport', content: 'content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no'}
+%meta{name: 'description', content: BlogSetting.blog_description}
+%meta{name: 'viewport', content: 'content="width=device-width, minimum-scale=1.0, initial-scale=1.0'}
 %meta{name: "apple-mobile-web-app-capable", content: "yes"}
 - BlogSeo.metatags.each do |metatag|
   = metatag.html_safe
