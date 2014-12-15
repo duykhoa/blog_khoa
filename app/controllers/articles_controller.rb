@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    @articles = Article.search(category_params)
+    @articles = Article.search(:all, category_params)
     render "index"
   end
 
