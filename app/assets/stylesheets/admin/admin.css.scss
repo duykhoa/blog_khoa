@@ -158,6 +158,15 @@ ul#categories {
 
   li.list-group-item {
     outline: none;
+    padding: 5px;
+
+    .row {
+      padding: 5px;
+
+      .col-xs-8 {
+        outline: none;
+      }
+    }
   }
 }
 

@@ -55,6 +55,7 @@ admin_ready = () ->
     if text != ""
       $("#new-category-text-field").val("")
       $("ul#categories").append("<li contenteditable='true' data-original-name='" + text + "' class='list-group-item'>" +
+        "<div class='row'>" +
         "<div class='col-xs-8'>" +
         text +
         "</div>" +
@@ -62,6 +63,7 @@ admin_ready = () ->
         "<a href='#'>" +
         "<i class='fa fa-trash-o'/>" +
         "</a>" +
+        "</div>" +
         "</div>" +
         "</li>
         ")

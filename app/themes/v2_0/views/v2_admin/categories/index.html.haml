@@ -34,12 +34,13 @@
           .col-xs-6
             %ul#categories.list-group
               - @categories.each do |category|
-                %li(id="#{category.id}" contenteditable="true" class="list-group-item" data-original-name = "#{category.name}")
-                  .col-xs-8
-                    = category.name
-                  .col-xs-1.col-xs-offset-3
-                    = link_to "#", class: "remove-category-link" do
-                      = fa_icon "trash-o"
+                %li(id="#{category.id}" class="list-group-item" data-original-name = "#{category.name}")
+                  .row
+                    .col-xs-8(contenteditable="true")
+                      = category.name
+                    .col-xs-1.col-xs-offset-3
+                      = link_to "#", class: "remove-category-link" do
+                        = fa_icon "trash-o"
 
         .row
           .col-xs-6
