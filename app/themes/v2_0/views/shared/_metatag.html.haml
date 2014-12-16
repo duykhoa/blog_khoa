@@ -8,12 +8,26 @@
 
 %title
   - if @article
-    = @article.title.truncate(30)
+    = @article.title.truncate(50)
     = "|"
   = BlogSetting.blog_title
+
 = link_to "", "https://plus.google.com/u/0/b/108911883128526579203", rel: "publisher"
+
 %meta{name: 'description', content: BlogSetting.blog_description}
 %meta{name: 'viewport', content: 'content="width=device-width, minimum-scale=1.0, initial-scale=1.0'}
 %meta{name: "apple-mobile-web-app-capable", content: "yes"}
+
 - BlogSeo.metatags.each do |metatag|
   = metatag.html_safe
+
+// Dublin Core
+%link(rel="schema.DC" href="http://purl.org/dc/elements/1.1/")
+
+%meta{name: "DC.title", content: BlogSetting.blog_title}
+%meta{name: "DC.subject", content: "website, wedding, hosting, design, tenluaweb, rocket boosting, tenluaweb.com, wedding website, trang web, website đám cưới, trang web đám cưới, đám cưới, blog, resume, cv, tenlua, tên lửa, ten lua, tenlua web, tenluaweb, ten lua web"}
+%meta{name: "DC.description", content: BlogSetting.blog_description}
+%meta{name: "DC.language", content: "vn"}
+%meta{name: "DC.publisher", content: "Ten Lua Web"}
+%meta{name: "DC.creator", content: "Khoa Tran, Phuong Bui"}
+%meta{name: "DC.date", content: "2014-12-11"}
