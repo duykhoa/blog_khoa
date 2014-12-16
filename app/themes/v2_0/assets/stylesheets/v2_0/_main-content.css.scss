@@ -110,6 +110,12 @@
       }
     }
 
+    .image-hidden {
+      position: fixed;
+      top: -500%;
+      left: -500%;
+    }
+
     .read-more {
       margin-top: 25px;
 
