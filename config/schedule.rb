@@ -19,8 +19,8 @@
 
 # Learn more: http://github.com/javan/whenever
 #
-every :tuesday, at: '12am', roles: [:app, :db, :web] do
-  command "backup perform --trigger blog_khoa"
+every :day, at: '12am', roles: [:app, :db, :web] do
+  command "backup perform --trigger blogtenluaweb_com"
 end
 
 every :day, roles: [:app, :db, :web] do
