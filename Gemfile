@@ -21,7 +21,6 @@ gem 'pg'
 gem 'haml'
 gem "paperclip", "~> 4.2"
 gem 'devise'
-gem 'rails_admin'
 gem 'friendly_id', '~> 5.0.0'
 gem 'tire'
 gem 'cancan'
@@ -38,7 +37,7 @@ gem 'draper'
 gem 'mechanize'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie', group: :production
-gem 'font-awesome-sass'
+gem "font-awesome-rails"
 gem 'acts_as_commentable'
 gem 'gibbon'
 

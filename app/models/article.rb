@@ -89,16 +89,6 @@ class Article < ActiveRecord::Base
     end
   end
 
-  rails_admin do
-    edit do
-      field :title
-      field :short_content
-      field :content
-      field :feature_image
-      field :category
-    end
-  end
-
   private
 
   def published_status(commit_type)

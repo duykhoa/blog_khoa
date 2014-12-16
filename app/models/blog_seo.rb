@@ -12,12 +12,6 @@ class BlogSeo < ActiveRecord::Base
 
   after_save :clear_metatags
 
-  rails_admin do
-    list do
-      field :value
-    end
-  end
-
   private
 
   def clear_metatags
