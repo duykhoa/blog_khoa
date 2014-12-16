@@ -19,6 +19,8 @@ class Category < ActiveRecord::Base
       category.position = index
       category.save
     end
+
+    @@category = nil
   end
 
   def self.delete_category_not_in(existed_categories)
