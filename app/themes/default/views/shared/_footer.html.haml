@@ -1,9 +1,0 @@
-.container
-  .logo
-    Phuong Bui
-  .category
-    %ul
-      - @categories.each do |category|
-        = link_to category_index_path(encode_url(category)) do
-          %li>
-            = category

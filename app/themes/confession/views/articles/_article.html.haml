@@ -1,7 +1,0 @@
-.article-container
-  .title
-    = link_to article.title, article_path(article.slug)
-  .post-time
-    = format_date(article.created_at)
-  .content
-    = markdown.render(article.content).html_safe
