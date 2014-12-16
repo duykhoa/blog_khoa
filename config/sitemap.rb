@@ -3,28 +3,16 @@
 host "blog.tenluaweb.com"
 
 sitemap :site do
-  url root_url, last_mod: Time.now, change_freq: "monthly", priority: 1.0
-  #url aboutme_url, last_mod: Time.now, change_freq: "monthly", priority: 1.0
-  #url feed_url, last_mod: Time.now, change_freq: "monthly", priority: 1.0
+  url root_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
 end
 
 sitemap_for Article.all do |article|
-  url article, last_mod: Time.now, change_freq: "monthly", priority: 0.9
+  url article, last_mod: Time.now, change_freq: "weekly", priority: 0.9
 end
 
-#sitemap_for Category.all, name: :category_index do |category|
-  #Article.all.each do |article|
-    #url category_index_url(category.sanitize_name), change_freq: "monthly", priority: 0.8
-    #url category_index_seo_url(
-      #category.sanitize_name,
-      #article.title.gsub(/\W/,'-'),
-    #),
-    #change_freq: "weekly",
-    #priority: 0.7
-
-    #url search_seo_friendly_url(article.title.gsub(/\W/, '-')), change_freq: "weekly", priority: 0.6
-  #end
-#end
+sitemap_for Category.all, name: :category_index do |category|
+  url seo_search_url(category.name), last_mod: category.updated_at, priority: 1, change_freq: "weekly"
+end
 
 # You can have multiple sitemaps like the above – just make sure their names are different.
 
@@ -57,4 +45,4 @@ end
 
 # Ping search engines after sitemap generation:
 #
-#   ping_with "http://#{host}/sitemap.xml"
+ping_with "http://#{host}/sitemap.xml"
