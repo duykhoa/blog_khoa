@@ -35,6 +35,7 @@ gem 'redcarpet'
 gem 'kaminari'
 gem 'simple_form'
 gem 'draper'
+gem 'mechanize'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie', group: :production
 gem 'font-awesome-sass'
