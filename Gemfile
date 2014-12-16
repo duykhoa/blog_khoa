@@ -28,7 +28,7 @@ gem 'cancan'
 gem 'dynamic_sitemaps'
 gem 'rails_config'
 gem 'stringex'
-#gem 'whenever', require: false
+gem 'whenever', require: false
 gem 'themes_on_rails'
 gem 'bourbon'
 gem 'redcarpet'
