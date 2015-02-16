@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title= BlogSetting.blog_title
+    = stylesheet_link_tag    'huongvinh4me/application', media: 'all'
+    = javascript_include_tag 'huongvinh4me/application'
+    = csrf_meta_tags
+    = favicon_link_tag '/favicon.ico'
+    -#= render "shared/metatag"
+  %body
+    #fb-root
+    .header
+      = render '/shared/header'
+    .navigation-menu
+      .category-responsive
+        -#= icon 'reorder'
+      .menu-items{data: {"0" => "position: static", "100" => "position: fixed; top: 0;"}}
+        -#= render '/shared/navigation_menu'
+      .clear
+    - if controller_name.eql?('articles') && action_name.eql?('index')
+      .header-image
+        = image_tag "huongvinh4me/header-image.jpg", {data: {"0" => "-webkit-transform: translate(0px, -30px);", "1000" => "-webkit-transform: translate(0px, 100px);"}}
+        .subtitle
+          -#%h2= BlogSetting.blog_sub_title
+    .container
+      = yield
