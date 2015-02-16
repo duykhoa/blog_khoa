@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def pagination_previous(articles, page)
-    if page && page > 1
+    if page && page.to_i > 1
       content_tag :div, class: 'previous' do
         link_to 'Previous Page', url_for(page: page.to_i - 1)
       end
@@ -20,7 +20,7 @@ module ApplicationHelper
   end
 
   def pagination_next(articles, page)
-    if page.in?(0...total_page(articles.total_count))
+    if page.to_i.in?(0...total_page(articles.total_count))
       content_tag :div, class: 'next' do
         link_to 'Next Page', url_for(page: page.to_i + 1)
       end

@@ -14,4 +14,3 @@
 //= require jquery_ujs
 //= require share.min
 //= require huongvinh4me/articles
-//= require skrollr
