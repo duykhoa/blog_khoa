@@ -84,4 +84,5 @@ Rails.application.configure do
   config.assets.precompile += %w( v2_0/images/social-icons.png )
   config.assets.precompile += %w( admin/admin.js Chart.min.js )
   config.assets.precompile += %w( admin/admin.css )
+  config.assets.precompile += %w( huongvinh4me/header-image.jpg )
 end

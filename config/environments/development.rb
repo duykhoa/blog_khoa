@@ -33,7 +33,7 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
   config.assets.precompile += %w( admin/admin.js Chart.min.js )
   config.assets.precompile += %w( admin/admin.css )
-  config.assets.precompile += %w( v2_0/images/social-icons.png )
+  config.assets.precompile += %w( huongvinh4me/header-image.jpg )
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
