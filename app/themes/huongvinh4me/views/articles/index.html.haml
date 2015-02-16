@@ -1,5 +1,9 @@
-.body.main-content
-  = render partial: "article", collection: @articles
+.body.main-content.container
+  .row
+    .col-md-6.col-md-offset-1.article-container
+      = render partial: "article", collection: @articles
+    .col-md-4.about-me
+      About Me
 .pagination-container
   = render 'shared/pagination'
   .clear

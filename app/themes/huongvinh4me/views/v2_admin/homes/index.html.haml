@@ -1,0 +1,81 @@
+%header.page-header
+  %h2 DashBoard
+.row.no-background
+  .col-md-6.col-xs-12
+    %section.panel.panel-info
+      %header.panel-heading
+        %h1.panel-title Glance
+      .panel-body
+        .row
+          .col-md-6.col-xs-12
+            .post
+              Total Posts:
+              = @posts_count
+
+            .published-post
+              Published Posts:
+              = @publish_posts_count
+
+            .published-post
+              Draft:
+              = @posts_count - @publish_posts_count
+          .col-md-6.col-xs-12
+            %canvas#post-chart
+
+  .col-md-6.col-xs-12
+    %section.panel.panel-success
+      %header.panel-heading
+        %h1.panel-title Activity
+      .panel-body
+        .row
+          .col-xs-12
+            .row
+              .col-xs-12.recent-post
+                %h4 Recent Posts:
+                .row
+                  .col-md-8
+                    = link_to @last_post.title, article_path(@last_post)
+                  .col-md-2
+                    = format_date @last_post.created_at.to_s
+                  .col-md-2
+                    = link_to edit_v2_admin_article_path(@last_post) do
+                      = fa_icon 'edit'
+
+  .clearfix
+
+  .col-md-6.col-xs-12
+    %section.panel.panel-warning
+      %header.panel-heading
+        %h1.panel-title Subscribers
+      .panel-body
+        .row
+          .col-xs-3.dashboard-subscribers
+            %span.fa-stack.fa-lg
+              = fa_icon "square-o stack-2x"
+              = fa_icon "users stack-1x"
+
+          .col-xs-4.dashboard-subscribers
+            %h4
+              %span
+                = "Subscribers: #{@subscribers}"
+
+= javascript_include_tag 'Chart.min'
+
+:coffee
+  ctx = document.getElementById("post-chart").getContext("2d")
+  options = { showTooltips: true }
+  data = [
+    {
+      value: parseInt("#{ @posts_count }")
+      color:"#039303",
+      highlight: "#96DD96",
+      label: "Published"
+    },
+    {
+      value: parseInt("#{ @posts_count - @publish_posts_count}"),
+      color:"#E67E22",
+      highlight: "#E77B77",
+      label: "Draft"
+    }]
+
+  postChart = new Chart(ctx).Pie(data, options)

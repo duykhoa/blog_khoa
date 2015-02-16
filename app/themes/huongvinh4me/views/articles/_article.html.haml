@@ -4,9 +4,8 @@
       = image_tag article.feature_image(:medium)
   .title{'data-no-turbolink' => ''}
     = link_to article.title, article_path(article.slug)
-  .post-time
-    = format_date(article.created_at)
   .short-content
     = article.short_content
-  .read-more
-    = link_to "READMORE", article_path(article.slug), "data-no-turbolink" => ''
+  .post-time
+    = fa_icon 'clock-o'
+    = format_date(article.created_at)
