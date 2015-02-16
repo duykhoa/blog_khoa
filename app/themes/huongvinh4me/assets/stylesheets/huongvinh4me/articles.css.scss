@@ -112,8 +112,17 @@ header {
   .about-me {
     margin-top: 50px;
 
+    .avatar {
+      img {
+        margin: 0 auto;
+      }
+    }
+
     .description {
       margin-top: 15px;
+      font-size: 12px;
+      color: #777;
+      text-align: justify;
     }
   }
 }
