@@ -4,7 +4,7 @@
       = render partial: "article", collection: @articles
     .col-md-4.about-me
       .avatar
-        = image_tag @about.avatar(:medium), class: 'img-responsive'
+        = image_tag @about.avatar, class: 'img-responsive'
       .description
         = @about.description
 
