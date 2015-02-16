@@ -18,7 +18,7 @@ class Article < ActiveRecord::Base
   include Tire::Model::Search
   include Tire::Model::Callbacks
 
-  index_name "blogtenluaweb_#{Rails.env}"
+  index_name "huongvinh4me_#{Rails.env}"
 
   extend FriendlyId
   friendly_id :article_url_slug, use: [:slugged, :finders]
