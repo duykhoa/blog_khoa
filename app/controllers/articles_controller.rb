@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   include ParamsExt
 
   def index
-    @articles = Article.search
+    @articles = Article.search nil, page_param
   end
 
   def show
@@ -19,5 +19,9 @@ class ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
+    end
+
+    def page_param
+      params.permit :page
     end
 end

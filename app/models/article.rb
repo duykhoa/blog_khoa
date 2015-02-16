@@ -1,7 +1,7 @@
 class Article < ActiveRecord::Base
   default_scope lambda { order(created_at: :desc) }
 
-  PER_PAGE = 20
+  PER_PAGE = 5
   DRAFT = "Save Draft"
 
   has_attached_file :feature_image, :styles => { :medium => "730x400#" }, :default_url => "missing.png"
