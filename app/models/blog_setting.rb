@@ -1,16 +1,16 @@
 class BlogSetting < ActiveRecord::Base
   DEFAULT_SETTING =
     {
-      mailchimp_api_key: '8ae750bfd7f6d3d8f7a5c3c45a2a9a2a-us8',
-      mailchimp_list_id: '45c3380fe4',
-      blog_title: 'Phuong Bui | Marketing Blog',
-      blog_description: 'A Marketing Blog (mostly stories)',
-      facebook_image_url: 'http://phuongbui.me/fbog.jpg',
-      facebook_description: 'Phuong Bui Marketing Blog sample content',
+      mailchimp_api_key: '',
+      mailchimp_list_id: '',
+      blog_title: '4 Myself',
+      blog_description: 'Blog for Sale & Yoga',
+      facebook_image_url: '',
+      facebook_description: '',
       email_subscriber_text: 'Please subscribe',
       facebook_app_id: '',
-      theme: 'v2_0',
-      url: 'http://phuongbui.me'
+      theme: 'huongvinh4me',
+      url: 'http://huongvinh4me.com'
     }
 
   after_save :restart_setting
