@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :categories, only: :index
     resources :email_subscribers, only: [:index]
     resources :categories, only: [:index, :create, :update]
+    resources :abouts, only: [:show,:edit, :update] do
+      get 'me', to: 'abouts#show', on: :collection
+    end
 
     patch 'blog_settings/updates' => 'blog_settings#update', as: :update_blog_settings
     get 'email_subscribers/index'
