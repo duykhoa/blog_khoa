@@ -120,6 +120,14 @@ header {
     font-size: 12px;
     color: #CCC;
   }
+
+  .about-me {
+    margin-top: 50px;
+
+    .description {
+      margin-top: 15px;
+    }
+  }
 }
 
 .article-container#article_show {

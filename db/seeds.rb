@@ -37,3 +37,5 @@ BlogSetting.destroy_all
 BlogSetting::DEFAULT_SETTING.each do  |key, value|
   BlogSetting.create(key: key, value: value)
 end
+
+About.create(description: 'haha')
