@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title= BlogSetting.blog_title
+    = stylesheet_link_tag    'duykhoa/application', media: 'all'
+    = javascript_include_tag 'duykhoa/application'
+    = csrf_meta_tags
+    = favicon_link_tag '/favicon.ico'
+    %link{:href=>"//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", :rel=>"stylesheet"}
+  %body
+    #fb-root
+    theme duykhoa
+
+    %header.text-center
+      %h1= BlogSetting.blog_title
+
+      %h2= BlogSetting.blog_description
+    .container
+      = yield
+
+    .clearfix

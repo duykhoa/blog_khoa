@@ -1,0 +1,49 @@
+%header.page-header
+  %h2 Category
+  .back.pull-left
+    = link_to "Go Back", v2_admin_root_path, class: 'btn btn-default btn-custom-default'
+  .right-wrapper.pull-right
+.row
+  .col-lg-12
+    %section.panel
+      .panel-body
+        .row
+          .col-xs-6
+            %h3 Categories list
+            %h5
+              %i Drag them to order. Click on to edit
+
+        .row#add-new-category
+          .col-xs-6
+            = link_to "Add new", "#", id: "add-new-category-link"
+        .row#add-new-category-form.hidden
+          .col-xs-6
+            = form_tag "", id: "add-new-category-form-tag" do |f|
+              .col-xs-6
+                = text_field_tag "New Category", nil, class: "form-control", id: 'new-category-text-field'
+
+              .col-xs-1
+                = button_tag type: "submit", class: 'btn' do
+                  = fa_icon "check"
+
+              .col-xs-1
+                = link_to "#", class: 'btn add-new-category-cancel-button' do
+                  = fa_icon "times"
+
+        .row
+          .col-xs-6
+            %ul#categories.list-group
+              - @categories.each do |category|
+                %li(id="#{category.id}" class="list-group-item" data-original-name = "#{category.name}")
+                  .row
+                    .col-xs-8(contenteditable="true")
+                      = category.name
+                    .col-xs-1.col-xs-offset-3
+                      = link_to "#", class: "remove-category-link" do
+                        = fa_icon "trash-o"
+
+        .row
+          .col-xs-6
+            = form_tag "", id: "changing-category-list" do |f|
+              = button_tag "Done Editing", class: 'btn saving-button', id: "category-saving-button"
+              = link_to "Cancel", v2_admin_categories_path, class: 'btn', type: 'reset'

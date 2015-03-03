@@ -1,0 +1,15 @@
+%header.page-header
+  %h2 Edit post
+  .back.pull-left
+    = link_to "Go Back", v2_admin_root_path, class: 'btn btn-default btn-custom-default'
+
+.actions
+  = link_to edit_v2_admin_about_path(1) do
+    = fa_icon 'edit'
+    Edit
+
+.row
+  .col-md-3
+    = image_tag @about.avatar, class: 'image-responsive'
+  .col-md-9
+    = raw @about.description
