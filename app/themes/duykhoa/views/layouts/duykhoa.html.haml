@@ -15,9 +15,15 @@
 
       %h2= BlogSetting.blog_description
 
-    .contact-me-icons.text-right
-      %span.small duykhoa12t[at]gmail.com
-      = render 'abouts/contact_me'
+    %nav
+      .contact-me-icons.text-right
+        %span.small duykhoa12t[at]gmail.com
+        = render 'abouts/contact_me'
+      .menu-link.text-right
+        %h5
+          = link_to "Posts", root_path
+          |
+          = link_to "About", about_path
 
     %article
       = yield
