@@ -5,22 +5,30 @@
 @import 'variable';
 @import "font-awesome";
 @import "mixins";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=Dosis:200&subset=latin,latin-ext);
 
 * {
   font-family:'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 14px;
-  color: #444;
-  font-weight: 400;
-  line-height: 1.7em;
+  font-size: 19px;
+  color: #555;
+  font-weight: 300;
+  line-height: 1.6em;
+}
+
+a {
+  @include transition(all 0.4s ease-in-out);
 }
 
 a, a:hover, a:visited {
   text-decoration: none;
   color: #444;
+}
+
+a:hover {
+  color: #2ecc71;
 }
 
 h1 {
@@ -38,6 +46,10 @@ h3 {
 
 h4 {
   font-size: 1.2em;
+}
+
+img {
+  width: 100%;
 }
 
 .container {
@@ -83,4 +95,18 @@ header {
 
 .fb-like-container, .related-post-wrapper, .facebook-comment {
   margin-top: 20px;
+}
+
+.related-post-wrapper {
+  ul {
+    margin-top: 5px;
+    list-style: none;
+    margin-left: 10px;
+
+    li {
+      a {
+        font-size: 0.85em;
+      }
+    }
+  }
 }
