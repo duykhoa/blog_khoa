@@ -40,12 +40,13 @@ h4 {
 }
 
 .container {
-  width: 60%;
+  width: 55%;
   margin: 0 auto;
   min-width: 600px;
+  padding: 0 5px;
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: calc(100% - 10px);
     min-width: initial;
   }
 }
@@ -60,11 +61,13 @@ header {
 }
 
 .article-wrapper {
-  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #EEE;
 }
 
 .title {
-  margin-top: 15px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 h3 {
@@ -75,4 +78,8 @@ h3 {
   margin-top: 4px;
   color: #999;
   font-size: 0.85em;
+
+  .fa {
+    color: #999;
+  }
 }
