@@ -8,6 +8,10 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=Dosis:200&subset=latin,latin-ext);
 
+body {
+  padding-bottom: 30px;
+}
+
 * {
   font-family:'Open Sans', sans-serif;
   margin: 0;
@@ -50,6 +54,7 @@ h4 {
 
 img {
   width: 100%;
+  padding: 7px 0;
 }
 
 .container {
