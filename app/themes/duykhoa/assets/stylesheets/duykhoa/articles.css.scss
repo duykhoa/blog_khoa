@@ -129,3 +129,15 @@ header {
     }
   }
 }
+
+.page {
+  display: none;
+}
+
+.last {
+  @extend .page;
+}
+
+.first {
+  @extend .page;
+}

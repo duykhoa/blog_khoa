@@ -1,41 +1,13 @@
 module ApplicationHelper
-  def markdown
-    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-  end
-
   def format_date(date, without_hours: true)
-    if without_hours
-      DateTime.parse(date).strftime('%B %-d, %Y')
+    if date.is_a?(String)
+      DateTime.parse(date.to_s).strftime(formater_string(without_hours: without_hours))
     else
-      DateTime.parse(date).strftime('<p>%B %-d, %Y</p><p>%r</p>')
+      date.strftime(formater_string(without_hours: without_hours))
     end
   end
 
-  def pagination_previous(articles, page)
-    if page && page.to_i > 1
-      content_tag :div, class: 'previous' do
-        link_to 'Previous Page', url_for(page: page.to_i - 1)
-      end
-    end
-  end
-
-  def pagination_next(articles, page)
-    if page.to_i.in?(0...total_page(articles.total_count))
-      content_tag :div, class: 'next' do
-        link_to 'Next Page', url_for(page: page.to_i + 1)
-      end
-    end
-  end
-
-  def total_page(total)
-    (total.to_f / Article::PER_PAGE).ceil
-  end
-
-  def render_shortcut(template, attr = :partial, *locals)
-    render attr => File.join(view_path, template)
-  end
-
-  def render_collection(partial, collection, resource_name = controller_name)
-    render partial: File.join(view_path, resource_name, partial), collection: collection
+  def formater_string(without_hours: true)
+    without_hours ? "%B %-d, %Y" : "<p>%B %-d, %Y</p><p>%r</p>"
   end
 end

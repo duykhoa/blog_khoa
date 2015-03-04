@@ -6,4 +6,4 @@
     = article.short_content
   .post-time
     = fa_icon 'clock-o'
-    = format_date(article.created_at)
+    = format_date(article.created_at, without_hours: true)

@@ -10,7 +10,7 @@
       %h3= @article.title
       .post-time
         = fa_icon 'clock-o'
-        = @article.created_at
+        = format_date(@article.created_at)
     .content
       = @article.content.html_safe
     .fb-like-container
