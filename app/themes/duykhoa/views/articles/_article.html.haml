@@ -2,7 +2,7 @@
   .title
     = link_to article_path(article.slug) do
       %h3= article.title
-  .short-content
+  .short-content.text-justify
     = article.short_content
   .post-time
     = fa_icon 'clock-o'

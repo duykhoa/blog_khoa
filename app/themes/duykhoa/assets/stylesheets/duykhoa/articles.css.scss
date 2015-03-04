@@ -15,7 +15,7 @@
   font-size: 19px;
   color: #555;
   font-weight: 300;
-  line-height: 1.6em;
+  line-height: 1.55em;
 }
 
 a {
@@ -53,9 +53,9 @@ img {
 }
 
 .container {
-  width: 55%;
+  width: 50%;
   margin: 0 auto;
-  min-width: 600px;
+  min-width: 500px;
   padding: 0 5px;
 
   @media (max-width: 768px) {
@@ -66,6 +66,10 @@ img {
 
 .text-center {
   text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 header {
@@ -81,6 +85,18 @@ header {
 .title {
   margin-top: 20px;
   margin-bottom: 10px;
+
+  a {
+    h3 {
+      @include transition(all 0.4s ease-in-out);
+    }
+  }
+
+  a:hover {
+    h3 {
+      color: #2ecc71;
+    }
+  }
 }
 
 .post-time {
