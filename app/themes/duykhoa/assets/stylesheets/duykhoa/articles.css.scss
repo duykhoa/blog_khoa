@@ -28,7 +28,7 @@ a {
 
 a, a:hover, a:visited {
   text-decoration: none;
-  color: #444;
+  color: #111;
 }
 
 a:hover {
@@ -40,7 +40,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 1.5em;
 }
 
 h3 {
@@ -73,13 +73,25 @@ img {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .text-justify {
   text-align: justify;
 }
 
+.small {
+  font-size: 0.8em;
+}
+
 header {
-  margin: 30px 0;
-  padding: 30px 0;
+  margin: 60px 0 30px 0;
+}
+
+article {
+  margin-top: 10px;
+  border-top: 2px solid #EEE;
 }
 
 .article-wrapper {
@@ -132,6 +144,12 @@ header {
         font-size: 0.85em;
       }
     }
+  }
+}
+
+.contact-me-icons {
+  .fa {
+    font-size: 30px;
   }
 }
 
