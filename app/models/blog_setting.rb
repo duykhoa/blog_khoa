@@ -3,14 +3,14 @@ class BlogSetting < ActiveRecord::Base
     {
       mailchimp_api_key: '',
       mailchimp_list_id: '',
-      blog_title: '4 Myself',
-      blog_description: 'Blog for Sale & Yoga',
+      blog_title: 'Khoa Tran',
+      blog_description: 'Senior Full Stack Ruby on Rails Developer',
       facebook_image_url: '',
       facebook_description: '',
       email_subscriber_text: 'Please subscribe',
       facebook_app_id: '',
-      theme: 'huongvinh4me',
-      url: 'http://huongvinh4me.com'
+      theme: 'duykhoa',
+      url: 'http://duykhoa.tenluaweb.com'
     }
 
   after_save :restart_setting
