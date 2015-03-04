@@ -3,26 +3,28 @@
   %meta{property: 'og:description', content: @article.short_content}
   %meta{property: 'og:url', content: article_url(@article)}
   %meta{property: 'og:image', content: BlogSetting.url + @article.feature_image.url}
+
 .article-container{id: ['article', action_name]}
   .left-content
     .title
-      %h1= @article.title
+      %h3= @article.title
+      .post-time
+        = fa_icon 'clock-o'
+        = @article.created_at
     .content
       = @article.content.html_safe
+
     .fb-like-container
       .fb-like{data: { href: article_url(@article.slug), layout: "standard", action: "like", 'show-faces' => "false", share: "false", send: "false" } }
     .share-social
       .share-button
-    .related-post
-      %h2
+
+    .related-post-wrapper
+      %h5
         You might also like
-      %ul
+      %ul.related-posts
         - @article.related_articles.each do |related_article|
           %li{'data-no-turbolink' => ''}= link_to related_article.title, related_article
-  .right-content
-    = render 'shared/subscriber_box'
-  .clear
-
 .facebook-comment
   .fb-comments{data: { href: article_url(@article.slug), numposts: "5", colorscheme: "light", width: '550px'} }
   :javascript

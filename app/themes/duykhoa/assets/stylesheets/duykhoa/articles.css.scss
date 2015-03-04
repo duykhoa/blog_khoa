@@ -33,6 +33,7 @@ h2 {
 
 h3 {
   font-size: 1.5em;
+  margin-bottom: 4px;
 }
 
 h4 {
@@ -70,10 +71,6 @@ header {
   margin-bottom: 10px;
 }
 
-h3 {
-  margin-bottom: 4px;
-}
-
 .post-time {
   margin-top: 4px;
   color: #999;
@@ -82,4 +79,8 @@ h3 {
   .fa {
     color: #999;
   }
+}
+
+.fb-like-container, .related-post-wrapper, .facebook-comment {
+  margin-top: 20px;
 }

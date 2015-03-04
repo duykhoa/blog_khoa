@@ -10,7 +10,8 @@
     #fb-root
 
     %header.text-center
-      %h1= BlogSetting.blog_title
+      = link_to root_path do
+        %h1= BlogSetting.blog_title
 
       %h2= BlogSetting.blog_description
 
