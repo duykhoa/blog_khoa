@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   before_action :category_list
-  before_action :set_about
 
   private
   def custom_theme
@@ -30,9 +29,5 @@ class ApplicationController < ActionController::Base
 
   def category_list
     @categories ||= Category.list
-  end
-
-  def set_about
-    @about ||= About.first
   end
 end

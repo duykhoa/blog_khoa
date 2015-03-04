@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :articles
   end
 
+  get 'about' => 'abouts#index'
   get '/search(/category/:category_name)' => 'articles#search', as: :seo_search
 
   get 'feed', to: 'articles#index', defaults: {format: 'rss'}, as: :feed
