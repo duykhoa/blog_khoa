@@ -6,12 +6,13 @@
     = javascript_include_tag 'duykhoa/application'
     = csrf_meta_tags
     = favicon_link_tag '/favicon.ico'
-  %body
+  %body.container
     #fb-root
 
-    %header
+    %header.text-center
       %h1= BlogSetting.blog_title
 
       %h2= BlogSetting.blog_description
-    .container
+
+    %article
       = yield

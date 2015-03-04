@@ -1,8 +1,5 @@
-.body.main-content.container
-  .row
-    .col-md-6.col-md-offset-3.article-container
-      = render partial: "article", collection: @articles
+.outside-wrapper
+  = render partial: "article", collection: @articles
 
-  .row
-    .pagination-container
-      = render 'shared/pagination'
+.pagination-wrapper
+  = render 'shared/pagination'
