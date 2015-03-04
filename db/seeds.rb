@@ -17,7 +17,7 @@ if Rails.env.development?
     Article.create(
       title: Faker::Lorem.sentence,
       short_content: Faker::Lorem.paragraph(4),
-      content: Faker::Lorem.paragraph(4),
+      content: Faker::Lorem.paragraphs(4).join,
       category_id:
         Category
         .offset(rand(Category.count))
@@ -37,5 +37,3 @@ BlogSetting.destroy_all
 BlogSetting::DEFAULT_SETTING.each do  |key, value|
   BlogSetting.create(key: key, value: value)
 end
-
-About.create(description: 'haha')
