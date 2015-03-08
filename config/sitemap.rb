@@ -1,6 +1,6 @@
 # Change this to your host. See the readme at https://github.com/lassebunk/dynamic_sitemaps
 # for examples of multiple hosts and folders.
-host "blog.tenluaweb.com"
+host "duykhoa.tenluaweb.com"
 
 sitemap :site do
   url root_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
@@ -10,9 +10,9 @@ sitemap_for Article.all do |article|
   url article, last_mod: Time.now, change_freq: "weekly", priority: 0.9
 end
 
-sitemap_for Category.all, name: :category_index do |category|
-  url seo_search_url(category.name), last_mod: category.updated_at, priority: 1, change_freq: "weekly"
-end
+#sitemap_for Category.all, name: :category_index do |category|
+  #url seo_search_url(category.name), last_mod: category.updated_at, priority: 1, change_freq: "weekly"
+#end
 
 # You can have multiple sitemaps like the above – just make sure their names are different.
 
