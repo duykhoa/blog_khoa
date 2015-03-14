@@ -29,4 +29,11 @@ describe ArticlesController do
       expect(assigns(:articles).count).to eq(8)
     end
   end
+
+  describe "GET search" do
+    it "render index template" do
+      get :search
+      expect(response).to render_template("index")
+    end
+  end
 end
