@@ -96,6 +96,11 @@ header {
   border-bottom: 2px solid $green;
 }
 
+nav span.item {
+  display: inline-block;
+  padding: 10px 5px;
+}
+
 article {
   margin-top: 10px;
 }

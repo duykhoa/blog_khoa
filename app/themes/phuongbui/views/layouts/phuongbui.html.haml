@@ -19,8 +19,8 @@
       %nav
         .menu-link.text-right
           %h5
-            = link_to "Posts", root_path
-            |
+            - Category.list.each do |category|
+              %span.item= link_to category.name, ""
             = link_to "About", about_path
 
       %article
