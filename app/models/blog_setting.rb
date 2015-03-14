@@ -3,13 +3,13 @@ class BlogSetting < ActiveRecord::Base
     {
       mailchimp_api_key: '',
       mailchimp_list_id: '',
-      blog_title: 'Khoa Tran',
-      blog_description: 'Senior Full Stack Ruby on Rails Developer',
+      blog_title: 'PhuongBui',
+      blog_description: 'A Digital Marketing and Branding Stories Blog',
       facebook_image_url: '',
       facebook_description: '',
       email_subscriber_text: 'Please subscribe',
       facebook_app_id: '',
-      theme: 'duykhoa',
+      theme: 'phuongbui',
       url: 'http://duykhoa.tenluaweb.com'
     }
 

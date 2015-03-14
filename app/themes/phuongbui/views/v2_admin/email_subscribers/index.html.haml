@@ -1,0 +1,19 @@
+%header.page-header
+  %h2 Subscribers
+  .back.pull-left
+    = link_to "Go Back", v2_admin_root_path, class: 'btn btn-default btn-custom-default'
+  .right-wrapper.pull-right
+.row
+  .col-lg-12
+    %table#articles.table.table-hover.mb-none
+      %thead
+        %tr
+          %th ID
+          %th Email
+          %th Subscribe Date
+      %tbody
+        - @email_subscribers.each do |subscriber|
+          %tr
+            %td= subscriber.id
+            %td= subscriber.email
+            %td= subscriber.created_at
