@@ -1,13 +1,12 @@
 - if controller_name.eql?('articles') && action_name.eql?('show')
   = yield :article_show
 - else
-  %meta{property: 'description', content: "I am a fullstack Ruby on Rails developer, I am writing my blog to share my idea about lifestyle and technical tips " }
-
   %meta{property: 'og:title', content: BlogSetting.blog_title}
   %meta{property: 'og:description', content: BlogSetting.facebook_description}
   %meta{property: 'og:image', content: BlogSetting.facebook_image_url}
   %meta{property: 'og:url', content: BlogSetting.url}
 
+%meta{name: 'description', content: "I am a fullstack Ruby on Rails developer, I am writing my blog to share my idea about lifestyle and technical tips " }
 %meta{name: 'viewport', content: 'content="width=device-width, minimum-scale=1.0, initial-scale=1.0'}
 %meta{name: "apple-mobile-web-app-capable", content: "yes"}
 - BlogSeo.metatags.each do |metatag|
