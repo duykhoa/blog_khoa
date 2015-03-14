@@ -6,24 +6,22 @@
     = javascript_include_tag 'phuongbui/application'
     = csrf_meta_tags
     = favicon_link_tag '/favicon.ico'
-  %body.container
+  %body
     #fb-root
+    .container
 
-    %header.text-center
-      = link_to root_path do
-        %h1= BlogSetting.blog_title
+      %header.text-center
+        = link_to root_path do
+          %h1= BlogSetting.blog_title
 
-      %h2= BlogSetting.blog_description
+        %h2= BlogSetting.blog_description
 
-    %nav
-      .contact-me-icons.text-right
-        %span.small duykhoa12t[at]gmail.com
-        = render 'abouts/contact_me'
-      .menu-link.text-right
-        %h5
-          = link_to "Posts", root_path
-          |
-          = link_to "About", about_path
+      %nav
+        .menu-link.text-right
+          %h5
+            = link_to "Posts", root_path
+            |
+            = link_to "About", about_path
 
-    %article
-      = yield
+      %article
+        = yield
