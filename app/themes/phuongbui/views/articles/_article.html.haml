@@ -1,6 +1,7 @@
 .article-wrapper
   .feature-image
-    = image_tag article.feature_image(:medium)
+    = link_to article_path(article.slug) do
+      = image_tag article.feature_image(:medium)
   .title
     = link_to article_path(article.slug) do
       %h3= article.title
