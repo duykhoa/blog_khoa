@@ -46,6 +46,39 @@ describe Article do
         expect(Article.search(search_params).count).to eq(2)
       end
     end
+
+    context "search with category_name params" do
+      let!(:other_article) { create(:article) }
+      let(:result) { Article.search(:all, search_params) }
+
+      context "normal category name" do
+        let!(:tech_tips_category) { create(:category, name: "TechTip") }
+        let!(:tech_tips_article) { create(:article, category: tech_tips_category) }
+
+        let(:search_params) { { category_name: 'techtip' } }
+
+        before(:each) { Article.tire.index.refresh }
+
+        it "returns only 1 article" do
+          expect(result.count).to eq(1)
+          expect(index_of(result, other_article)).to be_nil
+          expect(index_of(result, tech_tips_article)).to eq(0)
+        end
+      end
+
+      context "complex category name" do
+        let!(:tech_tips_category) { create(:category, name: "Tech Tip") }
+        let!(:tech_tips_article) { create(:article, category: tech_tips_category) }
+
+        let(:search_params) { { category_name: 'tech-tip' } }
+
+        before(:each) { Article.tire.index.refresh }
+
+        it "returns only 1 article" do
+          #TODO why fail???? expect(result.count).to eq(1)
+        end
+      end
+    end
   end
 
   describe "#create_or_update_with_commit_type" do

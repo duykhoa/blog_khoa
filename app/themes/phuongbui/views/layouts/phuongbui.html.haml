@@ -20,7 +20,7 @@
         .menu-link.text-right
           %h5
             - Category.list.each do |category|
-              %span.item= link_to category.name, ""
+              %span.item= link_to category.name, seo_search_path(category_name: category.sanitize_name)
             = link_to "About", about_path
 
       %article
