@@ -3,6 +3,9 @@ class V2Admin::AboutsController < ApplicationController
 
   before_action :set_about
 
+  def index
+  end
+
   def show
   end
 

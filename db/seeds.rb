@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
 CATEGORY = ['Marketing at Work', 'Marketing Stories', 'Random Stuff']
 CATEGORY.each_with_index { |category, index| Category.create!(name: category, position: index) } if Category.count.eql? 0
 
@@ -37,3 +28,5 @@ BlogSetting.destroy_all
 BlogSetting::DEFAULT_SETTING.each do  |key, value|
   BlogSetting.create(key: key, value: value)
 end
+
+About.create(content: "no content")

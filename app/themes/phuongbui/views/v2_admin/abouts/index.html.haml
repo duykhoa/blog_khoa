@@ -1,0 +1,7 @@
+%header.page-header
+  %h2 About
+  .edit.pull-left
+    = link_to "Edit About page", edit_v2_admin_about_path(@about), class: 'btn btn-custom'
+  .right-wrapper.pull-right
+.container
+  = raw @about.try :content
