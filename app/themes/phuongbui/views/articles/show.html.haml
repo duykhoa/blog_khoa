@@ -15,8 +15,17 @@
       = @article.content.html_safe
     .fb-like-container
       .fb-like{data: { href: article_url(@article.slug), layout: "standard", action: "like", 'show-faces' => "false", share: "false", send: "false" } }
-    .share-social
-      .share-button
+
+    .social-sharing
+      = link_to "https://www.facebook.com/sharer/sharer.php?u=#{article_url(@article)}", target: '_blank' do
+        %span.fa-stack.fa-lg
+          = fa_icon "circle stack-2x"
+          = fa_icon "facebook inverse stack-1x"
+
+      = link_to "https://plus.google.com/share?url=#{article_url(@article)}", target: '_blank' do
+        %span.fa-stack.fa-lg
+          = fa_icon "circle stack-2x"
+          = fa_icon "google-plus inverse stack-1x"
 
     .related-post-wrapper
       %h5

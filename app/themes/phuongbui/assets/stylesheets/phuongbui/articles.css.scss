@@ -162,6 +162,22 @@ article {
   margin-top: 20px;
 }
 
+.social-sharing {
+  margin-top: 10px;
+
+  .fa-circle {
+    color: $green;
+  }
+
+  a {
+    @include transition(opacity 0.5s ease-in-out);
+  }
+
+  a:hover {
+    opacity: 0.85;
+  }
+}
+
 .related-post-wrapper {
   border-top: 1px solid #DDD;
   padding-top: 10px;
