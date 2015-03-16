@@ -6,15 +6,12 @@ class V2Admin::AboutsController < ApplicationController
   def index
   end
 
-  def show
-  end
-
   def edit
   end
 
   def update
     @about.update(about_params)
-    redirect_to v2_admin_about_path(@about)
+    redirect_to v2_admin_abouts_path
   end
 
   private
