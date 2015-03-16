@@ -21,6 +21,6 @@ class V2Admin::AboutsController < ApplicationController
   end
 
   def about_params
-    params.require(:about).permit(:description, :avatar)
+    params.require(:about).permit(:content)
   end
 end
