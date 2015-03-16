@@ -33,6 +33,12 @@
       %ul.related-posts
         - @article.related_articles.each do |related_article|
           %li= link_to related_article.title, related_article
+.contact-form
+  %h2 Keep in touch
+  %h3= BlogSetting.email_subscriber_text
+  = simple_form_for EmailSubscribe.new do |f|
+    = f.input :email, label: false, input_html: { placeholder: "Your email"}
+    = f.submit "Subscribe"
 .facebook-comment
   .fb-comments{data: { href: article_url(@article.slug), numposts: "5", colorscheme: "light", width: '550px'} }
 

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'email_subscribers/index'
   end
 
-  resources :email_subscribes, only: [:index, :create]
+  resources :email_subscribes, only: [:create]
   resources :comments, only: [:create]
 
   resources :articles, only: [:index, :show]
