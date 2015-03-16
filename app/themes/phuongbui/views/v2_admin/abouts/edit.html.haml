@@ -7,5 +7,6 @@
     = simple_form_for [:v2_admin, @about] do |f|
       .field
         = f.input :content, label: false
+        %br/
       .actions
-        = f.submit
+        = f.submit "Update", class: 'btn btn-default btn-custom-default'

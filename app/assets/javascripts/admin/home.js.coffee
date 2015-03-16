@@ -7,6 +7,10 @@ admin_ready = () ->
         editor.insertImage(welEditable, data.path)
   )
 
+  $('textarea#about_content').summernote(
+    height: 300
+  )
+
   $(document).ajaxStart () ->
      NProgress.start()
 
