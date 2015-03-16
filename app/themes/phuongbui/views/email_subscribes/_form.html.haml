@@ -1,5 +1,7 @@
 %h2 Keep in touch
 %h3= BlogSetting.email_subscriber_text
+.congrat.hidden
+  Thanks for your subscription.
 = simple_form_for EmailSubscribe.new, remote: true do |f|
   = f.input :email, label: false, input_html: { placeholder: "Your email"}
   = f.submit "Subscribe"

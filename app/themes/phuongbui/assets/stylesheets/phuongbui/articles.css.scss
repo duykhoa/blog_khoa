@@ -1,4 +1,5 @@
 // Place all the styles related to the articles controller here.
+// display: none;
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'bourbon';
@@ -226,6 +227,11 @@ article {
       border: 1px solid transparent;
     }
   }
+
+  .congrat {
+    color: white;
+    font-size: 0.9em;
+  }
 }
 
 .related-post-wrapper {
@@ -265,4 +271,8 @@ article {
 
 .first {
   @extend .page;
+}
+
+.hidden {
+  display: none;
 }
