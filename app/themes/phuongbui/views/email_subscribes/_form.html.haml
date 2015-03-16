@@ -1,3 +1,5 @@
-= form_for EmailSubscribe.new, remote: true do |f|
-  = f.text_field :email, placeholder: 'Your email'
+%h2 Keep in touch
+%h3= BlogSetting.email_subscriber_text
+= simple_form_for EmailSubscribe.new, remote: true do |f|
+  = f.input :email, label: false, input_html: { placeholder: "Your email"}
   = f.submit "Subscribe"

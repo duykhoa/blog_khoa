@@ -181,7 +181,7 @@ article {
 .contact-form {
   background: #1A3805;
   margin-top: 20px;
-  padding: 20px 10%;
+  padding: 20px 12%;
   color: white;
 
   h2, h3 {
@@ -189,11 +189,11 @@ article {
   }
 
   h2 {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   h3 {
-    margin-top: 15px;
+    margin: 15px 0;
     font-size: 1.05em;
     font-weight: 300;
   }
@@ -214,6 +214,17 @@ article {
     border: 1px solid #EEE;
     color: #EEE;
     cursor: pointer;
+    @include transition(all 1s ease);
+
+    &:focus {
+      border: 1px solid #EEE;
+    }
+
+    &:hover {
+      padding: 10px 35px 10px 5px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid transparent;
+    }
   }
 }
 
