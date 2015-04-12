@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ArticlesController do
-  let!(:articles) { create_list(:article, 8) }
+  let!(:articles) { create_list(:article, 5) }
   let!(:admin_user) { create(:user) }
 
   before do
@@ -26,7 +26,7 @@ describe ArticlesController do
   describe "#index" do
     it "returns a list of article" do
       get :index
-      expect(assigns(:articles).count).to eq(8)
+      expect(assigns(:articles).count).to eq(5)
     end
   end
 end
