@@ -13,7 +13,7 @@ describe V2Admin::ArticlesController, :type => :controller do
 
     it "assigns @articles" do
       get :index
-      expect(assigns(:articles).count).to eq(10)
+      expect(assigns(:articles).count).to eq(5)
     end
   end
 

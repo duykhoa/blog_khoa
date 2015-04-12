@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  default_scope lambda { order(created_at: :desc) }
+  default_scope lambda { published.order(created_at: :desc) }
 
   PER_PAGE = 5
   DRAFT = "Save Draft"
@@ -22,6 +22,8 @@ class Article < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :article_url_slug, use: [:slugged, :finders]
+
+  scope :published, -> {  where(publish: true) }
 
   def article_url_slug
     title.to_url if title

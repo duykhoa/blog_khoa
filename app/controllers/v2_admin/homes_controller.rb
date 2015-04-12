@@ -1,6 +1,7 @@
 class V2Admin::HomesController < ApplicationController
   before_filter :authenticate_user!
-  before_action :statistic_data
+
+  before_action :statistic_data, if: Proc.new { controller_name.eql?('homes') }
 
   layout 'admin'
 
