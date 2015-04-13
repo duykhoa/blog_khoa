@@ -1,7 +1,7 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'huongvinh4me'
+set :application, 'duykhoablog'
 set :repo_url, 'git@bitbucket.org:duykhoa_tran/blog_khoa.git'
 
 # Default branch is :master
@@ -10,7 +10,7 @@ set :repo_url, 'git@bitbucket.org:duykhoa_tran/blog_khoa.git'
 # Default deploy_to directory is /var/www/my_app
 #set :deploy_to, '/home/blog_khoa/'
 
-set :branch, ENV['BRANCH'] || "v2.0_huongvinh4me"
+set :branch, ENV['BRANCH'] || "duykhoa.tenluaweb.com"
 
 set :rvm_type, :system
 set :rvm_ruby_version, '2.0.0-p451'      # Defaults to: 'default'

@@ -47,7 +47,7 @@ group :test, :development do
   gem 'spring'
   gem 'faker'
   gem 'rspec-rails', '~> 3.0.1'
-  gem 'byebug'
+  gem 'debugger'
   gem 'simplecov'
   gem "spring-commands-rspec"
 end

@@ -1,6 +1,0 @@
-= form_for EmailSubscribe.new, remote: true do |f|
-  .email-subscriber-wrapper
-    .form-wrapper
-      %h3= BlogSetting.email_subscriber_text
-      = f.text_field :email, placeholder: 'Your email'
-      = f.submit "Subscribe"
