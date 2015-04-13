@@ -2,7 +2,7 @@
 lock '3.2.1'
 
 set :application, 'huongvinh4me'
-set :repo_url, 'git@bitbucket.org:duykhoa_tran/blog_khoa.git'
+set :repo_url, 'git@github.com:duykhoa/blog_khoa.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
