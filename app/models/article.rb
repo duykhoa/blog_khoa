@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  default_scope lambda { published.order(created_at: :desc) }
+  default_scope lambda { order(created_at: :desc) }
 
   PER_PAGE = 5
   DRAFT = "Save Draft"
@@ -30,7 +30,7 @@ class Article < ActiveRecord::Base
   end
 
   def related_articles(number = 4)
-    self.class.where.not(id: id).limit(number)
+    self.class.published.where.not(id: id).limit(number)
   end
 
   def create_or_update_with_commit_type(commit_type)
