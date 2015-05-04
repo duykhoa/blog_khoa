@@ -3,11 +3,11 @@
     .col-md-6.col-md-offset-1.article-container
       = render partial: "article", collection: @articles
     .col-md-3.about-me
-      .avatar
-        = image_tag @about.avatar, class: 'img-responsive'
+      -#.avatar
+        -#= image_tag @about.avatar, class: 'img-responsive'
       .description
-        = raw @about.description
+        -#= raw @about.description
 
   .row
     .pagination-container
-      = render 'shared/pagination'
+      -#= render 'shared/pagination'
