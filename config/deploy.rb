@@ -13,9 +13,11 @@ set :rvm_type, :system
 #set :deploy_via, :copy
 #set :migration_role, 'migrator'
 set :pty, true
+set :rvm_ruby_string, '2.2.2@blog_khoa'
 
 # Default value for keep_releases is 5
 #set :keep_releases, 5
+set :keep_releases, 2
 
 namespace :deploy do
 
