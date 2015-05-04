@@ -4,19 +4,18 @@ lock '3.2.1'
 set :application, 'duykhoablog'
 set :repo_url, 'git@github.com:duykhoa/blog_khoa.git'
 
-set :branch, ENV['BRANCH'] || "duykhoa.tenluaweb.com"
+set :branch, ENV['BRANCH'] || "v2.2"
 
 set :rvm_type, :system
-set :rvm_ruby_version, '2.0.0-p451'
 
 #set :use_sudo, true
 
-set :deploy_via, :copy
-set :migration_role, 'migrator'
+#set :deploy_via, :copy
+#set :migration_role, 'migrator'
 set :pty, true
 
 # Default value for keep_releases is 5
-set :keep_releases, 5
+#set :keep_releases, 5
 
 namespace :deploy do
 
@@ -66,7 +65,7 @@ namespace :deploy do
       execute "ln -nfs #{shared_path}/sitemaps #{release_path}/public/sitemaps"
       execute "ln -nfs #{shared_path}/sitemaps/sitemap.xml #{release_path}/public/sitemap.xml"
       execute "ln -nfs #{shared_path}/config/settings.yml #{release_path}/config/settings.yml"
-      execute "ln -nfs #{shared_path}/favicon.ico #{release_path}/public/favicon.ico"
+      #execute "ln -nfs #{shared_path}/favicon.ico #{release_path}/public/favicon.ico"
     end
   end
 
