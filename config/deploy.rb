@@ -6,14 +6,14 @@ set :repo_url, 'git@github.com:duykhoa/blog_khoa.git'
 
 set :branch, ENV['BRANCH'] || "v2.2"
 
-#set :rvm_type, :system
+set :rvm_type, :system
 
-#set :use_sudo, true
+set :use_sudo, false
 
 #set :deploy_via, :copy
 #set :migration_role, 'migrator'
-#set :rvm_ruby_string, '2.2.2@blog_khoa'
-set :rvm_ruby_version, '2.2.2'
+set :rvm_ruby_string, '2.2.2@blog_khoa'
+#set :rvm_ruby_version, '2.2.2'
 
 # Default value for keep_releases is 5
 #set :keep_releases, 5
