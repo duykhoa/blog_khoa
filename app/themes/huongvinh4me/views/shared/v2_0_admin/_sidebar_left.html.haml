@@ -19,16 +19,15 @@
           = link_to  v2_admin_categories_path do
             = fa_icon 'tasks'
             %span Category
+        %li
+          = link_to v2_admin_abouts_path do
+            = fa_icon 'user'
+            %span About
 
         %li
           = link_to v2_admin_email_subscribers_path do
             = fa_icon 'users'
             %span Subscriber
-
-        %li
-          = link_to me_v2_admin_abouts_path do
-            = fa_icon 'user'
-            %span About
 
         %li
           = link_to  v2_admin_blog_settings_path do
