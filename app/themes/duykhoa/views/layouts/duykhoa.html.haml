@@ -1,11 +1,12 @@
 !!!
 %html
   %head
-    %title Khoa Tran Blogs
+    %title= BlogSetting.blog_title
     = stylesheet_link_tag    'duykhoa/application', media: 'all'
     = javascript_include_tag 'duykhoa/application'
     = csrf_meta_tags
     = favicon_link_tag '/favicon.ico'
+    = render 'shared/metatag'
   %body.container
     #fb-root
 
