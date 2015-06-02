@@ -53,8 +53,21 @@ h4 {
 }
 
 img {
-  width: 100% !important;
   padding: 7px 0;
+
+  @media (max-width: 768px) {
+    width: 100% !important;
+  }
+}
+
+pre {
+  font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  background: #F5F5F5;
+  line-height: 1.2em;
+  padding: 5px;
 }
 
 .container {
