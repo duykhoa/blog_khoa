@@ -35,6 +35,13 @@ a:hover {
   color: #2ecc71;
 }
 
+.content {
+  a {
+    color: #BBB;
+    border-bottom: 1px dotted #BBB;
+  }
+}
+
 h1 {
   font-size: 2.5em;
 }
